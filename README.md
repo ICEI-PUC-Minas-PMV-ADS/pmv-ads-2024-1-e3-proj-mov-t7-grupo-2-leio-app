@@ -1,23 +1,26 @@
-# TÍTULO DO PROJETO
+# Le.io
 
-`CURSO`
+`CURSO:` Análise e Desenvolvimento de Sistemas
 
-`DISCIPLINA`
+`DISCIPLINA:` Projeto: Desenvolvimento de uma Aplicação Móvel em um Ambiente de Negócio
 
-`SEMESTRE`
+`SEMESTRE:` Eixo 3 - 2024
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O aplicativo <strong>Le.io</strong> é voltado para organização e leitura de e-books.
 
 ## Integrantes
-
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+<ul>
+  <li><a href="https://github.com/alineazedias">Aline Azedias</a></li>
+  <li><a href="https://github.com/Lucagdev">Lucas Enis</a></li>
+  <li><a href="https://github.com/palomarizzon">Paloma Rizzon</a></li>
+  <li><a href="https://github.com/I-am-yoshi">Renata Gonzaga</a></li>
+  <li><a href="https://github.com/user">Ricardo Vieira</a></li>
+  <li><a href="https://github.com/user">Sandra Rodrigues</a></li>
+</ul>
 
 ## Orientador
 
-* Nome completo do professor 1
+* Sinaide Nunes Bezerra
 
 ## Instruções de utilização
 
