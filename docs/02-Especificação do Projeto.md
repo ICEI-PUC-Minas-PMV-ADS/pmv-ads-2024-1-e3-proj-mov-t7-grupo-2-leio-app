@@ -80,15 +80,18 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | ID   | Descrição                                                         | Prioridade |
 |------|-------------------------------------------------------------------|------------|
 | RNF-01 | O aplicativo deve garantir segurança na autenticação e na proteção dos dados do usuário. | ALTA       |
-| RNF-02 | O aplicativo deve ser compatível com os diferentes dispositivos móveis e suas versões de sistema operacional. | ALTA       |
-| RNF-03 | O aplicativo deve ser escalável para lidar com um grande número de usuários simultaneamente. | ALTA       |
-| RNF-04 | O aplicativo deve ter tempos de resposta rápidos, garantindo uma experiência fluida ao usuário. | ALTA       |
-| RNF-05 | O aplicativo deve ser facilmente integrável com outros serviços ou APIs externas, se necessário. | MÉDIA      |
-| RNF-06 | O aplicativo deve seguir padrões de acessibilidade para garantir que todos os usuários possam utilizá-lo, independentemente de suas necessidades especiais. | MÉDIA      |
-| RNF-07 | O aplicativo deve ter uma interface intuitiva e amigável, visando proporcionar uma experiência de uso agradável. | ALTA       |
-| RNF-08 | O aplicativo deve ser robusto e confiável, minimizando a ocorrência de falhas ou interrupções. | ALTA       |
-| RNF-09 | O aplicativo deve ser de fácil manutenção e extensibilidade, permitindo a incorporação de novas funcionalidades no futuro. | ALTA       |
-| RNF-10 | O aplicativo deve estar em conformidade com as leis e regulamentos de proteção de dados, como GDPR e LGPD. | ALTA       |
+| RNF-02 | O aplicativo deve estar em conformidade com as leis e regulamentos de proteção de dados, como GDPR e LGPD. | ALTA       |
+| RNF-03 | O aplicativo deve ter tempos de resposta rápidos, garantindo uma experiência fluida ao usuário. | ALTA       |
+| RNF-04 | O aplicativo deve ter uma interface intuitiva e amigável, visando proporcionar uma experiência de uso agradável. | ALTA       |
+| RNF-05 | O aplicativo deve ser robusto e confiável, minimizando a ocorrência de falhas ou interrupções. | ALTA       |
+| RNF-06 | O aplicativo deve ser de fácil manutenção e extensibilidade, permitindo a incorporação de novas funcionalidades no futuro. | ALTA       |
+| RNF-07 | O aplicativo deve ser compatível com os diferentes dispositivos móveis e suas versões de sistema operacional. | MÉDIA       |
+| RNF-08 | O aplicativo deve seguir padrões de acessibilidade para garantir que todos os usuários possam utilizá-lo, independentemente de suas necessidades especiais. | MÉDIA      |
+| RNF-09 | O aplicativo deve ser escalável para lidar com um grande número de usuários simultaneamente. | BAIXA       |
+| RNF-10 | O aplicativo deve ser facilmente integrável com outros serviços ou APIs externas, se necessário. | BAIXA      |
+
+
+
 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
