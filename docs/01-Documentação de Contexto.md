@@ -1,6 +1,7 @@
 # Introdução
+Segundo a pesquisa Retratos da Leitura no Brasil realizada em 2020, “De 2015 para 2019, a porcentagem de leitores no Brasil caiu de 56% para 52%. Já os não leitores, ou seja, brasileiros com mais de cinco anos que não leram nenhum livro, nem mesmo parte, nos últimos três meses representam 48% da população” (Agência Brasil, 2020). Em contrapartida, segundo a pesquisa da Folha de São Paulo, a “internet está presente em 91,5% dos domicílios.”(VIECELI, 2023). A pesquisa também diz que “de 2021 para 2022, o percentual de lares com acesso à internet cresceu de 74,7% para 78,1% na área rural e subiu de 92,3% para 93,5% na urbana.”
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Pensando nisso, o aplicativo “Le.io” visa proporcionar aos leitores uma ferramenta para encontrar e-books que estão em domínio público de uma maneira simples e rápida, além de poder organizar seus livros, sejam eles físicos ou digitais, através do aplicativo na internet, contribuindo assim para a democratização da leitura e possivelmente o crescimento no número de leitores no país.
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
@@ -24,13 +25,7 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
-
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Manter a organização das suas leituras ou buscar por e-books a princípio pode parecer uma atividade simples, mas se não forem utilizadas as ferramentas certas pode se tornar uma atividade frustrante. Nosso aplicativo visa proporcionar uma melhor experiência e maior facilidade em organizar e buscar esses livros dentro do aplicativo, tudo na palma da mão.
 
 ## Público-Alvo
 
