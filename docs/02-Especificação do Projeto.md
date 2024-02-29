@@ -21,7 +21,7 @@
 
 ## Histórias de Usuários
 
-- Com base na análise das personas identificamos as seguintes histórias de usuários:
+Com base na análise das personas identificamos as seguintes histórias de usuários:
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
@@ -72,8 +72,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-01| O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. | ALTA | 
+|RF-02| O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor.   | ALTA |
+|RF-03| O sistema deve permitir que o usuário possa marcar seus livros de acordo com categorias pré estabelecidas, sendo elas: lido, lendo, relendo, quero ler, abandonei, tenho, desejado, favorito, emprestado e disponível para troca. | ALTA |
+|RF-04| O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, gênero, sinopse e avaliações. | ALTA |
+|RF-05| O sistema deve permitir que o usuário baixe e-books para leitura de livros categorizados como domínio público. | ALTA |
+|RF-06| O sistema deve permitir que o usuário possa ler uma prévia do livro ou ouvir esta prévia em formato de áudio. | MÉDIA |
+|RF-07| O sistema deve permitir que o usuário possa avaliar o livro lido entre 1 e 5 estrelas. | MÉDIA |
+|RF-08| O sistema deve permitir que o usuário possa buscar por outros leitores e adicioná-los como amigos. | MÉDIA |
+|RF-09| O sistema deve permitir que o usuário possa enviar mensagens para outros usuários. | BAIXA |
 
 ### Requisitos não Funcionais
 
@@ -90,39 +97,17 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RNF-09 | O aplicativo deve ser escalável para lidar com um grande número de usuários simultaneamente. | BAIXA       |
 | RNF-10 | O aplicativo deve ser facilmente integrável com outros serviços ou APIs externas, se necessário. | BAIXA      |
 
-
-
-
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|RE-01| O projeto deverá ser entregue no final do semestre letivo, não podendo extrapolar a data de 23/06/2024. |
+|RE-02| A equipe não pode subcontratar o desenvolvimento do trabalho. |
+|RE-03| O projeto não deve usar sistemas de IAs para o desenvolvimento do código. |
+|RE-04| O projeto deve utilizar a linguagem de programação mobile React Native. |
+|RE-05| O projeto deve utilizar uma conexão com banco de dados. |
 
 ## Diagrama de Casos de Uso
 
