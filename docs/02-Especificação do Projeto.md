@@ -57,12 +57,16 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em segu
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
+| **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte Dados** | **Perspectiva** |
+|-------------|-------------|-------------|-------------|-------------|------------------------|
+| Taxa de satisfação| Avaliar a satisfação dos usuários em relação à experiência com a aplicação. | Medir a aceitação da aplicação através da avaliação média atribuída pelos usuários. | Nota média da loja de aplicativo| Loja de Aplicativo| Aprimorar a qualidade|
+| Número de downloads diário | Obter o número diário de downloads da aplicação. | Avaliar o número de downloads diários | Número de downloads | Loja de Aplicativo | Necessidade de aplicação|
+| Reclamações recebidas | Minimizar a incidência de feedbacks negativos mensais. | Analisar a quantidade de reclamações recebidas | Somatório das reclamações por mês | Central de reclamações | Qualidade do produto |
+| Cadastros Realizados | Analisar a quantidade de cadastros na plataforma | Total de cadastros em relação a plataforma | Crescimento mensal | Contador na plataforma | Aquisição de Novos Usuários e Expansão de Público. |
+| Taxa de Utilização de Recursos de Acessibilidade | Medir a aceitação e uso dos recursos de acessibilidade, especialmente por usuários com deficiência visual. | Monitorar a utilização de funcionalidades como a leitura de livros em voz alta. | Número de usuários que utilizaram recursos de acessibilidade | Atividades do usuário no aplicativo. | Acessibilidade |
+| Taxa de Atualização de Lista de Leitura | Verificar a frequência com que os usuários atualizam suas listas de leitura. | Acompanhar a modificação de status dos livros na lista do "Quero Ler" para "Lendo" ou "Lido". | Número de atualizações da lista de leitura | Atividades do usuário no aplicativo. | Engajamento do usuário. |
 
-Usar o seguinte modelo: 
 
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
 
 ## Requisitos
 
