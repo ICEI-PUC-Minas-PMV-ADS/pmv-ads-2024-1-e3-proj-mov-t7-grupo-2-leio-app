@@ -22,13 +22,5 @@ Manter a organização das suas leituras ou buscar por e-books a princípio pode
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+Este projeto é direcionado para leitores. Nosso público alvo são principalmente jovens e adultos, estudantes, professores, pesquisadores, profissionais da comunicação e do meio acadêmico. Usuários seriam leitores em busca de se envolver em imaginação, mentalização, antecipação, aprendizagem. Podem ser de ambos os sexos, não tendo especificação de idade, e não importando sua classe social ou seu poder aquisitivo
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
