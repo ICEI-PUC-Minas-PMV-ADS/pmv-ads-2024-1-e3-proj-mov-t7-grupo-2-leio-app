@@ -14,8 +14,8 @@ O aplicativo <strong>Le.io</strong> é voltado para organização e leitura de e
   <li><a href="https://github.com/Lucagdev">Lucas Enis</a></li>
   <li><a href="https://github.com/palomarizzon">Paloma Rizzon</a></li>
   <li><a href="https://github.com/I-am-yoshi">Renata Gonzaga</a></li>
-  <li><a href="https://github.com/user">Ricardo Vieira</a></li>
-  <li><a href="https://github.com/user">Sandra Rodrigues</a></li>
+  <li><a href="https://github.com/RicardoGVieira">Ricardo Vieira</a></li>
+  <li><a href="https://github.com/SandraMatos9">Sandra Rodrigues</a></li>
 </ul>
 
 ## Orientador
