@@ -34,14 +34,19 @@ Com base na análise das personas identificamos as seguintes histórias de usuá
 | Usuário que gosta de interagir com outros leitores	| Participar de grupos de discussão e clubes do livro dentro do aplicativo | Compartilhar ideias, debater sobre livros e fazer parte de uma comunidade de leitores engajada. |
 
 ## Modelagem do Processo de Negócio 
+organização e compartilhamento de leituras por meio da internet, promovendo o incentivo a leitura e possibilitando um crescimento dos leitores.
+Nosso público-alvo abrange jovens e adultos de ambos os sexos, como estudantes, professores, pesquisadores e profissionais da comunicação e acadêmicos. São pessoas interessadas em estimular a imaginação, a mentalização, a antecipação e a aprendizagem, sem restrição de idade, classe social ou poder aquisitivo.
+
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Segundo Lucena, 2023, realizou uma pesquisa, a qual constata que a porcentagem de leitores no país caiu 4% e também numa outra pesquisa da Folha de São Paulo que revela o percentual  de lares com internet crescendo significativamente, foi pensado o aplicativo Le.io, cuja proposta é proporcionar ao leitor uma ferramenta que o auxilie na 
+Atualmente, no mercado, existem aplicativos como o Kindle, Goodreads e Skoob. O Le.io, em comparação ao Goodreads, permite aos usuários catalogar os livros que já leram, estão lendo ou desejam ler, além de compartilhar resenhas, avaliações e recomendações de livros com amigos e a comunidade. O Le.io oferece a opção de adicionar à lista de troca, e-books para download, porém, diferente do Kindle, estes não são gratuitos. Além disso, o Le.io permite excluir livros e ouvir a prévia de um livro escolhido, promovendo o acesso à informação para pessoas com deficiência visual. As diferenças entre Le.io e Goodreads são as mesmas aplicadas ao Skoob. Acreditamos que, com os diferenciais em relação aos outros aplicativos citados e a inteligência artificial que possibilitará a leitura da tela, o potencial do Le.io é promissor para democratizar o acesso à leitura.
+
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+O aplicativo Le.io visa proporcionar aos leitores uma ferramenta de organização e compartilhamento de leituras pela internet, para assim, promover o incentivo à leitura e possibilitar um crescimento no número de leitores. Seu público-alvo são jovens e adultos, incluindo estudantes, professores, pesquisadores e profissionais da comunicação e acadêmicos, sem restrição de idade, classe social ou poder aquisitivo. Comparado a aplicativos como Kindle, Goodreads e Skoob, o Le.io oferece recursos como adicionar à lista de troca, e-books para download (não gratuitos), exclusão de livros e audição de prévias, especialmente úteis para pessoas com deficiência visual. A proposta é utilizar inteligência artificial para tornar a leitura mais acessível. As oportunidades de mercado incluem a expansão da base de usuários ao atender a demanda por aplicativos que promovam a leitura de forma inclusiva, mas enfrenta ameaças da concorrência e mudanças no mercado. Os objetivos do projeto incluem a organização da leitura pessoal, exploração de informações mais detalhadas sobre os livros e interação com outros leitores.
 
 ### Processo 1 – NOME DO PROCESSO
 
