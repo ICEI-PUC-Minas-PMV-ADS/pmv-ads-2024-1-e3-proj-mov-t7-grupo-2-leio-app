@@ -10,9 +10,14 @@ Atualmente a sobrecarga de informações diárias dificulta a organização das 
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O objetivo geral deste projeto é desenvolver um aplicativo que auxilia os leitores na organização e busca por livros, permitindo que eles gerenciem facilmente as obras que já leram, que desejam ler, aqueles que desejam trocar, entre outras categorias. Além disso, o aplicativo visa proporcionar maior inclusão à leitura, especialmente visando acessibilidade, pensando no público de pessoas com deficiência visual, já que o aplicativo oferece também a possibilidade de ouvir a prévia do livro escolhido.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+
+Como objetivos específicos, podemos ressaltar: 
+Organizar leituras pessoais;
+Buscar por novas sugestões de leitura;
+Se conectar com outros leitores.
+
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
