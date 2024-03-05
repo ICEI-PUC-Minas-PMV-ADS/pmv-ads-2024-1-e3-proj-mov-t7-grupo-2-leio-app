@@ -14,18 +14,13 @@ O objetivo geral deste projeto é desenvolver um aplicativo que auxilia os leito
 
 
 Como objetivos específicos, podemos ressaltar: 
-Organizar leituras pessoais;
-Buscar por novas sugestões de leitura;
-Se conectar com outros leitores.
-
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+- Organizar leituras pessoais;
+- Buscar por novas sugestões de leitura;
+- Se conectar com outros leitores.
 
 ## Justificativa
 Manter a organização das suas leituras ou buscar por e-books a princípio pode parecer uma atividade simples, mas se não forem utilizadas as ferramentas certas pode se tornar uma atividade frustrante. Nosso aplicativo visa proporcionar uma melhor experiência e maior facilidade em organizar e buscar esses livros dentro do aplicativo, tudo na palma da mão.
 
 ## Público-Alvo
 
-Este projeto é direcionado para leitores. Nosso público alvo são principalmente jovens e adultos, estudantes, professores, pesquisadores, profissionais da comunicação e do meio acadêmico. Usuários seriam leitores em busca de se envolver em imaginação, mentalização, antecipação, aprendizagem. Podem ser de ambos os sexos, não tendo especificação de idade, e não importando sua classe social ou seu poder aquisitivo
-
+Este projeto é direcionado para leitores. Nosso público alvo são principalmente jovens e adultos, estudantes, professores, pesquisadores, profissionais da comunicação e do meio acadêmico. Usuários seriam leitores em busca de se envolver em imaginação, mentalização, antecipação, aprendizagem. Podem ser de ambos os sexos, não tendo especificação de idade, e não importando sua classe social ou seu poder aquisitivo.
