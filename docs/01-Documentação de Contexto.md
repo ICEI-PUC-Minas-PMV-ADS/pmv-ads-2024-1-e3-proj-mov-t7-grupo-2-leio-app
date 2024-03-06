@@ -6,11 +6,11 @@ Pensando nisso, o aplicativo “Le.io” visa proporcionar aos leitores uma ferr
 ## Problema
 Este aplicativo visa resolver o problema que os leitores enfrentam ao organizar suas leituras.
 
-Atualmente a sobrecarga de informações diárias dificulta a organização das leituras no dia a dia, por isso se faz necessário o uso de uma ou mais ferramentas para conseguir manter essas informações em um só lugar. Com nosso aplicativo os leitores serão capazes de recordar se já leram ou não um livro, sua opinião sobre ele e até encontrar novas sugestões de leitura que estão em domínio público para leitura.
+A atual sobrecarga diária de informações dificulta a organização das leituras no dia a dia, por isso se faz necessário o uso de uma ou mais ferramentas para conseguir manter essas informações em um só lugar. Com nosso aplicativo os leitores serão capazes de categorizar seus livros, encontrar novas sugestões de leitura que estão em domínio público e até se conectar com outros leitores.
 
 ## Objetivos
 
-O objetivo geral deste projeto é desenvolver um aplicativo que auxilia os leitores na organização e busca por livros, permitindo que eles gerenciem facilmente as obras que já leram, que desejam ler, aqueles que desejam trocar, entre outras categorias. Além disso, o aplicativo visa proporcionar maior inclusão à leitura, especialmente visando acessibilidade, pensando no público de pessoas com deficiência visual, já que o aplicativo oferece também a possibilidade de ouvir a prévia do livro escolhido.
+O objetivo geral deste projeto é desenvolver um aplicativo que auxilia os leitores na organização e busca por livros, permitindo que eles gerenciem facilmente as obras que já leram, que desejam ler, aqueles que desejam trocar, entre outras categorias. Além disso, o aplicativo visa proporcionar maior inclusão à leitura, especialmente visando acessibilidade, pensando no público de pessoas com deficiência visual, já que o aplicativo oferece também a possibilidade de ouvir uma prévia do livro escolhido.
 
 
 Como objetivos específicos, podemos ressaltar: 
