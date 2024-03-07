@@ -34,7 +34,7 @@ Com base na análise das personas identificamos as seguintes histórias de usuá
 | Usuário que gosta de interagir com outros leitores	| Participar de grupos de discussão e clubes do livro dentro do aplicativo | Compartilhar ideias, debater sobre livros e fazer parte de uma comunidade de leitores engajada. |
 
 ## Modelagem do Processo de Negócio 
-organização e compartilhamento de leituras por meio da internet, promovendo o incentivo a leitura e possibilitando um crescimento dos leitores.
+Organização e compartilhamento de leituras por meio da internet, promovendo o incentivo a leitura e possibilitando um crescimento dos leitores.
 Nosso público-alvo abrange jovens e adultos de ambos os sexos, como estudantes, professores, pesquisadores e profissionais da comunicação e acadêmicos. São pessoas interessadas em estimular a imaginação, a mentalização, a antecipação e a aprendizagem, sem restrição de idade, classe social ou poder aquisitivo.
 
 
