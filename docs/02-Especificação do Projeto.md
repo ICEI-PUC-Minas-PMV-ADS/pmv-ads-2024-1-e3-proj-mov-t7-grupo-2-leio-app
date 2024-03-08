@@ -34,8 +34,7 @@ Com base na análise das personas identificamos as seguintes histórias de usuá
 | Usuário que gosta de interagir com outros leitores	| Participar de grupos de discussão e clubes do livro dentro do aplicativo | Compartilhar ideias, debater sobre livros e fazer parte de uma comunidade de leitores engajada. |
 
 ## Modelagem do Processo de Negócio 
-Organização e compartilhamento de leituras por meio da internet, promovendo o incentivo a leitura e possibilitando um crescimento dos leitores.
-Nosso público-alvo abrange jovens e adultos de ambos os sexos, como estudantes, professores, pesquisadores e profissionais da comunicação e acadêmicos. São pessoas interessadas em estimular a imaginação, a mentalização, a antecipação e a aprendizagem, sem restrição de idade, classe social ou poder aquisitivo.
+<img width="379" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app/assets/109739949/c05b606a-9702-44e5-8435-8d1548e07d39">
 
 
 ### Análise da Situação Atual
