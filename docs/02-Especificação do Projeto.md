@@ -88,8 +88,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-05| O sistema deve permitir que o usuário baixe e-books para leitura de livros categorizados como domínio público. | ALTA |
 |RF-06| O sistema deve permitir que o usuário possa ler uma prévia do livro ou ouvir esta prévia em formato de áudio. | MÉDIA |
 |RF-07| O sistema deve permitir que o usuário possa avaliar o livro lido entre 1 e 5 estrelas. | MÉDIA |
-|RF-08| O sistema deve permitir que o usuário possa buscar por outros leitores e adicioná-los como amigos. | MÉDIA |
-|RF-09| O sistema deve permitir que o usuário possa enviar mensagens para outros usuários. | BAIXA |
 
 ### Requisitos não Funcionais
 
