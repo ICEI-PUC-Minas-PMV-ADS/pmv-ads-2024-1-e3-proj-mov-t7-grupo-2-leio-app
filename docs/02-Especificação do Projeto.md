@@ -36,7 +36,7 @@ Com base na análise das personas identificamos as seguintes histórias de usuá
 
 ### Análise da Situação Atual
 
-Segundo Lucena, 2023, realizou uma pesquisa, a qual constata que a porcentagem de leitores no país caiu 4% e também numa outra pesquisa da Folha de São Paulo que revela o percentual  de lares com internet crescendo significativamente, foi pensado o aplicativo Le.io, cuja proposta é proporcionar ao leitor uma ferramenta que o auxilie na 
+Segundo Lucena, 2023, realizou uma pesquisa, a qual constata que a porcentagem de leitores no país caiu 4% e também numa outra pesquisa da Folha de São Paulo que revela o percentual  de lares com internet crescendo significativamente, foi pensado o aplicativo Le.io, cuja proposta é proporcionar ao leitor uma ferramenta que o auxilie. 
 Atualmente, no mercado, existem aplicativos como o Kindle, Goodreads e Skoob. O Le.io, em comparação ao Goodreads, permite aos usuários catalogar os livros que já leram, estão lendo ou desejam ler, além de compartilhar resenhas, avaliações e recomendações de livros com amigos e a comunidade. O Le.io oferece a opção de adicionar à lista de troca, e-books para download, porém, diferente do Kindle, estes não são gratuitos. Além disso, o Le.io permite excluir livros e ouvir a prévia de um livro escolhido, promovendo o acesso à informação para pessoas com deficiência visual. As diferenças entre Le.io e Goodreads são as mesmas aplicadas ao Skoob. Acreditamos que, com os diferenciais em relação aos outros aplicativos citados e a inteligência artificial que possibilitará a leitura da tela, o potencial do Le.io é promissor para democratizar o acesso à leitura.
 
 
@@ -125,7 +125,7 @@ De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar 
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+
 
 <img src="/docs/img/diagramaderede2.png">
 O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
