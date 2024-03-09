@@ -30,7 +30,7 @@ Com base na análise das personas identificamos as seguintes histórias de usuá
 | Usuário ocupado | Baixar livros para ler offline | Desfrutar da leitura mesmo quando estiver sem conexão com a internet. |
 
 ## Modelagem do Processo de Negócio 
-<img width="470" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app/assets/109739949/a0bd290f-964a-45bc-9755-ed40cee38a2e">
+<img width="259" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app/assets/109739949/b067a490-f749-46be-9230-5f560e1a4a87">
 
 
 
