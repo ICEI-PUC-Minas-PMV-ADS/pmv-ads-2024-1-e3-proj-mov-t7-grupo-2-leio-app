@@ -1,5 +1,9 @@
 # Especificações do Projeto
 
+<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+
+A especificação do projeto é composta pela definição do diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+
 ## Personas
 
 - Identificamos personas representativas para compreender suas necessidades e expectativas.
@@ -124,7 +128,8 @@ Abaixo temos duas representações para o gerenciamento do projeto, levando em c
 ### Gráfico de Gantt ou diagrama de Gantt
 
 <img src="/docs/img/graficodegant.png">
-Todas as tarefas criadas podem ser consultadas neste link.
+
+Todas as tarefas criadas podem ser consultadas <a href="https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/812/views/4">neste link</a> ou em Github Projects > Roadmap.
 
 ## Gerenciamento de Equipe
 
@@ -141,4 +146,5 @@ alocação estratégica de recursos humanos em diversas equipes, aquisição de 
 Cada aspecto do orçamento foi otimizado para garantir uma distribuição eficiente dos recursos, assegurando o sucesso do projeto dentro das limitações financeiras estabelecidas.
 
 A tabela abaixo apresenta o gerenciamento de orçamento:
+
 <img src="./img/gestao-de-orcamento.jpg">
