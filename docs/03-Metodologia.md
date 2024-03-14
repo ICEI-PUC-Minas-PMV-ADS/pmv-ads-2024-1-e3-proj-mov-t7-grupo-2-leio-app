@@ -1,20 +1,18 @@
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
+<span style="color:red">Pré-requisitos: <a href="02-Especificação do Projeto.md"> Documentação de Especificação</a></span>
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+A metodologia do projeto é a etapa onde ocorrem todas as definições de gerência do projeto, é onde também definimos quais ferramentas vamos utilizar e quais as regras para um bom desenvolvimento e sucesso de toda a aplicação.
+
+## Etapas
+- Na primeira etapa foi a definição inicial do projeto. Fizemos uma busca por referências, matérias sobre o universo da leitura, identificação do problema e possibilidades para a ideia do projeto. Após a definição do projeto, identificamos as histórias de usuário, personas e quais requisitos fariam sentido para o aplicativo. Também definimos alguns indicadores de desempenho que são importantes para metrificação. Gestão de orçamento, equipes, matriz de rastreabilidade e diagrama de casos de uso também foram definidos aqui.
+- Já na segunda etapa, é onde ocorre quase todo o resto da definição de documentação para finalmente começar o desenvolvimento do aplicativo na prática.
+- Na terceira e quarta etapa, haverá todo o desenvolvimento da aplicação e registros de casos de teste de software e usabilidade.
+- E por último, faremos as correções de possíveis bugs e melhorias no aplicativo, além de realizar a apresentação final.
 
 ## Relação de Ambientes de Trabalho
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentado na tabela que se segue.
-
-| AMBIENTE                          | PLATAFORMA      | LINK DE ACESSO                                                                                                                  |
-| --------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Repositório de código fonte       | GitHub          | [Repositório de código fonte](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app) |
-| Documentos do projeto             | Github          | [Documentos do projeto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app)       |
-| Diagramas             | Drawio          | [Diagramas](https://drive.google.com/file/d/1gX-52zc4wUdfiWraM814l3lypL60Gz5b/view?usp=sharing)       |
-| Projeto de Interface e Wireframes | Figma           | [Projeto de Interface e Wireframes](https://www.figma.com/file/PVMDd8ZYhduvIBc5eUkktw/Grupo-02---Le.io-App?type=design&node-id=0%3A1&mode=design&t=2Ob3Hm0gWIMeTHxV-1)                      |
-| Gerenciamento do Projeto          | GitHub Projects | [Gerenciamento do Projeto](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/812)                                         |
+O projeto é composto por 6 integrantes, todos trabalhando de maneira 100% remota. Para o desenvolvimento do aplicativo, temos encontros semanais estilo daily do scrum entre 1h e 1h30 para fazer alinhamentos, tomar decisões, pedidos de ajuda e possíveis ajustes de rota. Como o foco é no desenvolvimento ágil, essas reuniões são importantes para que o cronograma seja cumprido até o fim do eixo.
 
 ## Controle de Versão
 
@@ -31,15 +29,7 @@ Quanto à gerência de issues, o projeto adota a seguinte convenção para etiqu
 - `funcionalidade`: uma nova funcionalidade precisa ser introduzida
 - `design`: uma tela precisa ser desenhada no figma
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
-> **Links Úteis**:
-> - [Microfundamento: Gerência de Configuração](https://pucminas.instructure.com/courses/87878/)
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+Como estamos usando apenas uma branch, a documentação do projeto é realizada direto no site do GitHub ou é feito via GitHub Desktop após baixar todas as atualizações disponíveis para evitar conflitos. Já a gerência de tags determina o que cada issue representa, então se a tarefa diz respeito a uma funcionalidade do sistema, usaremos a tag `funcionalidade`, se a tarefa é uma documentação, usaremos a tag `documentação` e  assim por diante.
 
 ## Gerenciamento de Projeto
 
@@ -69,30 +59,25 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 O quadro kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos é apresentado abaixo no estado atual.
 <br>
 <br>
-<img height="400px" src="link" />
+<img src="./img/Quadro Kanban.png">
 <br>
-Figura X - Tela do kanban (GitHub Projects) utilizada pelo grupo
- 
-> **Links Úteis**:
-> - [Planejamento e Gestáo Ágil de Projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
+Tela do kanban (GitHub Projects) utilizada pelo grupo
 
 ### Ferramentas
 
-As ferramentas empregadas no projeto são:
+As ferramentas empregadas no projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes é apresentado na tabela que se segue.
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
+| AMBIENTE                          | PLATAFORMA      | LINK DE ACESSO                                                                                                                  |
+| --------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Repositório de código fonte e documentação       | GitHub          | [Repositório](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app) |
+| Gerenciamento do Projeto          | GitHub Projects | [Quadro do projeto](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/812)                                         |
+| Diagramas             | Drawio          | [Diagramas](https://drive.google.com/file/d/1gX-52zc4wUdfiWraM814l3lypL60Gz5b/view?usp=sharing)       |
+| Projeto de Interface e Wireframes | Figma           | [Projeto no Figma](https://www.figma.com/file/PVMDd8ZYhduvIBc5eUkktw/Grupo-02---Le.io-App?type=design&node-id=0%3A1&mode=design&t=2Ob3Hm0gWIMeTHxV-1)                      |
+| Editor de código          | Nome | [Nome](link)                                         |
+| Ferramenta de comunicação          | Teams | [Grupo no Teams](https://teams.microsoft.com/l/channel/19%3Ab3636001a6c843ccb50226d70758bc61%40thread.tacv2/Grupo%202?groupId=afb28315-f87a-4a98-a72f-d65700c83779&tenantId=14cbd5a7-ec94-46ba-b314-cc0fc972a161)                                         |
 
-O editor de código foi escolhido porque ele possui uma integração com o sistema de versão. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as necessidades da nossa solução.
-
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
+- O <b>GitHub projects</b> foi escolhido para o gerenciamento dos cards de tarefas e roadmap por suas funcionalidades e integração com o próprio repositório.
+- O <b>Draw.io</b> foi escolhido para a criação dos diagramas por ser integrado ao google drive e permitir a edição simultânea pelos integrantes do grupo.
+- O <b>Figma</b> foi escolhido para wireframes e desenho das telas por ser o mais usado no mercado, além de possuir todas as funcionalidades que precisamos.
+- O <b>Nome</b> foi escolhido como editor de código por indicação dos microfundamentos.
+- O <b>Teams</b> foi escolhido pelo grupo por já ser utilizado nas orientações com o professor.
