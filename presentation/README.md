@@ -1,3 +1,5 @@
 # Apresentação da Solução
 
-Faça uma apresentação de um resumo de todos o processo de desenvolvimento e no final apresente a solução desenvolvida, usando um pequeno vídeo.
+O projeto Le.io se trata de um aplicativo de organização e leitura de e-books.
+
+<a href="./Apresentação inicial.pdf">Apresentação inicial</a>

@@ -1,5 +1,7 @@
 # Le.io
 
+<img src="./docs/img/Logo.png">
+
 `CURSO:` Análise e Desenvolvimento de Sistemas
 
 `DISCIPLINA:` Projeto: Desenvolvimento de uma Aplicação Móvel em um Ambiente de Negócio
@@ -9,6 +11,7 @@
 O aplicativo <strong>Le.io</strong> é voltado para organização e leitura de e-books.
 
 ## Integrantes
+
 <ul>
   <li><a href="https://github.com/alineazedias">Aline Azedias</a></li>
   <li><a href="https://github.com/Lucagdev">Lucas Enis</a></li>
@@ -20,7 +23,7 @@ O aplicativo <strong>Le.io</strong> é voltado para organização e leitura de e
 
 ## Orientador
 
-* Sinaide Nunes Bezerra
+- Sinaide Nunes Bezerra
 
 ## Instruções de utilização
 
