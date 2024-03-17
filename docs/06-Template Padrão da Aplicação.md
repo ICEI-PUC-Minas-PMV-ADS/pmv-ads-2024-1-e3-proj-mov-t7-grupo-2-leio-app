@@ -60,7 +60,7 @@ As telas do aplicativo do projeto de interface são compostas pelos seguintes la
 
 ### Categorias do livro
 
-<img src="./img/Prototipo-Categorias do livro.png>
+<img src="./img/Prototipo-Categorias do livro.png">
 
 ### Biblioteca
 

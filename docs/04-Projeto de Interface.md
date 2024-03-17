@@ -18,36 +18,36 @@ São protótipos usados em design de interface para sugerir a estrutura de um si
 
 ### Login
 
-<img src="./img/Wireframes-Login.png">
+<img style="max-width: 200px;" src="./img/Wireframes-Login.png">
 
 ### Cadastro
 
-<img src="./img/Wireframes-Cadastro.png">
+<img style="max-width: 200px;" src="./img/Wireframes-Cadastro.png">
 
 ### Perfil
 
-<img src="./img/Wireframes-Perfil.png">
+<img style="max-width: 200px;" src="./img/Wireframes-Perfil.png">
 
 ### Página inicial
 
-<img src="./img/Wireframes-Página inicial.png">
+<img style="max-width: 200px;" src="./img/Wireframes-Página inicial.png">
 
 ### Pesquisa
 
-<img src="./img/Wireframes-Pesquisa.png">
+<img style="max-width: 200px;" src="./img/Wireframes-Pesquisa.png">
 
 ### Resultado da pesquisa
 
-<img src="./img/Wireframes-Resultado da pesquisa.png">
+<img style="max-width: 200px;" src="./img/Wireframes-Resultado da pesquisa.png">
 
 ### Informações do livro
 
-<img src="./img/Wireframes-Info do livro.png">
+<img style="max-width: 200px;" src="./img/Wireframes-Info do livro.png">
 
 ### Categorias do livro
 
-<img src="./img/Wireframes-Categorias do livro.png>
+<img style="max-width: 200px;" src="./img/Wireframes-Categorias do livro.png">
 
 ### Biblioteca
 
-<img src="./img/Wireframes-Biblioteca.png">
+<img style="max-width: 200px;" src="./img/Wireframes-Biblioteca.png">
