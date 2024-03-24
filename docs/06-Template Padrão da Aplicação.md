@@ -6,9 +6,9 @@ Layout padrão da aplicação que será utilizado em todas as páginas como a de
 
 ## Identidade visual
 
-### Logo e favicon
+### Logo e Ícone
 
-<img src="./img/Logo + favicon.jpg">
+<img src="./img/Logo - Icone.jpg">
 
 ### Paleta de cores
 
@@ -32,36 +32,40 @@ As telas do aplicativo do projeto de interface são compostas pelos seguintes la
 
 ### Login
 
-<img src="./img/Prototipo-Login.png">
+<img max-width= "200px" src="./img/Prototipo-Login.png">
 
 ### Cadastro
 
-<img src="./img/Prototipo-Cadastro.png">
+<img max-width= "200px" src="./img/Prototipo-Cadastro.png">
 
 ### Perfil
 
-<img src="./img/Prototipo-Perfil.png">
+<img max-width= "200px" src="./img/Prototipo-Perfil.png">
 
 ### Página inicial
 
-<img src="./img/Prototipo-Página inicial.png">
+<img max-width= "200px" src="./img/Prototipo-Página inicial.png">
 
 ### Pesquisa
 
-<img src="./img/Prototipo-Pesquisa.png">
+<img max-width= "200px" src="./img/Prototipo-Pesquisa.png">
 
 ### Resultado da pesquisa
 
-<img src="./img/Prototipo-Resultado da pesquisa.png">
+<img max-width= "200px" src="./img/Prototipo-Resultado da pesquisa.png">
 
 ### Informações do livro
 
-<img src="./img/Prototipo-Info do livro.png">
+<img max-width= "200px" src="./img/Prototipo-Info do livro.png">
 
 ### Categorias do livro
 
-<img src="./img/Prototipo-Categorias do livro.png">
+<img max-width= "200px" src="./img/Prototipo-Categorias do livro.png">
 
 ### Biblioteca
 
-<img src="./img/Prototipo-Biblioteca.png">
+<img max-width= "200px" src="./img/Prototipo-Biblioteca.png">
+
+### Estante
+
+<img max-width= "200px" src="./img/Prototipo-Estante.png">
