@@ -18,36 +18,36 @@ São protótipos usados em design de interface para sugerir a estrutura de um si
 
 ### Login
 
-<img max-width= "200px" src="./img/Wireframes-Login.png">
+<img max-height= "500px" src="./img/Wireframes-Login.png">
 
 ### Cadastro
 
-<img max-width= "200px" src="./img/Wireframes-Cadastro.png">
+<img max-height= "500px" src="./img/Wireframes-Cadastro.png">
 
 ### Perfil
 
-<img max-width= "200px" src="./img/Wireframes-Perfil.png">
+<img max-height= "500px" src="./img/Wireframes-Perfil.png">
 
 ### Página inicial
 
-<img max-width= "200px" src="./img/Wireframes-Página inicial.png">
+<img max-height= "500px" src="./img/Wireframes-Página inicial.png">
 
 ### Pesquisa
 
-<img max-width= "200px" src="./img/Wireframes-Pesquisa.png">
+<img max-height= "500px" src="./img/Wireframes-Pesquisa.png">
 
 ### Resultado da pesquisa
 
-<img max-width= "200px" src="./img/Wireframes-Resultado da pesquisa.png">
+<img max-height= "500px" src="./img/Wireframes-Resultado da pesquisa.png">
 
 ### Informações do livro
 
-<img max-width= "200px" src="./img/Wireframes-Info do livro.png">
+<img max-height= "500px" src="./img/Wireframes-Info do livro.png">
 
 ### Categorias do livro
 
-<img max-width= "200px" src="./img/Wireframes-Categorias do livro.png">
+<img max-height= "500px" src="./img/Wireframes-Categorias do livro.png">
 
 ### Biblioteca
 
-<img max-width= "200px" src="./img/Wireframes-Biblioteca.png">
+<img max-height= "500px" src="./img/Wireframes-Biblioteca.png">

@@ -32,40 +32,40 @@ As telas do aplicativo do projeto de interface são compostas pelos seguintes la
 
 ### Login
 
-<img max-width= "200px" src="./img/Prototipo-Login.png">
+<img max-height= "500px" src="./img/Prototipo-Login.png">
 
 ### Cadastro
 
-<img max-width= "200px" src="./img/Prototipo-Cadastro.png">
+<img max-height= "500px" src="./img/Prototipo-Cadastro.png">
 
 ### Perfil
 
-<img max-width= "200px" src="./img/Prototipo-Perfil.png">
+<img max-height= "500px" src="./img/Prototipo-Perfil.png">
 
 ### Página inicial
 
-<img max-width= "200px" src="./img/Prototipo-Página inicial.png">
+<img max-height= "500px" src="./img/Prototipo-Página inicial.png">
 
 ### Pesquisa
 
-<img max-width= "200px" src="./img/Prototipo-Pesquisa.png">
+<img max-height= "500px" src="./img/Prototipo-Pesquisa.png">
 
 ### Resultado da pesquisa
 
-<img max-width= "200px" src="./img/Prototipo-Resultado da pesquisa.png">
+<img max-height= "500px" src="./img/Prototipo-Resultado da pesquisa.png">
 
 ### Informações do livro
 
-<img max-width= "200px" src="./img/Prototipo-Info do livro.png">
+<img max-height= "500px" src="./img/Prototipo-Info do livro.png">
 
 ### Categorias do livro
 
-<img max-width= "200px" src="./img/Prototipo-Categorias do livro.png">
+<img max-height= "500px" src="./img/Prototipo-Categorias do livro.png">
 
 ### Biblioteca
 
-<img max-width= "200px" src="./img/Prototipo-Biblioteca.png">
+<img max-height= "500px" src="./img/Prototipo-Biblioteca.png">
 
 ### Estante
 
-<img max-width= "200px" src="./img/Prototipo-Estante.png">
+<img max-height= "500px" src="./img/Prototipo-Estante.png">
