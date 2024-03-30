@@ -20,7 +20,8 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
 
 As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app/assets/109739949/8e2b86b7-b5f9-44c0-8b68-b3d179bc950b)
+
+![Diagramas-Modelo ER](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app/assets/109739949/00fe49ab-cbcf-4bbd-9228-2440017bb05b)
 
 
 ## Esquema Relacional
@@ -29,7 +30,8 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
  
 As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
 
-> - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
+![Diagramas-Esquema relacional](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app/assets/109739949/f44592c9-7838-4818-a449-4917f1a38782)
+
 
 ## Modelo Físico
 
