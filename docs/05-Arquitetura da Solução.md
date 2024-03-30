@@ -30,7 +30,7 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
  
 As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
 
-![Diagramas-Esquema relacional](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app/assets/109739949/f44592c9-7838-4818-a449-4917f1a38782)
+![Diagramas-Esquema relacional (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app/assets/109739949/f303199e-d646-44cd-94f7-29402cb8b974)
 
 
 ## Modelo Físico
