@@ -5,6 +5,7 @@
 Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 
 | **Caso de Teste** 	| **CT-01 - Criar conta** 	|
+|:---:	|:---:	|
 |	Requisito Associado 	| RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 | Objetivo do Teste 	| Verificar a possibilidade de criar conta |
 | Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a opção “Cadastre-se aqui”. <br> 3. Preencher os dados necessários. <br> 4. Salvar dados. <br> 5. Clicar em "Cadastrar"; <br> 6. Informar conta cadastrada com sucesso. <br> |
