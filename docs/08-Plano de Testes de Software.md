@@ -1,6 +1,6 @@
 # Plano de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="03-Projeto de Interface.md"> Projeto de Interface</a>
+<span style="color:red">Pré-requisitos: <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="04-Projeto de Interface.md"> Projeto de Interface</a>
 
 Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 
