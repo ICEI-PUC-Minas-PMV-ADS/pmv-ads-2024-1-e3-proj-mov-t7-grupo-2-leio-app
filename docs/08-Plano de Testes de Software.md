@@ -1,19 +1,86 @@
 # Plano de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
+<span style="color:red">Pré-requisitos: <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="03-Projeto de Interface.md"> Projeto de Interface</a>
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
+Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 
-Enumere quais cenários de testes foram selecionados para teste. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
- 
-## Ferramentas de Testes (Opcional)
-
-Comente sobre as ferramentas de testes utilizadas.
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+| **Caso de Teste** 	| **CT-01 - Criar conta** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
+| Objetivo do Teste 	| Verificar a possibilidade de criar conta |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a opção “Cadastre-se aqui”. <br> 3. Preencher os dados necessários. <br> 4. Salvar dados. <br> 5. Clicar em "Cadastrar"; <br> 6. Informar conta cadastrada com sucesso. <br>
+ |
+|Critério de Êxito | Criação da conta realizada com sucesso
+| | |
+| **Caso de Teste** 	| **CT-02 - Editar conta** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
+| Objetivo do Teste 	| Verificar a possibilidade de editar conta |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Preencher os dados necessários. <br> 5. Salvar dados. <br> 6. Clicar em "Salvar alterações"; <br> 7. Informar conta editada com sucesso. <br>
+ |
+|Critério de Êxito | Edição da conta realizada com sucesso
+| | |
+| **Caso de Teste** 	| **CT-03 - Visualizar conta** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
+| Objetivo do Teste 	| Verificar a possibilidade de visualizar sua conta |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar no botão “Perfil” <br> 5. Visualizar dados da conta. <br>
+ |
+|Critério de Êxito | Visualização da conta realizada com sucesso
+| | |
+| **Caso de Teste** 	| **CT-04 - Excluir conta** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
+| Objetivo do Teste 	| Verificar a possibilidade de excluir conta |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar em editar conta. <br> 5. Clicar em “Excluir conta”. <br> 6. Clicar em "Confirmar"; <br> 7. Informar conta excluída com sucesso. <br>
+ |
+|Critério de Êxito | Exclusão da conta realizada com sucesso
+| | |
+| **Caso de Teste** 	| **CT-05 - Buscar livros** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 02 O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor. |
+| Objetivo do Teste 	| Verificar a possibilidade de buscar livros |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar na área de busca. <br> 5. Digitar nome do livro ou nome do autor. <br> 6. Clicar em "Buscar"; <br> 7. Visualizar livros. <br>
+ |
+|Critério de Êxito | Livros encontrados com sucesso
+| | |
+| **Caso de Teste** 	| **CT-06 - Marcar livros** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 03 O sistema deve permitir que o usuário possa marcar seus livros de acordo com categorias pré estabelecidas, sendo elas: lido, lendo, relendo, quero ler, abandonei, tenho, desejado, favorito, emprestado e disponível para troca. |
+| Objetivo do Teste 	| Verificar a possibilidade de marcar livros |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar na área de busca. <br> 5. Digitar nome do livro ou nome do autor. <br> 6. Clicar em "Buscar"; <br> 7. Selecione o livro desejado. <br> 8. Marcar categoria desejada. <br>
+ |
+|Critério de Êxito | Livro marcado com sucesso.
+| | |
+| **Caso de Teste** 	| **CT-07 - Ler descrição dos livros** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 04 O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, gênero, sinopse e avaliações |
+| Objetivo do Teste 	| Verificar a possibilidade de ler a descrição dos livros |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar na área de busca. <br> 5. Digitar nome do livro ou nome do autor. <br> 6. Clicar em "Buscar"; <br> 7. Selecione o livro desejado. <br> 8. Ler descrição do livro. <br>
+ |
+|Critério de Êxito | Descrição do livro disponível com sucesso.
+| | |
+| **Caso de Teste** 	| **CT-08 - Baixar e-books** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 05 O sistema deve permitir que o usuário baixe e-books para leitura de livros categorizados como domínio público. |
+| Objetivo do Teste 	| Verificar a possibilidade de baixar e-books |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar na área de busca. <br> 5. Digitar nome do livro ou nome do autor. <br> 6. Clicar em "Buscar"; <br>7. Selecione o livro desejado. <br> 8. Clicar em “Buscar e-book”. <br>
+ |
+|Critério de Êxito | Realizado download do e-book com sucesso.
+| | |
+| **Caso de Teste** 	| **CT-09 - Ler prévia de livro ou ouvir formato áudio** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 06 O sistema deve permitir que o usuário possa ler uma prévia do livro ou ouvir esta prévia em formato de áudio. |
+| Objetivo do Teste 	| Verificar a possibilidade de ler prévia de livro ou ouvir em formato áudio |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar na área de busca. <br> 5. Digitar nome do livro ou nome do autor. <br> 6. Clicar em "Buscar"; <br> 7. Selecione o livro desejado. <br> 8. Clique em “ler prévia” e/ou ouvir em formato áudio <br>
+ |
+|Critério de Êxito | Leitura da prévia realizada e formato áudio disponível com sucesso.
+| | |
+| **Caso de Teste** 	| **CT-10 - Avaliar livros** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF - 07 O sistema deve permitir que o usuário possa avaliar o livro lido entre 1 e 5 estrelas. |
+| Objetivo do Teste 	| Verificar a possibilidade de avaliar livros |
+| Passos 	| 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar na área de busca. <br> 5. Digitar nome do livro ou nome do autor. <br> 6. Clicar em "Buscar"; <br> 7. Selecione o livro desejado. <br> 8. Clique em avaliar. <br> 9. Selecione a quantidade de estrelas. <br>
+ |
+|Critério de Êxito | Avaliação efetuada com sucesso.
+| | |
