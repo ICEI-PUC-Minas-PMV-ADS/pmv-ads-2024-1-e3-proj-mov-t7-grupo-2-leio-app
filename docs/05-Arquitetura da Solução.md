@@ -1,10 +1,8 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="03-Projeto de Interface.md"> Projeto de Interface</a></span>
+Utilizaremos o React Native, com a base de dados hospedada localmente no SQLite.
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
-
-![Arquitetura da Solução](img/02-mob-arch.png)
+![Arquitetura da Solução](img/arquiteturasolucao.png)
 
 ## Diagrama de Classes
 
