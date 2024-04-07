@@ -1,15 +1,55 @@
 # Programação de Funcionalidades
 
-<span style="color:red">Pré-requisitos: <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="03-Metodologia.md"> Metodologia</a>, <a href="04-Projeto de Interface.md"> Projeto de Interface</a>, <a href="05-Arquitetura da Solução.md"> Arquitetura da Solução</a>
+* Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas para cada funcionalidade do sistema.
 
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
 
-Para cada requisito funcional, pode ser entregue um artefato desse tipo
+## Tela de Login
 
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/login.jpeg" alt="Tela de login" title="Tela de login" style="border-radius: 20px; height: 800px;">
+      <p style="text-align: center;"><em>Tela de login</em></p>
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF01 - O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>Login.js.</li>
+      </ul>
+      <h3>Desenvolvedor</h3>
+      <ul>
+        <li>Lucas Enis.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+## Tela de Cadastro
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/cadastro.jpeg" alt="Tela de cadastro" title="Tela de cadastro" style="border-radius: 20px; height: 800px;">
+      <p style="text-align: center;"><em>Tela de cadastro</em></p>
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF01 - O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>Cadastro.js.</li>
+      </ul>
+      <h3>Desenvolvedor</h3>
+      <ul>
+        <li>Lucas Enis.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
