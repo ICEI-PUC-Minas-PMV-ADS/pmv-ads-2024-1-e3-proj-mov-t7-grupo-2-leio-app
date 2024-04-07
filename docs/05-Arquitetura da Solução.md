@@ -27,10 +27,24 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 <img src="./img/Esquema relacional.jpg">
 
 ## Modelo Físico
+A tabela abaixo representa o modelo físico do banco de dados SQLite da aplicação.
+![Modelo Físico](img/modelo-fisico.png)
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+O arquivo contendo os scripts de criação das tabelas do banco de dados SQLite está localizado na pasta src/db:  <a href="../src/db/DbServices.js">src/db</a>
 
 ## Tecnologias Utilizadas
+|Função    | Tecnologia  | 
+|------------|-----------------------------------------|
+| Linguagem | JavaScript | 
+| Framework | ReactNative | 
+| Bibliotecas | React Native Paper | 
+| IDE | Visual Studio Code e Expo Dev | 
+| Ferramentas  Wireframes| Figma | 
+| Ferramentas de Comunicação| Microsoft Teams, GitHub, Whatsapp | 
+| Ferramentas de Gestão de Projeto| Github Projects | 
+| Ferramentas de versionamento| Github Desktop |
+| Ferramentas de diagramação| Draw.io |
+| Banco de dados | SQLite |
 
 Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
 
