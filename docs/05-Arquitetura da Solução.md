@@ -46,9 +46,9 @@ O arquivo contendo os scripts de criação das tabelas do banco de dados SQLite 
 | Ferramentas de diagramação| Draw.io |
 | Banco de dados | SQLite |
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+O usuário interage com a interface do usuário, que é construída utilizando React Native. Quando o usuário executa uma ação na interface, como clicar em um botão, uma requisição é enviada para o banco de dados. O banco de dados, processa a requisição, conforme necessário, e executa a query. Após o processamento, o banco de dados envia uma resposta de volta para o React Native frontend. O React Native frontend recebe a resposta e atualiza a interface do usuário conforme necessário para refletir o resultado da ação do usuário.
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+![Tecnologias Utilizadas](img/tecnologia-utilizadas.png)
 
 ## Hospedagem
 
