@@ -1,7 +1,6 @@
 # Programação de Funcionalidades
 
-* Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas para cada funcionalidade do sistema.
-
+Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas para cada funcionalidade do sistema.
 
 ## Tela de Login
 
@@ -27,7 +26,6 @@
     </td>
   </tr>
 </table>
-
 
 ## Tela de Cadastro
 

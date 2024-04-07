@@ -27,24 +27,26 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 <img src="./img/Esquema relacional.jpg">
 
 ## Modelo Físico
+
 A tabela abaixo representa o modelo físico do banco de dados SQLite da aplicação.
 ![Modelo Físico](img/modelo-fisico.png)
 
-O arquivo contendo os scripts de criação das tabelas do banco de dados SQLite está localizado na pasta src/db:  <a href="../src/db/DbServices.js">src/db</a>
+O arquivo contendo os scripts de criação das tabelas do banco de dados SQLite está localizado na pasta src/db: <a href="../src/db/DbServices.js">src/db</a>
 
 ## Tecnologias Utilizadas
-|Função    | Tecnologia  | 
-|------------|-----------------------------------------|
-| Linguagem | JavaScript | 
-| Framework | ReactNative | 
-| Bibliotecas | React Native Paper | 
-| IDE | Visual Studio Code e Expo Dev | 
-| Ferramentas  Wireframes| Figma | 
-| Ferramentas de Comunicação| Microsoft Teams, GitHub, Whatsapp | 
-| Ferramentas de Gestão de Projeto| Github Projects | 
-| Ferramentas de versionamento| Github Desktop |
-| Ferramentas de diagramação| Draw.io |
-| Banco de dados | SQLite |
+
+| Função                                | Tecnologia                        |
+| ------------------------------------- | --------------------------------- |
+| Linguagem                             | JavaScript                        |
+| Framework                             | ReactNative                       |
+| Bibliotecas                           | React Native Paper                |
+| IDE                                   | Visual Studio Code e Expo Dev     |
+| Ferramentas Wireframes                | Figma                             |
+| Ferramentas de Comunicação            | Microsoft Teams, GitHub, Whatsapp |
+| Ferramentas de Gestão de Projeto      | Github Projects                   |
+| Ferramentas de versionamento          | Github Desktop                    |
+| Ferramentas para criação de diagramas | Draw.io                           |
+| Banco de dados                        | SQLite                            |
 
 O usuário interage com a interface do usuário, que é construída utilizando React Native. Quando o usuário executa uma ação na interface, como clicar em um botão, uma requisição é enviada para o banco de dados. O banco de dados, processa a requisição, conforme necessário, e executa a query. Após o processamento, o banco de dados envia uma resposta de volta para o React Native frontend. O React Native frontend recebe a resposta e atualiza a interface do usuário conforme necessário para refletir o resultado da ação do usuário.
 
