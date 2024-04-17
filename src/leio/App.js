@@ -4,6 +4,8 @@ import Login from "./Components/Login";
 import Cadastro from "./Components/Cadastro";
 import Home from "./Components/Home";
 import Biblioteca from "./Components/Biblioteca";
+import Perfil from "./Components/Perfil";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -30,7 +32,7 @@ export default function App() {
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Biblioteca" component={Biblioteca} />
-
+        <Stack.Screen name="Perfil" component={Perfil} />
       </Stack.Navigator>
     </NavigationContainer>
   );

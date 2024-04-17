@@ -1,6 +1,7 @@
 //Importações gerais
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleCadastro from "../assets/styles/cadastro";
 
@@ -10,8 +11,14 @@ const Cadastro = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  const navigation = useNavigation(); // hook de navegação
+
   const redirectLogin = () => {
     navigation.navigate("Login"); // navegar para a tela desejada
+  };
+
+  const redirectPerfil = () => {
+    navigation.navigate("Perfil"); // navegar para a tela desejada
   };
 
   const handleSelecionarFoto = () => {
@@ -84,7 +91,7 @@ const Cadastro = () => {
           style={[styles.button, { backgroundColor: "#8872DE" }]}
           onPress={handleCadastrar}
         >
-          <Text style={styles.buttonText}>Cadastrar</Text>
+          <Text onPress={redirectPerfil} style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
       </View>
     </View>
