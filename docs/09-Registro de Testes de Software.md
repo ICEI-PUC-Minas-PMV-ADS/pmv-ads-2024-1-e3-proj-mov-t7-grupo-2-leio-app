@@ -6,7 +6,7 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 
 |    Caso de Teste    |                                   CT-01 - Criar conta                                    |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                              <img src = "./img/CT-01.jpg"/>                              |
+|       Imagem        |                          <img src = "./img/Tela-Cadastro.jpg"/>                          |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                            Não foi possível criar a conta. ❌                            |
 
