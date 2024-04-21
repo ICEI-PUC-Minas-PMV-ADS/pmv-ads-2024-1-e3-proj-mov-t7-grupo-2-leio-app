@@ -170,7 +170,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
       <ul>
-        <li>RF08 - O sistema deve permitir ao usuário armazenar os livros em uma Biblioteca.</li>
+        <li>RF08 - O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca.</li>
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
