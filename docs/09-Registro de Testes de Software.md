@@ -10,6 +10,25 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                            Não foi possível criar a conta. ❌                            |
 
+|    Caso de Teste    |                                   CT-02 - Editar conta                                    |
+| :-----------------: | :--------------------------------------------------------------------------------------: |
+|       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
+| Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
+|      Avaliação      |                            Não foi possível editar a conta. ❌                            |
+
+|    Caso de Teste    |                                   CT-03 - Visualizar conta                                    |
+| :-----------------: | :--------------------------------------------------------------------------------------: |
+|       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
+| Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
+|      Avaliação      |                            Não foi possível visualizar a conta. ❌                            |
+
+|    Caso de Teste    |                                   CT-01 - Excluir conta                                    |
+| :-----------------: | :--------------------------------------------------------------------------------------: |
+|       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
+| Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
+|      Avaliação      |                            Não foi possível excluir a conta. ❌                            |
+
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.

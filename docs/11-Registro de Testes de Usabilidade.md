@@ -16,6 +16,20 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 - Facilidade de Uso: Não aplicável devido à impossibilidade de criar a conta.
 - Satisfação: Não aplicável devido à impossibilidade de criar a conta.
 
+## Tela Perfil
+
+|  **Descrição da Tarefa**   |                       **Foto**                       | **Erros** |        **Resultado**         |
+| :------------------------: | :--------------------------------------------------: | :-------: | :--------------------------: |
+| Edite informações do usuário. <br> Visualize os detalhes da conta do usuário. <br> Exclua a sua conta de usuário. | <img width="250px" src = "./img/Tela-Perfil.jpg"/> |    Sim    | A edição não foi realizada. <br> Visualização da conta não realizada. <br> O usuário não foi excluído. |
+
+### Métricas:
+
+- Taxa de Sucesso: Não aplicável devido à impossibilidade de visualizar, editar e excluir a conta.
+- Tempo Médio de Conclusão: Não aplicável devido à impossibilidade de visualizar, editar e excluir a conta.
+- Erros Cometidos: Os participantes relataram tentativas malsucedidas de visualização, edição e exclusão da conta devido a falhas no funcionamento da página de perfil.
+- Facilidade de Uso: Não aplicável devido à impossibilidade de visualizar, editar e excluir a conta.
+- Satisfação: Não aplicável devido à impossibilidade de visualizar, editar e excluir a conta.
+
 ## Tela inicial/Home
 
 |  **Descrição da Tarefa**   |                     **Foto**                     | **Erros** |           **Resultado**           |

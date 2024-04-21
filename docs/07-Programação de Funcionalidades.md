@@ -79,3 +79,29 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     </td>
   </tr>
 </table>
+
+## Tela Perfil
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-Perfil.jpg" alt="Tela perfil" title="Tela perfil" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF01 - O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>../Components/Perfil.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/perfil.js</li>
+      </ul>
+      <h3>Desenvolvedor</h3>
+      <ul>
+        <li>Ricardo Vieira</li>
+      </ul>
+    </td>
+  </tr>
+</table>
