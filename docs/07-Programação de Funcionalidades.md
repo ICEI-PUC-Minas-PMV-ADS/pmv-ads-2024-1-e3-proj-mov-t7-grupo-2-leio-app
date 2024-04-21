@@ -117,7 +117,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
       <ul>
-        <li>RF01 - O sistema deve permitir que o usuário visualize o resultado da pesquisa solicitada.</li>
+        <li>RF01 - O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.</li>
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
