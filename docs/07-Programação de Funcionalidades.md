@@ -54,32 +54,6 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
   </tr>
 </table>
 
-## Tela inicial/Home
-
-<table>
-  <tr>
-    <td style="width: 30%;">
-      <img src="img/Tela-Home.jpg" alt="Tela inicial" title="Tela inicial" style="height: 800px;">
-    </td>
-    <td style="width: 70%;">
-      <h3>Requisitos atendidos</h3>
-      <ul>
-        <li>Todos os requisitos</li>
-      </ul>
-      <h3>Artefatos produzidos</h3>
-      <ul>
-        <li>../Components/Home.js</li>
-        <li>../assets/styles/base.js</li>
-        <li>../assets/styles/home.js</li>
-      </ul>
-      <h3>Desenvolvedora</h3>
-      <ul>
-        <li>Paloma Rizzon</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
 ## Tela Perfil
 
 <table>
@@ -106,12 +80,38 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
   </tr>
 </table>
 
+## Tela inicial/Home
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-Home.jpg" alt="Tela inicial" title="Tela inicial" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>Todos os requisitos</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>../Components/Home.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/home.js</li>
+      </ul>
+      <h3>Desenvolvedora</h3>
+      <ul>
+        <li>Paloma Rizzon</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 ## Tela Pesquisa
 
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-Pesquisa.png" alt="Tela pesquisa" title="Tela pesquisa" style="height: 800px;">
+      <img src="img/Tela-Pesquisa.png" alt="Tela pesquisa" title="Tela pesquisa">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -122,7 +122,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       <ul>
         <li>../Components/Pesquisa.js</li>
         <li>../assets/styles/base.js</li>
-        <li>../assets/styles/Pesquisa</li>
+        <li>../assets/styles/pesquisa.js</li>
       </ul>
       <h3>Desenvolvedora</h3>
       <ul>
@@ -132,8 +132,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
   </tr>
 </table>
 
-
-## Tela ResultadoPesquisa
+## Tela Resultado da Pesquisa
 
 <table>
   <tr>
@@ -143,13 +142,13 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
       <ul>
-        <li>RF01 - O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.</li>
+        <li>RF02 - O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor.</li>
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
         <li>../Components/ResultadoPesquisa.js</li>
         <li>../assets/styles/base.js</li>
-        <li>../assets/styles/resultadoPesquisa</li>
+        <li>../assets/styles/resultadoPesquisa.js</li>
       </ul>
       <h3>Desenvolvedora</h3>
       <ul>
@@ -158,7 +157,6 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     </td>
   </tr>
 </table>
-
 
 ## Tela da Biblioteca
 

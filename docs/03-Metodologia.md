@@ -21,7 +21,8 @@ A ferramenta de controle de versão adotada no projeto foi o [GitHub Desktop](ht
 
 O projeto segue com apenas uma branch até o momento:
 
-- `main`: versão completa do projeto
+- `main`: versão completa e estável do projeto
+- `dev`: versão do aplicativo em produção
 
 Quanto à gerência de issues, o projeto adota a seguinte convenção para etiquetas:
 
@@ -69,17 +70,17 @@ Tela do kanban (GitHub Projects) utilizada pelo grupo
 
 As ferramentas empregadas no projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes é apresentado na tabela que se segue.
 
-| AMBIENTE                                   | PLATAFORMA      | LINK DE ACESSO                                                                                                                                                                                                    |
-| ------------------------------------------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Repositório de código fonte e documentação | GitHub          | [Repositório](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app)                                                                                                           |
-| Gerenciamento do Projeto                   | GitHub Projects | [Quadro do projeto](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/812)                                                                                                                                  |
-| Diagramas                                  | Drawio          | [Diagramas](https://drive.google.com/file/d/1gX-52zc4wUdfiWraM814l3lypL60Gz5b/view?usp=sharing)                                                                                                                   |
-| Projeto de Interface e Wireframes          | Figma           | [Projeto no Figma](https://www.figma.com/file/PVMDd8ZYhduvIBc5eUkktw/Grupo-02---Le.io-App?type=design&node-id=0%3A1&mode=design&t=2Ob3Hm0gWIMeTHxV-1)                                                             |
-| Editor de código                           | Expo            | [Expo](https://snack.expo.dev/@lucasgdev/login-leio-app)                                                                                                                                                          |
-| Ferramenta de comunicação                  | Teams           | [Grupo no Teams](https://teams.microsoft.com/l/channel/19%3Ab3636001a6c843ccb50226d70758bc61%40thread.tacv2/Grupo%202?groupId=afb28315-f87a-4a98-a72f-d65700c83779&tenantId=14cbd5a7-ec94-46ba-b314-cc0fc972a161) |
+| AMBIENTE                                   | PLATAFORMA                | LINK DE ACESSO                                                                                                                                                                                                    |
+| ------------------------------------------ | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Repositório de código fonte e documentação | GitHub                    | [Repositório](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app)                                                                                                           |
+| Gerenciamento do Projeto                   | GitHub Projects           | [Quadro do projeto](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/812)                                                                                                                                  |
+| Diagramas                                  | Drawio                    | [Diagramas](https://drive.google.com/file/d/1gX-52zc4wUdfiWraM814l3lypL60Gz5b/view?usp=sharing)                                                                                                                   |
+| Projeto de Interface e Wireframes          | Figma                     | [Projeto no Figma](https://www.figma.com/file/PVMDd8ZYhduvIBc5eUkktw/Grupo-02---Le.io-App?type=design&node-id=0%3A1&mode=design&t=2Ob3Hm0gWIMeTHxV-1)                                                             |
+| Editor de código                           | Visual Studio Code + Expo | [Expo](https://snack.expo.dev/@lucasgdev/login-leio-app)                                                                                                                                                          |
+| Ferramenta de comunicação                  | Teams                     | [Grupo no Teams](https://teams.microsoft.com/l/channel/19%3Ab3636001a6c843ccb50226d70758bc61%40thread.tacv2/Grupo%202?groupId=afb28315-f87a-4a98-a72f-d65700c83779&tenantId=14cbd5a7-ec94-46ba-b314-cc0fc972a161) |
 
 - O <b>GitHub projects</b> foi escolhido para o gerenciamento dos cards de tarefas e roadmap por suas funcionalidades e integração com o próprio repositório.
 - O <b>Draw.io</b> foi escolhido para a criação dos diagramas por ser integrado ao google drive e permitir a edição simultânea pelos integrantes do grupo.
 - O <b>Figma</b> foi escolhido para wireframes e desenho das telas por ser o mais usado no mercado, além de possuir todas as funcionalidades que precisamos.
-- O <b>Expo</b> foi escolhido como editor de código por indicação dos microfundamentos.
+- O <b>Visual Studio Code + Expo</b> foram escolhidos para o desenvolvimento da aplicação por indicação dos microfundamentos.
 - O <b>Teams</b> foi escolhido pelo grupo por já ser utilizado nas orientações com o professor.

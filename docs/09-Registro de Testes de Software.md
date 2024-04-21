@@ -10,48 +10,42 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                            Não foi possível criar a conta. ❌                            |
 
-|    Caso de Teste    |                                   CT-02 - Entrar na conta                                    |
+|    Caso de Teste    |                                   CT-02 - Editar conta                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                                <img src="img/Tela-Login.jpg" alt="Tela de login" title="Tela de login" style="height: 800px;">                          |
+|       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                            Não foi possível entrar na conta. ❌                            |
+|      Avaliação      |                           Não foi possível editar a conta. ❌                            |
 
-
-|    Caso de Teste    |                                   CT-03 - Editar conta                                    |
+|    Caso de Teste    |                                 CT-03 - Visualizar conta                                 |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
+|       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                            Não foi possível editar a conta. ❌                            |
+|      Avaliação      |                         Não foi possível visualizar a conta. ❌                          |
 
-|    Caso de Teste    |                                   CT-04 - Visualizar conta                                    |
+|    Caso de Teste    |                                  CT-04 - Excluir conta                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
+|       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                            Não foi possível visualizar a conta. ❌                            |
+|      Avaliação      |                           Não foi possível excluir a conta. ❌                           |
 
-|    Caso de Teste    |                                   CT-05 - Excluir conta                                    |
-| :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
-| Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                            Não foi possível excluir a conta. ❌                            |
-
-|    Caso de Teste    |                                   CT-06 - Buscar livros                                   |
-| :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                          <img src = "./img/Tela-Pesquisa.png"/>                          |
+|    Caso de Teste    |                                           CT-05 - Buscar livros                                           |
+| :-----------------: | :-------------------------------------------------------------------------------------------------------: |
+|       Imagem        |                                  <img src = "./img/Tela-Pesquisa.png"/>                                   |
 | Requisito Associado | RF - 02 O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor. |
-|      Avaliação      |                            Não foi possível fazer a pesquisa. ❌                            |
+|      Avaliação      |                                   Não foi possível fazer a pesquisa. ❌                                   |
 
-|    Caso de Teste    |                                   CT-07 - Armazenar livros na Estante/Biblioteca                                   |
-| :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                                <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">                          |
-| Requisito Associado | RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca. |
-|      Avaliação      |                           Não existem livros reais para serem armazenados. ❌                            |
+|    Caso de Teste    |                                     CT-11 - Entrar na conta                                     |
+| :-----------------: | :---------------------------------------------------------------------------------------------: |
+|       Imagem        | <img src="img/Tela-Login.jpg" alt="Tela de login" title="Tela de login" style="height: 800px;"> |
+| Requisito Associado |    RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.     |
+|      Avaliação      |                              Não foi possível entrar na conta. ❌                               |
 
+|    Caso de Teste    |                                                                 CT-12 - Armazenar livros na Estante/Biblioteca |
+| :-----------------: | -------------------------------------------------------------------------------------------------------------: |
+|       Imagem        | <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;"> |
+| Requisito Associado |                      RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca. |
+|      Avaliação      |                                                            Não existem livros reais para serem armazenados. ❌ |
 
 ## Avaliação
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
-
-> **Links Úteis**:
->
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+Como a aplicação ainda não possui o banco de dados conectado as telas, todos os testes deram erro. Estamos trabalhando pra que isso seja feito o quanto antes para que novos testes possam ser feitos!
