@@ -36,7 +36,7 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 
 |    Caso de Teste    |                                   CT-06 - Armazenar livros na Estante/Biblioteca                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                          <img src = "./img/Tela-Biblioteca.jpg"/>                          |
+|       Imagem        |                                <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">                          |
 | Requisito Associado | RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca. |
 |      Avaliação      |                           Não existem livros reais para serem armazenados. ❌                            |
 
