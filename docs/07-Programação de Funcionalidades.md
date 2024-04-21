@@ -105,3 +105,32 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     </td>
   </tr>
 </table>
+
+
+## Tela ResultadoPesquisa
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-ResultadoPesquisa.jpg" alt="Tela resultado pesquisa" title="Tela resultadoPesquisa" style="height: 800px;">
+
+    </td>
+
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF01 - O sistema deve permitir que o usuário visualize o resultado da pesquisa solicitada.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>../Components/ResultadoPesquisa.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/resultadoPesquisa.js</li>
+      </ul>
+      <h3>Desenvolvedora</h3>
+      <ul>
+        <li>Sandra Matos</li>
+      </ul>
+    </td>
+  </tr>
+</table>
