@@ -40,11 +40,11 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | Requisito Associado |    RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.     |
 |      Avaliação      |                              Não foi possível entrar na conta. ❌                               |
 
-|    Caso de Teste    |                                                                 CT-12 - Armazenar livros na Estante/Biblioteca |
-| :-----------------: | -------------------------------------------------------------------------------------------------------------: |
+|    Caso de Teste    |                                 CT-12 - Armazenar livros na Estante/Biblioteca                                 |
+| :-----------------: | :------------------------------------------------------------------------------------------------------------: |
 |       Imagem        | <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;"> |
-| Requisito Associado |                      RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca. |
-|      Avaliação      |                                                            Não existem livros reais para serem armazenados. ❌ |
+| Requisito Associado |           RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca.            |
+|      Avaliação      |                              Não existem livros reais para serem armazenados. ❌                               |
 
 ## Avaliação
 
