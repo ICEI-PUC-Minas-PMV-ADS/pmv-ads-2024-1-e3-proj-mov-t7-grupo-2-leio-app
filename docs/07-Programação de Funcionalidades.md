@@ -7,8 +7,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/login.jpeg" alt="Tela de login" title="Tela de login" style="border-radius: 20px; height: 800px;">
-      <p style="text-align: center;"><em>Tela de login</em></p>
+      <img src="img/Tela-Login.jpg" alt="Tela de login" title="Tela de login" style="height: 800px;">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -17,11 +16,13 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
-        <li>Login.js.</li>
+        <li>../Components/Login.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/login.js</li>
       </ul>
       <h3>Desenvolvedor</h3>
       <ul>
-        <li>Lucas Enis.</li>
+        <li>Lucas Enis</li>
       </ul>
     </td>
   </tr>
@@ -32,8 +33,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/cadastro.jpeg" alt="Tela de cadastro" title="Tela de cadastro" style="border-radius: 20px; height: 800px;">
-      <p style="text-align: center;"><em>Tela de cadastro</em></p>
+      <img src="img/Tela-Cadastro.jpg" alt="Tela de cadastro" title="Tela de cadastro" style="height: 800px;">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -42,11 +42,65 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
-        <li>Cadastro.js.</li>
+        <li>../Components/Cadastro.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/cadastro.js</li>
       </ul>
       <h3>Desenvolvedor</h3>
       <ul>
-        <li>Lucas Enis.</li>
+        <li>Lucas Enis</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## Tela inicial/Home
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-Home.jpg" alt="Tela inicial" title="Tela inicial" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>Todos os requisitos</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>../Components/Home.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/home.js</li>
+      </ul>
+      <h3>Desenvolvedora</h3>
+      <ul>
+        <li>Paloma Rizzon</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## Tela Perfil
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-Perfil.jpg" alt="Tela perfil" title="Tela perfil" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF01 - O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>../Components/Perfil.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/perfil.js</li>
+      </ul>
+      <h3>Desenvolvedor</h3>
+      <ul>
+        <li>Ricardo Vieira</li>
       </ul>
     </td>
   </tr>
