@@ -112,10 +112,8 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-ResultadoPesquisa.jpg" alt="Tela resultado pesquisa" title="Tela resultadoPesquisa" style="height: 800px;">
-
+      <img src="img/Tela-ResultadoPesquisa.jpg" alt="Tela perfil" title="Tela perfil" style="height: 800px;">
     </td>
-
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
       <ul>
@@ -125,7 +123,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       <ul>
         <li>../Components/ResultadoPesquisa.js</li>
         <li>../assets/styles/base.js</li>
-        <li>../assets/styles/resultadoPesquisa.js</li>
+        <li>../assets/styles/resultadoPesquisa</li>
       </ul>
       <h3>Desenvolvedora</h3>
       <ul>
