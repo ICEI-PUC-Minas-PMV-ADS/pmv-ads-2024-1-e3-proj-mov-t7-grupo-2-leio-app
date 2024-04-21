@@ -19,7 +19,7 @@ export default function App() {
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="Perfil" component={Perfil} />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Biblioteca" component={Biblioteca} />
+      <Stack.Screen name="Biblioteca" component={Biblioteca} />
       </Stack.Navigator>
     </NavigationContainer>
   );
