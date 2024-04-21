@@ -16,6 +16,20 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 - Facilidade de Uso: Não aplicável devido à impossibilidade de criar a conta.
 - Satisfação: Não aplicável devido à impossibilidade de criar a conta.
 
+## Tela de Login
+
+|  **Descrição da Tarefa**   |                       **Foto**                       | **Erros** |        **Resultado**         |
+| :------------------------: | :--------------------------------------------------: | :-------: | :--------------------------: |
+| Entrar na conta de usuário. | <img width="250px" src = "./img/Tela-Login.jpg"/> |    Sim    | O login não foi efetuado |
+
+### Métricas:
+
+- Taxa de Sucesso: Não aplicável devido à impossibilidade de entrar na conta.
+- Tempo Médio de Conclusão: Não aplicável devido à impossibilidade de entrar na conta.
+- Erros Cometidos: Os participantes relataram tentativas malsucedidas de conclusão do cadastro devido a falhas no funcionamento da página de login.
+- Facilidade de Uso: Não aplicável devido à impossibilidade de entrar na conta.
+- Satisfação: Não aplicável devido à impossibilidade de entrar na conta.
+
 ## Tela Perfil
 
 |  **Descrição da Tarefa**   |                       **Foto**                       | **Erros** |        **Resultado**         |
