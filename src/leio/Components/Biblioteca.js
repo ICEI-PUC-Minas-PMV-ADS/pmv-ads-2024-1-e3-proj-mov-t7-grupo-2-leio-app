@@ -4,20 +4,6 @@ import styles from "../assets/styles/base";
 import styleBiblioteca from "../assets/styles/biblioteca";
 import { Image, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 
-const books = [
-    { id: '1', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '2', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '3', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '4', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '5', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '6', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '7', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '8', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '9', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '10', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '11', coverUrl: 'https://via.placeholder.com/100x160' },
-    { id: '12', coverUrl: 'https://via.placeholder.com/100x160' },
-];
 
 const Biblioteca = () => {
     //Para testar hover no botão
@@ -25,7 +11,21 @@ const Biblioteca = () => {
 
     const [activeTab, setActiveTab] = useState('Estante');
     const [searchQuery, setSearchQuery] = useState('');
-    const [books, setBooks] = useState([]);
+    const books = [
+        { id: '1', coverUrl: require("../assets/img/bookOne.svg") },
+        { id: '2', coverUrl: require("../assets/img/bookOne.svg") },
+        { id: '3', coverUrl: require("../assets/img/bookOne.svg") },
+        { id: '4', coverUrl: require("../assets/img/bookTwo.svg") },
+        { id: '5', coverUrl: require("../assets/img/bookTwo.svg") },
+        { id: '6', coverUrl: require("../assets/img/bookTwo.svg") },
+        { id: '7', coverUrl: require("../assets/img/bookOne.svg") },
+        { id: '8', coverUrl: require("../assets/img/bookOne.svg") },
+        { id: '9', coverUrl: require("../assets/img/bookOne.svg") },
+        { id: '10', coverUrl: require("../assets/img/bookTwo.svg") },
+        { id: '11', coverUrl: require("../assets/img/bookTwo.svg") },
+        { id: '12', coverUrl: require("../assets/img/bookTwo.svg") },
+    ];
+
 
     return (
 
@@ -88,10 +88,10 @@ const Biblioteca = () => {
 
                 {books.map((book) => (
                     <View key={book.id} style={styleBiblioteca.book}>
-                        <Image source={{ uri: book.coverUrl }} style={styleBiblioteca.bookCover} />
+                        <Image source={book.coverUrl} style={styleBiblioteca.bookCover} />
                     </View>
                 ))}
-
+                
             </ScrollView>
 
 
