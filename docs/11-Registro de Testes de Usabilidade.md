@@ -58,3 +58,18 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 - Erros Cometidos: Os participantes relataram tentativas malsucedidas em fazer uma pesquisa devido a falhas no funcionamento do aplicativo.
 - Facilidade de Uso: Não aplicável devido à impossibilidade de não ser possível redirecionar para o resultado da pesquisa.
 - Satisfação: Não aplicável devido à impossibilidade de  avaliar a satisfação dos participantes.
+
+
+## Tela da Estante/Biblioteca
+
+|  **Descrição da Tarefa**   |                     **Foto**                     | **Erros** |           **Resultado**           |
+| :------------------------: | :----------------------------------------------: | :-------: | :-------------------------------: |
+| Armazenar livros na Estante/Biblioteca. | <img width="250px" src = "./img/Tela-Biblioteca.jpg"/> |    Sim    | Não foi possível realizar a tarefa. |
+
+### Métricas:
+
+- Taxa de Sucesso: Não aplicável devido à inexistência de livros reais.
+- Tempo Médio de Conclusão: Não aplicável devido à inexistência de livros reais.
+- Erros Cometidos: Os participantes relataram tentativas malsucedidas em fazer armazenar os livros devido a falhas no funcionamento do aplicativo.
+- Facilidade de Uso: Não aplicável devido à impossibilidade de não ser possível escolher um livro para ser armazenado na Estante/Biblioteca.
+- Satisfação: Não aplicável devido à impossibilidade de  avaliar a satisfação dos participantes.
