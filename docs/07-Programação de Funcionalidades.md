@@ -106,6 +106,32 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
   </tr>
 </table>
 
+## Tela Pesquisa
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-Pesquisa.png" alt="Tela pesquisa" title="Tela pesquisa" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF02 - O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>../Components/Pesquisa.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/Pesquisa</li>
+      </ul>
+      <h3>Desenvolvedora</h3>
+      <ul>
+        <li>Renata Gonzaga</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 
 ## Tela ResultadoPesquisa
 
