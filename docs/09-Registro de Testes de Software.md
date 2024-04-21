@@ -10,31 +10,38 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                            Não foi possível criar a conta. ❌                            |
 
-|    Caso de Teste    |                                   CT-02 - Editar conta                                    |
+|    Caso de Teste    |                                   CT-02 - Entrar na conta                                    |
+| :-----------------: | :--------------------------------------------------------------------------------------: |
+|       Imagem        |                                <img src="img/Tela-Login.jpg" alt="Tela de login" title="Tela de login" style="height: 800px;">                          |
+| Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
+|      Avaliação      |                            Não foi possível entrar na conta. ❌                            |
+
+
+|    Caso de Teste    |                                   CT-03 - Editar conta                                    |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                            Não foi possível editar a conta. ❌                            |
 
-|    Caso de Teste    |                                   CT-03 - Visualizar conta                                    |
+|    Caso de Teste    |                                   CT-04 - Visualizar conta                                    |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                            Não foi possível visualizar a conta. ❌                            |
 
-|    Caso de Teste    |                                   CT-04 - Excluir conta                                    |
+|    Caso de Teste    |                                   CT-05 - Excluir conta                                    |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                            Não foi possível excluir a conta. ❌                            |
 
-|    Caso de Teste    |                                   CT-05 - Buscar livros                                   |
+|    Caso de Teste    |                                   CT-06 - Buscar livros                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                          <img src = "./img/Tela-Pesquisa.png"/>                          |
 | Requisito Associado | RF - 02 O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor. |
 |      Avaliação      |                            Não foi possível fazer a pesquisa. ❌                            |
 
-|    Caso de Teste    |                                   CT-06 - Armazenar livros na Estante/Biblioteca                                   |
+|    Caso de Teste    |                                   CT-07 - Armazenar livros na Estante/Biblioteca                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                                <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">                          |
 | Requisito Associado | RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca. |
