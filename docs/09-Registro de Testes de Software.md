@@ -38,7 +38,7 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                          <img src = "./img/Tela-Biblioteca.jpg"/>                          |
 | Requisito Associado | RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca. |
-|      Avaliação      |                           Os Livros foram armazenados na Estante/Biblioteca. ✅                            |
+|      Avaliação      |                           Não existem livros reais para serem armazenados. ❌                            |
 
 
 ## Avaliação
