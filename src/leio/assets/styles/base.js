@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 12,
     gap: 12,
-    width: "90%",
+    width: "100%",
     maxWidth: 500,
     backgroundColor: "white",
     borderRadius: 12,
@@ -31,6 +31,22 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     fontSize: 14,
+  },
+  bookContainer: {
+    gap: 16,
+    width: "100%",
+    flexWrap: "wrap",
+    flexDirection: "row",
+  },
+  book: {
+    width: 95,
+    height: 144,
+  },
+  bookImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: 12,
   },
 });
 
