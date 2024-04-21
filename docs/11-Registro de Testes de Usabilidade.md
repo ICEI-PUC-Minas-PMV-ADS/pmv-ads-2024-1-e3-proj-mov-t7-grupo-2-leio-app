@@ -43,3 +43,18 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 - Erros Cometidos: Os participantes relataram tentativas malsucedidas em selecionar o livro escolhido devido a falhas no funcionamento do aplicativo.
 - Facilidade de Uso: Não aplicável devido à impossibilidade de ser redirecinado para o livro clicado.
 - Satisfação: Não aplicável devido à impossibilidade de ser redirecinado para o livro clicado.
+
+
+## Tela Pesquisa
+
+|  **Descrição da Tarefa**   |                     **Foto**                     | **Erros** |           **Resultado**           |
+| :------------------------: | :----------------------------------------------: | :-------: | :-------------------------------: |
+| Faça uma pesquisa. | <img width="250px" src = "./img/Tela-Pesquisa.png"/> |    Sim    | Não foi possível fazer pesquisa. |
+
+### Métricas:
+
+- Taxa de Sucesso: Não aplicável devido à impossibilidade de realizar a pesquisa.
+- Tempo Médio de Conclusão: Não aplicável devido à impossibilidade realizar a pesquisa.
+- Erros Cometidos: Os participantes relataram tentativas malsucedidas em fazer uma pesquisa devido a falhas no funcionamento do aplicativo.
+- Facilidade de Uso: Não aplicável devido à impossibilidade de não ser possível redirecionar para o resultado da pesquisa.
+- Satisfação: Não aplicável devido à impossibilidade de  avaliar a satisfação dos participantes.
