@@ -158,3 +158,30 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     </td>
   </tr>
 </table>
+
+
+## Tela da Biblioteca
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF08 - O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>../Components/Biblioteca.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/biblioteca.js</li>
+      </ul>
+      <h3>Desenvolvedor</h3>
+      <ul>
+        <li>Lucas Enis</li>
+      </ul>
+    </td>
+  </tr>
+</table>
