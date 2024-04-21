@@ -22,7 +22,7 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                            Não foi possível visualizar a conta. ❌                            |
 
-|    Caso de Teste    |                                   CT-01 - Excluir conta                                    |
+|    Caso de Teste    |                                   CT-04 - Excluir conta                                    |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                          <img src = "./img/Tela-Perfil.jpg"/>                          |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
@@ -33,6 +33,12 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 |       Imagem        |                          <img src = "./img/Tela-Pesquisa.png"/>                          |
 | Requisito Associado | RF - 02 O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor. |
 |      Avaliação      |                            Não foi possível fazer a pesquisa. ❌                            |
+
+|    Caso de Teste    |                                   CT-06 - Armazenar livros na Estante/Biblioteca                                   |
+| :-----------------: | :--------------------------------------------------------------------------------------: |
+|       Imagem        |                          <img src = "./img/Tela-Biblioteca.jpg"/>                          |
+| Requisito Associado | RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca. |
+|      Avaliação      |                           Os Livros foram armazenados na Estante/Biblioteca. ✅                            |
 
 
 ## Avaliação
