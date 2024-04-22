@@ -11,12 +11,12 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 |       Passos        | 1. Acessar o Aplicativo; <br> 2. Acessar a opção “Cadastre-se aqui”. <br> 3. Preencher os dados necessários. <br> 4. Salvar dados. <br> 5. Clicar em "Cadastrar"; <br> 6. Informar conta cadastrada com sucesso. <br> |
 |  Critério de Êxito  |                                                                                        Criação da conta realizada com sucesso                                                                                         |
 
-|  **Caso de Teste**  |                                                                                                        **CT-02 - Editar conta**                                                                                                        |
-| :-----------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Requisito Associado |                                                                        RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                                                                        |
-|  Objetivo do Teste  |                                                                                               Verificar a possibilidade de editar conta                                                                                                |
+|  **Caso de Teste**  |                                                                                                             **CT-02 - Editar conta**                                                                                                              |
+| :-----------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Requisito Associado |                                                                             RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                                                                              |
+|  Objetivo do Teste  |                                                                                                     Verificar a possibilidade de editar conta                                                                                                     |
 |       Passos        | 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar no botão "Perfil" <br> 5. Preencher os dados necessários. <br> 6. Clicar em "Salvar alterações"; <br> 7. Informar conta editada com sucesso. <br> |
-|  Critério de Êxito  |                                                                                                 Edição da conta realizada com sucesso                                                                                                  |
+|  Critério de Êxito  |                                                                                                       Edição da conta realizada com sucesso                                                                                                       |
 
 |  **Caso de Teste**  |                                                               **CT-03 - Visualizar conta**                                                                |
 | :-----------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -25,12 +25,12 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 |       Passos        | 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar no botão “Perfil” <br> 5. Visualizar dados da conta. <br> |
 |  Critério de Êxito  |                                                        Visualização da conta realizada com sucesso                                                        |
 
-|  **Caso de Teste**  |                                                                                                      **CT-04 - Excluir conta**                                                                                                       |
-| :-----------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Requisito Associado |                                                                       RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                                                                       |
-|  Objetivo do Teste  |                                                                                              Verificar a possibilidade de excluir conta                                                                                              |
+|  **Caso de Teste**  |                                                                                                       **CT-04 - Excluir conta**                                                                                                        |
+| :-----------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Requisito Associado |                                                                        RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                                                                        |
+|  Objetivo do Teste  |                                                                                               Verificar a possibilidade de excluir conta                                                                                               |
 |       Passos        | 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar no botão “Perfil”. <br> 5. Clicar em “Excluir conta”. <br> 6. Clicar em "Confirmar"; <br> 7. Informar conta excluída com sucesso. <br> |
-|  Critério de Êxito  |                                                                                               Exclusão da conta realizada com sucesso                                                                                                |
+|  Critério de Êxito  |                                                                                                Exclusão da conta realizada com sucesso                                                                                                 |
 
 |  **Caso de Teste**  |                                                                                                   **CT-05 - Buscar livros**                                                                                                   |
 | :-----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -73,3 +73,17 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 |  Objetivo do Teste  |                                                                                                                                  Verificar a possibilidade de avaliar livros                                                                                                                                  |
 |       Passos        | 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar na área de busca. <br> 5. Digitar nome do livro ou nome do autor. <br> 6. Clicar em "Buscar"; <br> 7. Selecione o livro desejado. <br> 8. Clique em avaliar. <br> 9. Selecione a quantidade de estrelas. <br> |
 |  Critério de Êxito  |                                                                                                                                        Avaliação efetuada com sucesso.                                                                                                                                        |
+
+|  **Caso de Teste**  |                                       **CT-11 - Entrar na conta**                                        |
+| :-----------------: | :------------------------------------------------------------------------------------------------------: |
+| Requisito Associado |         RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.         |
+|  Objetivo do Teste  |                                           Visualizar sua conta                                           |
+|       Passos        | 1. Acessar o Aplicativo; <br> 2. Colocar e-mail e senha. <br> 3. Ser redirecionado para a página inicial |
+|  Critério de Êxito  |                                        Login efetuado com sucesso                                        |
+
+|  **Caso de Teste**  |                                                               **CT-12 - Armazenar livros na Estante/Biblioteca**                                                                |
+| :-----------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Requisito Associado |                                            RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca.                                            |
+|  Objetivo do Teste  |                                                                Salvar os livros na estante para consultar depois                                                                |
+|       Passos        | 1. Acessar o Aplicativo; <br> 2. Realizar login; <br> 3. Ser redirecionado para a página inicial <br> 4. Pesquisar um livro <br> 5. Selecionar o livro <br> Adicionar a estante |
+|  Critério de Êxito  |                                                                          Livro adicionado com sucesso                                                                           |

@@ -75,13 +75,13 @@ const styleBiblioteca = StyleSheet.create({
         flexWrap: 'wrap',
         paddingLeft: 20,
         paddingRight: 20,
-        gap: 16
+        gap: 16,
     },
     bookCover: {
         width: 100,
         height: 160,
         resizeMode: 'cover',
-        borderRadius: 12
+        borderRadius: 12,
     },
 });
 
