@@ -9,6 +9,7 @@ import Perfil from "./Components/Perfil";
 import Home from "./Components/Home";
 import Pesquisa from "./Components/Pesquisa";
 import ResultadoPesquisa from "./Components/ResultadoPesquisa";
+import Info from "./Components/Info";
 import Biblioteca from "./Components/Biblioteca";
 
 const Stack = createStackNavigator();
@@ -23,6 +24,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Pesquisa" component={Pesquisa} />
         <Stack.Screen name="ResultadoPesquisa" component={ResultadoPesquisa} />
+        <Stack.Screen name="Info" component={Info} />
         <Stack.Screen name="Biblioteca" component={Biblioteca} />
       </Stack.Navigator>
     </NavigationContainer>
