@@ -1,12 +1,14 @@
 //Importações gerais
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { View, Text, TextInput, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleCadastro from "../assets/styles/cadastro";
-// import auth from '@react-native-firebase/auth';
-//import firestore from '@react-native-firebase/firestore';
-// import { launchImageLibrary } from "react-native-image-picker";
+import { auth, db } from '../db/firebaseConfig';
+
+import { launchImageLibrary } from "react-native-image-picker";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
 const Cadastro = () => {
   const [foto, setFoto] = useState(null);
@@ -46,37 +48,33 @@ const Cadastro = () => {
 
   const handleCadastrar = async () => {
     try {
-      // Cria usuário com email e senha
-      const userCredential = await auth().createUserWithEmailAndPassword(
-        email,
-        senha
-      );
+      const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
       console.log("Usuário criado com sucesso!", userCredential.user);
 
-      // Adiciona mais detalhes ao Firestore sob a coleção 'Usuario'
-      await firestore().collection("Usuario").doc(userCredential.user.uid).set({
+      await setDoc(doc(db, "Usuario", userCredential.user.uid), {
         usuario: usuario,
-        email: email, // Opcional, já que o email já está associado ao usuário de autenticação
-        foto: foto, // Certifique-se de que 'foto' é um URL ou um caminho relevante
+        email: email,
+        foto: foto,
       });
 
       console.log("Detalhes do usuário adicionados ao Firestore!");
-      redirectPerfil(); // Redirecione para o perfil após o cadastro bem-sucedido
+      redirectLogin(); // Redirecione para o perfil após o cadastro bem-sucedido
     } catch (error) {
       console.error("Erro ao cadastrar usuário:", error);
     }
   };
+
 
   return (
     <View style={styles.container}>
       <View style={styleCadastro.selectPhoto}>
         <Image source={require("../assets/img/upload_photo_camera.svg")} />
       </View>
-      <TouchableOpacity onPress={handleSelecionarFoto}>
+      <Pressable onPress={handleSelecionarFoto}>
         <View>
           <Text>Selecione uma foto</Text>
         </View>
-      </TouchableOpacity>
+      </Pressable >
 
       <View style={styles.inputContainer}>
         <Image source={require("../assets/img/user.svg")} />
@@ -107,22 +105,22 @@ const Cadastro = () => {
       </View>
 
       <View style={styleCadastro.buttonContainer}>
-        <TouchableOpacity
+        <Pressable
           style={[styles.button, { backgroundColor: "#F7C31F" }]}
         >
           <Text onPress={redirectLogin} style={styles.buttonText}>
             Cancelar
           </Text>
-        </TouchableOpacity>
+        </Pressable >
 
-        <TouchableOpacity
+        <Pressable
           style={[styles.button, { backgroundColor: "#8872DE" }]}
           onPress={handleCadastrar}
         >
-          <Text onPress={redirectPerfil} style={styles.buttonText}>
+          <Text style={styles.buttonText}>
             Cadastrar
           </Text>
-        </TouchableOpacity>
+        </Pressable >
       </View>
     </View>
   );
