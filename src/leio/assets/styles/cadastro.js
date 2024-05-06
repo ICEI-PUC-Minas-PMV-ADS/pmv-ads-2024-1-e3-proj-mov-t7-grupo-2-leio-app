@@ -8,6 +8,8 @@ const styleCadastro = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
     gap: 24,
   },
 });

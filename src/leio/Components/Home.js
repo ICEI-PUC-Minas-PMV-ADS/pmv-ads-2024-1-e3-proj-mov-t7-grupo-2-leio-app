@@ -1,6 +1,7 @@
 //Importações gerais
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
+import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleHome from "../assets/styles/home";
 
@@ -19,10 +20,9 @@ const Home = () => {
           </View>
         </TouchableOpacity>
       </View>
-
       <View style={styleHome.body}>
         <View style={styleHome.bodyContent}>
-          <Text>Continue lendo</Text>
+          <Text style={styleHome.text}>Continue lendo</Text>
           <View style={styles.bookContainer}>
             <View style={styles.book}>
               <Image
@@ -64,7 +64,7 @@ const Home = () => {
         </View>
 
         <View style={styleHome.bodyContent}>
-          <Text>Você também pode gostar</Text>
+          <Text style={styleHome.text}>Você também pode gostar</Text>
           <View style={styles.bookContainer}>
             <View style={styles.book}>
               <Image
@@ -106,7 +106,7 @@ const Home = () => {
         </View>
 
         <View style={styleHome.bodyContent}>
-          <Text>Em alta</Text>
+          <Text style={styleHome.text}>Em alta</Text>
           <View style={styles.bookContainer}>
             <View style={styles.book}>
               <Image
@@ -147,6 +147,7 @@ const Home = () => {
           </View>
         </View>
       </View>
+      <Menu navigation={navigation} />
     </View>
   );
 };

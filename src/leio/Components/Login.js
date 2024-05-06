@@ -4,7 +4,7 @@ import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleLogin from "../assets/styles/login";
-import { auth } from '../db/firebaseConfig';
+import { auth } from "../db/firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
@@ -23,7 +23,11 @@ const Login = () => {
 
   const efetuarLogin = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, senha);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        senha
+      );
       console.log("Login efetuado com sucesso!", userCredential.user);
       redirectHome(); // Redirecione para a home após o login bem-sucedido
     } catch (error) {
@@ -42,6 +46,7 @@ const Login = () => {
       <View style={styles.inputContainer}>
         <Image source={require("../assets/img/user.svg")} />
         <TextInput
+          style={styles.input}
           placeholder="Email"
           value={email}
           onChangeText={(text) => setEmail(text)}
@@ -51,6 +56,7 @@ const Login = () => {
       <View style={styles.inputContainer}>
         <Image source={require("../assets/img/password.svg")} />
         <TextInput
+          style={styles.input}
           placeholder="Senha"
           secureTextEntry={true}
           value={senha}
@@ -58,13 +64,11 @@ const Login = () => {
         />
       </View>
 
-      <TouchableOpacity 
+      <TouchableOpacity
         style={[styles.button, { backgroundColor: "#8872DE" }]}
         onPress={efetuarLogin}
       >
-        <Text style={styles.buttonText}>
-          Entrar
-        </Text>
+        <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
 
       <Text onPress={redirectCadastro}>

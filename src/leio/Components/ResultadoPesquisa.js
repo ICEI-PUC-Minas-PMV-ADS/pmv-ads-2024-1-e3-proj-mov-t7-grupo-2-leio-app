@@ -1,6 +1,7 @@
 // Importações gerais
 import React, { useState } from "react";
 import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
+import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import stylePesquisa from "../assets/styles/resultadoPesquisa";
 
@@ -216,6 +217,7 @@ const ResultadoPesquisa = () => {
           </View>
         </View>
       </View>
+      <Menu navigation={navigation} />
     </View>
   );
 };

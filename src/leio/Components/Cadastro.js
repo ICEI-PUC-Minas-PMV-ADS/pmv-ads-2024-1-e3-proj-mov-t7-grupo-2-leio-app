@@ -4,9 +4,9 @@ import { View, Text, TextInput, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleCadastro from "../assets/styles/cadastro";
-import { auth, db } from '../db/firebaseConfig';
+import { auth, db } from "../db/firebaseConfig";
 
-import { launchImageLibrary } from "react-native-image-picker";
+// import { launchImageLibrary } from "react-native-image-picker";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -48,7 +48,11 @@ const Cadastro = () => {
 
   const handleCadastrar = async () => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        senha
+      );
       console.log("Usuário criado com sucesso!", userCredential.user);
 
       await setDoc(doc(db, "Usuario", userCredential.user.uid), {
@@ -64,7 +68,6 @@ const Cadastro = () => {
     }
   };
 
-
   return (
     <View style={styles.container}>
       <View style={styleCadastro.selectPhoto}>
@@ -74,11 +77,12 @@ const Cadastro = () => {
         <View>
           <Text>Selecione uma foto</Text>
         </View>
-      </Pressable >
+      </Pressable>
 
       <View style={styles.inputContainer}>
         <Image source={require("../assets/img/user.svg")} />
         <TextInput
+          style={styles.input}
           placeholder="Usuário"
           value={usuario}
           onChangeText={(text) => setUsuario(text)}
@@ -88,6 +92,7 @@ const Cadastro = () => {
       <View style={styles.inputContainer}>
         <Image source={require("../assets/img/email.svg")} />
         <TextInput
+          style={styles.input}
           placeholder="Email"
           value={email}
           onChangeText={(text) => setEmail(text)}
@@ -97,6 +102,7 @@ const Cadastro = () => {
       <View style={styles.inputContainer}>
         <Image source={require("../assets/img/password.svg")} />
         <TextInput
+          style={styles.input}
           placeholder="Senha"
           secureTextEntry={true}
           value={senha}
@@ -105,22 +111,18 @@ const Cadastro = () => {
       </View>
 
       <View style={styleCadastro.buttonContainer}>
-        <Pressable
-          style={[styles.button, { backgroundColor: "#F7C31F" }]}
-        >
+        <Pressable style={[styles.button, { backgroundColor: "#F7C31F" }]}>
           <Text onPress={redirectLogin} style={styles.buttonText}>
             Cancelar
           </Text>
-        </Pressable >
+        </Pressable>
 
         <Pressable
           style={[styles.button, { backgroundColor: "#8872DE" }]}
           onPress={handleCadastrar}
         >
-          <Text style={styles.buttonText}>
-            Cadastrar
-          </Text>
-        </Pressable >
+          <Text style={styles.buttonText}>Cadastrar</Text>
+        </Pressable>
       </View>
     </View>
   );

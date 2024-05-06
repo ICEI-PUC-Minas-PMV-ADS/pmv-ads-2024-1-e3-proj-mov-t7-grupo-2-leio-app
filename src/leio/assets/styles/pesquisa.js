@@ -1,28 +1,36 @@
 import { StyleSheet } from "react-native";
 
 const stylePesquisa = StyleSheet.create({
-   image: {
-    width: 100, 
-    height: 100, 
-    borderRadius: 50,
-    marginLeft: 10,
-    marginVertical: 10,
+  bodyContent: {
+    flex: 1,
+    gap: 24,
+    width: "100%",
   },
-  imageContainer: {
-    marginRight: 10,
-    marginVertical: 10,
+  imgsContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: 16,
+    width: "100%",
+  },
+  imageView: {
+    gap: 12,
+  },
+  image: {
+    width: 125,
+    height: 125,
+    borderRadius: "50%",
   },
   imageText: {
-    textAlign: 'center',
+    textAlign: "center",
   },
   titleText: {
-    marginLeft: 20,
-    textAlign: 'center',
+    textAlign: "center",
     fontWeight: 600,
-    fontSize: 18,    
-    color: '#8872DE',
-    marginVertical: 10, 
-  }, 
+    fontSize: 18,
+    color: "#8872DE",
+    marginBottom: 12,
+  },
 });
 
 export default stylePesquisa;

@@ -8,8 +8,9 @@ const styleHome = StyleSheet.create({
     justifyContent: "space-between",
     gap: 16,
     color: "#8872DE",
-    fontSize: 18,
-    fontWeight: 600,
+    fontSize: 30,
+    fontWeight: 700,
+    fontFamily: "Dongle",
   },
   body: {
     width: "100%",
@@ -19,6 +20,10 @@ const styleHome = StyleSheet.create({
   bodyContent: {
     flex: 1,
     gap: 16,
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 500,
   },
 });
 
