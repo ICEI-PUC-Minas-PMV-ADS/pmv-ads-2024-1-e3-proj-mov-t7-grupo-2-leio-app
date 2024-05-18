@@ -6,7 +6,7 @@ import styles from "../assets/styles/base";
 import styleCadastro from "../assets/styles/cadastro";
 import { auth, db } from "../db/firebaseConfig";
 
-// import { launchImageLibrary } from "react-native-image-picker";
+import { launchImageLibrary } from "react-native-image-picker";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 

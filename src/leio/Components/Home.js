@@ -1,14 +1,27 @@
-//Importações gerais
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleHome from "../assets/styles/home";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const redirectLogin = () => {
     navigation.navigate("Login"); // navegar para a tela desejada
   };
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://www.googleapis.com/books/v1/volumes?q=react%20native"
+      );
+      const data = await response.json();
+      setBooks(data.items);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <View style={[styles.container, { flex: "initial" }]}>
@@ -21,131 +34,16 @@ const Home = () => {
         </TouchableOpacity>
       </View>
       <View style={styleHome.body}>
-        <View style={styleHome.bodyContent}>
-          <Text style={styleHome.text}>Continue lendo</Text>
-          <View style={styles.bookContainer}>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
+        {books.map((book, index) => (
+          <View key={index} style={styles.book}>
+            <Image
+              style={styles.bookImg}
+              source={{ uri: book.volumeInfo.imageLinks.thumbnail }}
+            />
+            <Text>{book.volumeInfo.title}</Text>
+            <Text>{book.volumeInfo.authors.join(", ")}</Text>
           </View>
-        </View>
-
-        <View style={styleHome.bodyContent}>
-          <Text style={styleHome.text}>Você também pode gostar</Text>
-          <View style={styles.bookContainer}>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookTwo.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookTwo.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookTwo.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookTwo.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookTwo.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookTwo.svg")}
-              />
-            </View>
-          </View>
-        </View>
-
-        <View style={styleHome.bodyContent}>
-          <Text style={styleHome.text}>Em alta</Text>
-          <View style={styles.bookContainer}>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-            <View style={styles.book}>
-              <Image
-                style={styles.bookImg}
-                source={require("../assets/img/bookOne.svg")}
-              />
-            </View>
-          </View>
-        </View>
+        ))}
       </View>
       <Menu navigation={navigation} />
     </View>
