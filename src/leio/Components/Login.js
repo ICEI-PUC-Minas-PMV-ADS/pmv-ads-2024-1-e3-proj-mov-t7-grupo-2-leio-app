@@ -1,4 +1,3 @@
-//Importações gerais
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -36,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { justifyContent: "center" }]}>
       <Image source={require("../assets/img/logo.svg")} />
       <Image
         source={require("../assets/img/ilustracao.svg")}

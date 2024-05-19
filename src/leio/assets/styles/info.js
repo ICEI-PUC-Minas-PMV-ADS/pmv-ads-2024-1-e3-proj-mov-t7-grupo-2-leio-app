@@ -1,51 +1,47 @@
 import { StyleSheet } from "react-native";
 
 const styleInfo = StyleSheet.create({
-    // bookImg: {
-    //     width: "100%",
-    //     height: "100%",
-    //     borderRadius: 12,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    // },
-    bookName: {
-        fontSize: 20,
-        textAlign: "center",
-    },
-    author: {
-        fontSize: 15,
-        textAlign: "center",
-    },
-    ratingContainer: {
-        flexDirection: "row",
-        justifyContent: "center",
-    },
-    summary: {
-        // marginTop: 20,
-        paddingHorizontal: 20,
-    },
-    buttonContainer: {
-        flexDirection: "row",
-        justifyContent: "center",
-        marginTop: 20,
-    },
-    lerPreviaButton: {
-        backgroundColor: "#8872DE",
-        marginRight: 10,
-        paddingVertical: 12,
-        paddingHorizontal: 24,
-        borderRadius: 12,
-    },
-    buscarEbookButton: {
-        backgroundColor: "#7B9FE1",
-        paddingVertical: 12,
-        paddingHorizontal: 24,
-        borderRadius: 12,
-    },
-    buttonText: {
-        color: "white",
-        fontSize: 14,
-    },
+  book: {
+    width: 165,
+    height: 250,
+  },
+  bookName: {
+    fontSize: 24,
+    textAlign: "center",
+  },
+  btnsContainer: {
+    flexWrap: "wrap",
+    flexDirection: "row",
+    gap: 8,
+    alignItems: "center",
+    position: "absolute",
+    top: 0,
+    right: -60,
+  },
+  author: {
+    fontSize: 15,
+    textAlign: "center",
+  },
+  ratingContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 2,
+  },
+  summary: {
+    fontSize: 15,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: 16,
+  },
+  lerPreviaButton: {
+    backgroundColor: "#8872DE",
+  },
+  buscarEbookButton: {
+    backgroundColor: "#7B9FE1",
+  },
 });
 
 export default styleInfo;

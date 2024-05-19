@@ -3,47 +3,93 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleHome from "../assets/styles/home";
+import { fetchBooks } from "../api/api";
 
 const Home = ({ navigation }) => {
   const redirectLogin = () => {
-    navigation.navigate("Login"); // navegar para a tela desejada
+    navigation.navigate("Login");
   };
 
-  const [books, setBooks] = useState([]);
+  const redirectInfo = () => {
+    navigation.navigate("Info");
+  };
+
+  const [newestBooks, setNewestBooks] = useState([]);
+  const [romanceBooks, setRomanceBooks] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        "https://www.googleapis.com/books/v1/volumes?q=react%20native"
-      );
-      const data = await response.json();
-      setBooks(data.items);
+      try {
+        const fetchedBooks = await fetchBooks("all", 6, "newest");
+        setNewestBooks(fetchedBooks);
+        console.log("Recentes:", fetchedBooks);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedBooks = await fetchBooks("romance", 6, "newest");
+        setRomanceBooks(fetchedBooks);
+        console.log("Romances:", fetchedBooks);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
     };
 
     fetchData();
   }, []);
 
   return (
-    <View style={[styles.container, { flex: "initial" }]}>
+    <View style={styles.container}>
       <View style={styleHome.containerName}>
         <Text style={styleHome.containerName}>Olá, Maria</Text>
         <TouchableOpacity onPress={redirectLogin}>
-          <View>
-            <Image source={require("../assets/img/logout.svg")} />
-          </View>
+          <Image source={require("../assets/img/logout.svg")} />
         </TouchableOpacity>
       </View>
+
       <View style={styleHome.body}>
-        {books.map((book, index) => (
-          <View key={index} style={styles.book}>
-            <Image
-              style={styles.bookImg}
-              source={{ uri: book.volumeInfo.imageLinks.thumbnail }}
-            />
-            <Text>{book.volumeInfo.title}</Text>
-            <Text>{book.volumeInfo.authors.join(", ")}</Text>
+        <View style={styleHome.bodyContent}>
+          <Text style={styleHome.text}>Adicionados recentemente</Text>
+          <View style={styles.bookContainer}>
+            {newestBooks.map((book) => (
+              <TouchableOpacity
+                onPress={redirectInfo}
+                key={book.id}
+                style={styles.book}
+              >
+                <Image
+                  style={styles.bookImg}
+                  source={{ uri: book.volumeInfo.imageLinks.thumbnail }}
+                />
+              </TouchableOpacity>
+            ))}
           </View>
-        ))}
+        </View>
+
+        <View style={styleHome.bodyContent}>
+          <Text style={styleHome.text}>Sugestões de romance</Text>
+          <View style={styles.bookContainer}>
+            {romanceBooks.map((book) => (
+              <TouchableOpacity
+                onPress={redirectInfo}
+                key={book.id}
+                style={styles.book}
+              >
+                <Image
+                  style={styles.bookImg}
+                  source={{ uri: book.volumeInfo.imageLinks.thumbnail }}
+                />
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
       </View>
       <Menu navigation={navigation} />
     </View>

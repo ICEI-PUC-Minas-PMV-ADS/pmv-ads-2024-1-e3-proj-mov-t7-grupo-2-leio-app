@@ -3,8 +3,8 @@ import { View, Image, TouchableOpacity } from "react-native";
 import styles from "../assets/styles/base";
 
 const Menu = ({ navigation }) => {
-  const navigateToScreen = (Pagina) => {
-    navigation.navigate(Pagina);
+  const navigateToScreen = (screenName) => {
+    navigation.navigate(screenName);
   };
 
   return (

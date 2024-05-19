@@ -1,12 +1,10 @@
-//Importações gerais
 import React, { useState } from "react";
 import { View, Text, TextInput, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleCadastro from "../assets/styles/cadastro";
 import { auth, db } from "../db/firebaseConfig";
-
-import { launchImageLibrary } from "react-native-image-picker";
+import * as ImagePicker from "expo-image-picker";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -22,28 +20,27 @@ const Cadastro = () => {
     navigation.navigate("Login"); // navegar para a tela desejada
   };
 
-  const redirectPerfil = () => {
-    navigation.navigate("Perfil"); // navegar para a tela desejada
+  const redirectHome = () => {
+    navigation.navigate("Home"); // navegar para a tela desejada
   };
 
-  const handleSelecionarFoto = () => {
-    const options = {
-      storageOptions: {
-        skipBackup: true,
-        path: "images",
-      },
-    };
+  const handleSelecionarFoto = async () => {
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (status !== "granted") {
+      alert("Precisamos da permissão para acessar a galeria de fotos!");
+      return;
+    }
 
-    launchImageLibrary(options, (response) => {
-      if (response.didCancel) {
-        console.log("Usuário cancelou a seleção de imagem");
-      } else if (response.error) {
-        console.log("ImagePicker Error: ", response.error);
-      } else {
-        const source = { uri: response.uri };
-        setFoto(source.uri); // Supondo que você está armazenando o URI da imagem
-      }
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
     });
+
+    if (!result.canceled) {
+      setFoto(result.uri); // Armazenando o URI da imagem
+    }
   };
 
   const handleCadastrar = async () => {
@@ -55,23 +52,40 @@ const Cadastro = () => {
       );
       console.log("Usuário criado com sucesso!", userCredential.user);
 
+      let photoURL = "";
+      if (foto) {
+        photoURL = await uploadImageAsync(foto);
+      }
+
+      await updateProfile(userCredential.user, {
+        displayName: usuario,
+        photoURL: photoURL,
+      });
+
       await setDoc(doc(db, "Usuario", userCredential.user.uid), {
         usuario: usuario,
         email: email,
-        foto: foto,
+        foto: photoURL,
       });
 
       console.log("Detalhes do usuário adicionados ao Firestore!");
-      redirectLogin(); // Redirecione para o perfil após o cadastro bem-sucedido
+      redirectHome(); // Redirecione para o perfil após o cadastro bem-sucedido
     } catch (error) {
       console.error("Erro ao cadastrar usuário:", error);
     }
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { justifyContent: "center" }]}>
       <View style={styleCadastro.selectPhoto}>
-        <Image source={require("../assets/img/upload_photo_camera.svg")} />
+        <Image
+          source={
+            foto
+              ? { uri: foto }
+              : require("../assets/img/upload_photo_camera.svg")
+          }
+          style={styleCadastro.photo}
+        />
       </View>
       <Pressable onPress={handleSelecionarFoto}>
         <View>

@@ -40,7 +40,7 @@ const Perfil = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { justifyContent: "center" }]}>
       <View style={stylePerfil.selectPhoto}>
         <Image source={require("../assets/img/Maria-perfil.png")} />
       </View>

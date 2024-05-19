@@ -1,14 +1,14 @@
 import { StyleSheet } from "react-native";
 
+//Estilos gerais
 const styles = StyleSheet.create({
-  //Estilos gerais
   container: {
-    flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
     padding: 40,
     gap: 16,
     backgroundColor: "#F4F3FF",
+    minHeight: "100vh",
   },
   inputContainer: {
     flexDirection: "row",
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     width: "100%",
     flexWrap: "wrap",
     flexDirection: "row",
+    justifyContent: "space-between",
   },
   book: {
     width: 95,

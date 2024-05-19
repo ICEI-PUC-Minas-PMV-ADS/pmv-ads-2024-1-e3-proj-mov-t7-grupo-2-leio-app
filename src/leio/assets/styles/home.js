@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 const styleHome = StyleSheet.create({
   containerName: {
     width: "100%",
-    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     gap: 16,
@@ -18,7 +17,6 @@ const styleHome = StyleSheet.create({
     gap: 16,
   },
   bodyContent: {
-    flex: 1,
     gap: 16,
   },
   text: {

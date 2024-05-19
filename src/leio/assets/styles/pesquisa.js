@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 const stylePesquisa = StyleSheet.create({
   bodyContent: {
-    flex: 1,
     gap: 24,
     width: "100%",
   },

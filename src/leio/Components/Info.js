@@ -1,32 +1,62 @@
-import React, { useState } from "react";
-import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import Menu from "./Menu";
+// import { fetchBooks } from "../api/api";
 import styles from "../assets/styles/base";
 import styleInfo from "../assets/styles/info";
 
-const Info = () => {
+const Info = ({ navigation, route }) => {
+  const [book, setBook] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://www.googleapis.com/books/v1/volumes/_ojXNuzgHRcC"
+        );
+        const bookData = await response.json();
+        setBook(bookData);
+        console.log(bookData);
+      } catch (error) {
+        console.error("Error fetching book data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (!book || !book.volumeInfo) {
+    return <Text>Loading...</Text>;
+  }
+
   return (
-    <View style={styles.container}>
-      <View style={styles.book}>
+    <View style={[styles.container, { position: "relative" }]}>
+      <View style={styleInfo.book}>
         <Image
           style={styles.bookImg}
-          source={require("../assets/img/bookOne.svg")}
+          source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
         />
+        <View style={styleInfo.btnsContainer}>
+          <TouchableOpacity>
+            <Image source={require("../assets/img/favorite.svg")} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={require("../assets/img/share.svg")} />
+          </TouchableOpacity>
+        </View>
       </View>
 
-      {/* Nome do livro */}
-      <Text style={styleInfo.bookName}>Nome do Livro</Text>
+      <Text style={styleInfo.bookName}>{book.volumeInfo.title}</Text>
 
-      {/* Autor */}
-      <Text style={styleInfo.author}>Autor do Livro</Text>
+      <Text style={styleInfo.author}>
+        {book.volumeInfo.authors?.join(", ")}
+      </Text>
 
-      {/* Avaliação */}
       <View style={styleInfo.ratingContainer}>
         {[1, 2, 3, 4, 5].map((index) => (
           <TouchableOpacity
             key={index}
             onPress={() => console.log(`Pressed star ${index}`)}
-            style={{ marginRight: 5 }} // Adiciona um pequeno espaçamento entre as estrelas
           >
             <Image
               source={require("../assets/img/star.svg")}
@@ -36,20 +66,15 @@ const Info = () => {
         ))}
       </View>
 
-      {/* Resumo do livro */}
-      <Text style={styleInfo.summary}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-        condimentum urna sed enim euismod hendrerit.
-      </Text>
+      <Text style={styleInfo.summary}>{book.volumeInfo.description}</Text>
 
-      {/* Botões */}
       <View style={styleInfo.buttonContainer}>
         <TouchableOpacity style={[styles.button, styleInfo.lerPreviaButton]}>
-          <Text style={styles.buttonText}>Ler Prévia</Text>
+          <Text style={styles.buttonText}>Ler prévia</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={[styles.button, styleInfo.buscarEbookButton]}>
-          <Text style={styles.buttonText}>Buscar E-book</Text>
+          <Text style={styles.buttonText}>Buscar e-book</Text>
         </TouchableOpacity>
       </View>
 

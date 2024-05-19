@@ -1,10 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styleBiblioteca = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#F4F3FF",
-  },
   containerInput: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -27,7 +23,6 @@ const styleBiblioteca = StyleSheet.create({
     shadowRadius: 4,
   },
   searchInput: {
-    flex: 1,
     paddingLeft: 10,
     color: "#5E41D2",
   },
@@ -67,18 +62,6 @@ const styleBiblioteca = StyleSheet.create({
   },
   activeTabText: {
     color: "#5E41D2",
-  },
-  bookshelf: {
-    alignItems: "center",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 16,
-  },
-  bookCover: {
-    width: 100,
-    height: 160,
-    resizeMode: "cover",
-    borderRadius: 12,
   },
 });
 

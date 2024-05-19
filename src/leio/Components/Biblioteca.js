@@ -7,7 +7,7 @@ import { Image, TextInput, ScrollView, TouchableOpacity } from "react-native";
 
 const Biblioteca = () => {
   const [activeTab, setActiveTab] = useState("Estante");
-  const [searchQuery, setSearchQuery] = useState("");
+
   const books = [
     { id: "1", coverUrl: require("../assets/img/bookOne.svg") },
     { id: "2", coverUrl: require("../assets/img/bookOne.svg") },
@@ -27,10 +27,7 @@ const Biblioteca = () => {
     <View style={styles.container}>
       <View style={styleBiblioteca.containerInput}>
         <View style={styleBiblioteca.searchContainer}>
-          <TextInput
-            placeholder="O que você quer ler?"
-            style={styleBiblioteca.searchInput}
-          />
+          <TextInput placeholder="O que você quer ler?" style={styles.input} />
 
           <TouchableOpacity
             onPress={() => {
@@ -78,10 +75,10 @@ const Biblioteca = () => {
         </TouchableOpacity>
       </View>
 
-      <ScrollView contentContainerStyle={styleBiblioteca.bookshelf}>
+      <ScrollView contentContainerStyle={styles.bookContainer}>
         {books.map((book) => (
-          <View key={book.id} style={styleBiblioteca.book}>
-            <Image source={book.coverUrl} style={styleBiblioteca.bookCover} />
+          <View key={book.id} style={styles.book}>
+            <Image source={book.coverUrl} style={styles.bookImg} />
           </View>
         ))}
       </ScrollView>
