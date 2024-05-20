@@ -12,7 +12,7 @@ const Info = ({ navigation, route }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://www.googleapis.com/books/v1/volumes/_ojXNuzgHRcC"
+          "https://www.googleapis.com/books/v1/volumes/Hg77EAAAQBAJ"
         );
         const bookData = await response.json();
         setBook(bookData);

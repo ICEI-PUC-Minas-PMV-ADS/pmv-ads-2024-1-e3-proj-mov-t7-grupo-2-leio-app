@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styleCadastro = StyleSheet.create({
   selectPhoto: {
-    borderRadius: 50,
+    borderRadius: '50%',
     backgroundColor: "white",
     padding: 50,
   },
@@ -15,7 +15,7 @@ const styleCadastro = StyleSheet.create({
   photo: {
     width: 100,
     height: 100,
-    borderRadius: 50,
+    objectFit: "cover",
   },
   errorText: {
     color: "red",

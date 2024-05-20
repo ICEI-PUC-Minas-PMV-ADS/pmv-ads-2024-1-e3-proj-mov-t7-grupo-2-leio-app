@@ -75,7 +75,6 @@ const Cadastro = () => {
       });
 
       console.log("Detalhes do usuário adicionados ao Firestore!");
-      // Definir a mensagem de sucesso
       setSuccess("Usuário criado com sucesso!");
 
       setTimeout(() => {
@@ -110,6 +109,7 @@ const Cadastro = () => {
 
   return (
     <View style={[styles.container, { justifyContent: "center" }]}>
+      
       <View style={styleCadastro.selectPhoto}>
         <Image
           source={

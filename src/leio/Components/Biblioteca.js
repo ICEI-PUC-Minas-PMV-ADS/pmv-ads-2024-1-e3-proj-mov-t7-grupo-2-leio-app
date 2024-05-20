@@ -4,36 +4,70 @@ import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleBiblioteca from "../assets/styles/biblioteca";
 import { fetchBooks } from "../api/api";
+import FiltroModal from "./FiltroModal"; // Import FiltroModal
+
 
 const Biblioteca = ({ navigation }) => {
   const [activeTab, setActiveTab] = useState("Estante");
   const [books, setBooks] = useState([]);
   const [query, setQuery] = useState("");
   const [filteredBooks, setFilteredBooks] = useState([]);
+  const [isFilterModalVisible, setFilterModalVisible] = useState(false);
+  const [filters, setFilters] = useState({});
+
+  const redirectInfo = () => {
+    navigation.navigate("Info");
+  };
 
   useEffect(() => {
     const loadBooks = async () => {
+
       try {
         const books = await fetchBooks(query, 12, "relevance");
         setBooks(books);
         setFilteredBooks(books);
-      } catch (error) {
+      }
+
+      catch (error) {
         console.error("Error fetching books:", error);
       }
     };
 
     loadBooks();
+
   }, [query]);
+
+  const applyFilters = (books, filters) => {
+    let filtered = books;
+
+    if (filters.genres && filters.genres.length > 0) {
+      filtered = filtered.filter(book =>
+        filters.genres.some(genre => book.volumeInfo.categories?.includes(genre))
+      );
+    }
+
+    if (filters.rating) {
+      filtered = filtered.filter(book => book.volumeInfo.averageRating >= filters.rating);
+    }
+
+    if (filters.format) {
+      filtered = filtered.filter(book => book.volumeInfo.printType === filters.format);
+    }
+
+    return filtered;
+  };
 
   const handleSearch = (text) => {
     setQuery(text);
+
     if (text) {
-      const filtered = books.filter(book =>
+      const filtered = applyFilters(books.filter(book =>
         book.volumeInfo.title.toLowerCase().includes(text.toLowerCase())
-      );
+      ), filters);
       setFilteredBooks(filtered);
-    } else {
-      setFilteredBooks(books);
+    }
+    else {
+      setFilteredBooks(applyFilters(books, filters));
     }
   };
 
@@ -50,7 +84,7 @@ const Biblioteca = ({ navigation }) => {
 
           <TouchableOpacity
             onPress={() => {
-              /* Função de busca */
+              handleSearch(query);
             }}
           >
             <Image
@@ -61,9 +95,7 @@ const Biblioteca = ({ navigation }) => {
         </View>
 
         <TouchableOpacity
-          onPress={() => {
-            /* Função de filtro */
-          }}
+          onPress={() => setFilterModalVisible(true)} // Abre o modal de filtros
         >
           <Image
             style={styleBiblioteca.searchFilter}
@@ -97,10 +129,24 @@ const Biblioteca = ({ navigation }) => {
       <ScrollView contentContainerStyle={styles.bookContainer}>
         {filteredBooks.map((book) => (
           <View key={book.id} style={styles.book}>
-            <Image source={{ uri: book.volumeInfo.imageLinks?.thumbnail }} style={styles.bookImg} />
+            <TouchableOpacity
+              onPress={redirectInfo}
+              key={book.id}
+              style={styles.book}
+            >
+              <Image source={{ uri: book.volumeInfo.imageLinks?.thumbnail }} style={styles.bookImg} />
+
+            </TouchableOpacity>
+            {/* <Image source={{ uri: book.volumeInfo.imageLinks?.thumbnail }} style={styles.bookImg} /> */}
           </View>
         ))}
       </ScrollView>
+
+      <FiltroModal
+        isVisible={isFilterModalVisible}
+        onClose={() => setFilterModalVisible(false)}
+        onApply={(appliedFilters) => setFilters(appliedFilters)}
+      />
 
       <Menu navigation={navigation} />
     </View>

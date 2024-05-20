@@ -12,6 +12,7 @@ import styles from "../assets/styles/base";
 import stylePesquisa from "../assets/styles/pesquisa";
 import { fetchBooks } from "../api/api";
 
+
 const Pesquisa = () => {
   const [pesquisa, setPesquisa] = useState("");
 

@@ -40,7 +40,7 @@ const Login = () => {
 
       setTimeout(() => {
         redirectHome(); // Redireciona para a home após alguns segundos para dar tempo do usuário ler a mensagem
-      }, 2000);
+      }, 10);
 
     }
 
