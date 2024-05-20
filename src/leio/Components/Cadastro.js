@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Pressable, Image } from "react-native";
+import { View, Text, TextInput, Pressable, Image, Alert, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleCadastro from "../assets/styles/cadastro";
@@ -14,6 +14,10 @@ const Cadastro = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const navigation = useNavigation(); // hook de navegação
 
   const redirectLogin = () => {
@@ -24,7 +28,7 @@ const Cadastro = () => {
     navigation.navigate("Home"); // navegar para a tela desejada
   };
 
-  const handleSelecionarFoto = async () => {
+  const selecionarFoto = async () => {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (status !== "granted") {
       alert("Precisamos da permissão para acessar a galeria de fotos!");
@@ -43,13 +47,15 @@ const Cadastro = () => {
     }
   };
 
-  const handleCadastrar = async () => {
+  const efetuarCadastro = async () => {
+    setIsLoading(true);
+    setError("");
+    setSuccess("");
+
+
+    /////////////////////////// Cadastrar usuário ///////////////////////////
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        senha
-      );
+      const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
       console.log("Usuário criado com sucesso!", userCredential.user);
 
       let photoURL = "";
@@ -69,9 +75,36 @@ const Cadastro = () => {
       });
 
       console.log("Detalhes do usuário adicionados ao Firestore!");
-      redirectHome(); // Redirecione para o perfil após o cadastro bem-sucedido
-    } catch (error) {
+      // Definir a mensagem de sucesso
+      setSuccess("Usuário criado com sucesso!");
+
+      setTimeout(() => {
+        redirectHome(); // Redireciona para a home após alguns segundos pra dar tempo do usuário ler a mensagem
+      }, 2000);
+
+    }
+
+    /////////////////////////// Exceptions ///////////////////////////
+    catch (error) {
+      let errorMessage = "Ocorreu um erro ao cadastrar. Por favor, tente novamente.";
+
+      if (error.code === 'auth/email-already-in-use') {
+        errorMessage = "O email já está em uso.";
+      }
+
+      else if (error.code === 'auth/invalid-email') {
+        errorMessage = "O email não é válido.";
+      }
+
+      else if (error.code === 'auth/weak-password') {
+        errorMessage = "A senha é muito fraca.";
+      }
+
       console.error("Erro ao cadastrar usuário:", error);
+      setError(errorMessage);
+
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -85,16 +118,17 @@ const Cadastro = () => {
               : require("../assets/img/upload_photo_camera.svg")
           }
           style={styleCadastro.photo}
+          aria-label="Foto do usuário"
         />
       </View>
-      <Pressable onPress={handleSelecionarFoto}>
+      <Pressable onPress={selecionarFoto}>
         <View>
           <Text>Selecione uma foto</Text>
         </View>
       </Pressable>
 
       <View style={styles.inputContainer}>
-        <Image source={require("../assets/img/user.svg")} />
+        <Image source={require("../assets/img/user.svg")} aria-label="Ícone de usuário" />
         <TextInput
           style={styles.input}
           placeholder="Usuário"
@@ -104,7 +138,7 @@ const Cadastro = () => {
       </View>
 
       <View style={styles.inputContainer}>
-        <Image source={require("../assets/img/email.svg")} />
+        <Image source={require("../assets/img/email.svg")} aria-label="Ícone de email" />
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -114,7 +148,7 @@ const Cadastro = () => {
       </View>
 
       <View style={styles.inputContainer}>
-        <Image source={require("../assets/img/password.svg")} />
+        <Image source={require("../assets/img/password.svg")} aria-label="Ícone de senha" />
         <TextInput
           style={styles.input}
           placeholder="Senha"
@@ -124,18 +158,24 @@ const Cadastro = () => {
         />
       </View>
 
+      {error ? <Text style={styleCadastro.errorText}>{error}</Text> : null}
+      {success ? <Text style={styleCadastro.successText}>{success}</Text> : null}
+
       <View style={styleCadastro.buttonContainer}>
-        <Pressable style={[styles.button, { backgroundColor: "#F7C31F" }]}>
-          <Text onPress={redirectLogin} style={styles.buttonText}>
-            Cancelar
-          </Text>
+        <Pressable style={[styles.button, { backgroundColor: "#F7C31F" }]} onPress={redirectLogin}>
+          <Text style={styles.buttonText}>Cancelar</Text>
         </Pressable>
 
         <Pressable
           style={[styles.button, { backgroundColor: "#8872DE" }]}
-          onPress={handleCadastrar}
+          onPress={efetuarCadastro}
+          disabled={!usuario || !email || !senha || isLoading}
         >
-          <Text style={styles.buttonText}>Cadastrar</Text>
+          {isLoading ? (
+            <ActivityIndicator color="#FFF" />
+          ) : (
+            <Text style={styles.buttonText}>Cadastrar</Text>
+          )}
         </Pressable>
       </View>
     </View>

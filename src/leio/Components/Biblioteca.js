@@ -1,33 +1,52 @@
-import React, { useState } from "react";
-import { View, Text } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, TextInput, ScrollView, TouchableOpacity, Image } from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleBiblioteca from "../assets/styles/biblioteca";
-import { Image, TextInput, ScrollView, TouchableOpacity } from "react-native";
+import { fetchBooks } from "../api/api";
 
-const Biblioteca = () => {
+const Biblioteca = ({ navigation }) => {
   const [activeTab, setActiveTab] = useState("Estante");
+  const [books, setBooks] = useState([]);
+  const [query, setQuery] = useState("");
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
-  const books = [
-    { id: "1", coverUrl: require("../assets/img/bookOne.svg") },
-    { id: "2", coverUrl: require("../assets/img/bookOne.svg") },
-    { id: "3", coverUrl: require("../assets/img/bookOne.svg") },
-    { id: "4", coverUrl: require("../assets/img/bookTwo.svg") },
-    { id: "5", coverUrl: require("../assets/img/bookTwo.svg") },
-    { id: "6", coverUrl: require("../assets/img/bookTwo.svg") },
-    { id: "7", coverUrl: require("../assets/img/bookOne.svg") },
-    { id: "8", coverUrl: require("../assets/img/bookOne.svg") },
-    { id: "9", coverUrl: require("../assets/img/bookOne.svg") },
-    { id: "10", coverUrl: require("../assets/img/bookTwo.svg") },
-    { id: "11", coverUrl: require("../assets/img/bookTwo.svg") },
-    { id: "12", coverUrl: require("../assets/img/bookTwo.svg") },
-  ];
+  useEffect(() => {
+    const loadBooks = async () => {
+      try {
+        const books = await fetchBooks(query, 12, "relevance");
+        setBooks(books);
+        setFilteredBooks(books);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+
+    loadBooks();
+  }, [query]);
+
+  const handleSearch = (text) => {
+    setQuery(text);
+    if (text) {
+      const filtered = books.filter(book =>
+        book.volumeInfo.title.toLowerCase().includes(text.toLowerCase())
+      );
+      setFilteredBooks(filtered);
+    } else {
+      setFilteredBooks(books);
+    }
+  };
 
   return (
     <View style={styles.container}>
       <View style={styleBiblioteca.containerInput}>
         <View style={styleBiblioteca.searchContainer}>
-          <TextInput placeholder="O que você quer ler?" style={styles.input} />
+          <TextInput
+            placeholder="O que você quer ler?"
+            style={styles.input}
+            value={query}
+            onChangeText={handleSearch}
+          />
 
           <TouchableOpacity
             onPress={() => {
@@ -76,9 +95,9 @@ const Biblioteca = () => {
       </View>
 
       <ScrollView contentContainerStyle={styles.bookContainer}>
-        {books.map((book) => (
+        {filteredBooks.map((book) => (
           <View key={book.id} style={styles.book}>
-            <Image source={book.coverUrl} style={styles.bookImg} />
+            <Image source={{ uri: book.volumeInfo.imageLinks?.thumbnail }} style={styles.bookImg} />
           </View>
         ))}
       </ScrollView>
