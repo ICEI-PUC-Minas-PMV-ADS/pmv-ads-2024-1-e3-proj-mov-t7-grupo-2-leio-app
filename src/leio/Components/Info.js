@@ -46,6 +46,10 @@ const Info = ({ navigation, route }) => {
         </View>
       </View>
 
+      <TouchableOpacity onPress={() => navigation.navigate('Modal')}>
+        <Image source={require("../assets/img/save.svg")} />
+      </TouchableOpacity>
+
       <Text style={styleInfo.bookName}>{book.volumeInfo.title}</Text>
 
       <Text style={styleInfo.author}>
@@ -65,6 +69,8 @@ const Info = ({ navigation, route }) => {
           </TouchableOpacity>
         ))}
       </View>
+
+
 
       <Text style={styleInfo.summary}>{book.volumeInfo.description}</Text>
 

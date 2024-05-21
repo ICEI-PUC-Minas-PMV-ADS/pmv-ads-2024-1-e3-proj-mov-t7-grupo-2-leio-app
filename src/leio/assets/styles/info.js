@@ -42,6 +42,7 @@ const styleInfo = StyleSheet.create({
   buscarEbookButton: {
     backgroundColor: "#7B9FE1",
   },
+
 });
 
 export default styleInfo;
