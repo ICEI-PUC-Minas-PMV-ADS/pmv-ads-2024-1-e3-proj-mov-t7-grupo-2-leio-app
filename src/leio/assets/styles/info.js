@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import Modal from "../../Components/Modal";
 
 const styleInfo = StyleSheet.create({
   book: {
@@ -42,7 +43,6 @@ const styleInfo = StyleSheet.create({
   buscarEbookButton: {
     backgroundColor: "#7B9FE1",
   },
-
 });
 
 export default styleInfo;

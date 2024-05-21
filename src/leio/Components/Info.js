@@ -7,12 +7,13 @@ import styleInfo from "../assets/styles/info";
 
 const Info = ({ navigation, route }) => {
   const [book, setBook] = useState(null);
+  const { bookId } = route.params;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://www.googleapis.com/books/v1/volumes/Hg77EAAAQBAJ"
+          `https://www.googleapis.com/books/v1/volumes/${bookId}`
         );
         const bookData = await response.json();
         setBook(bookData);
@@ -23,7 +24,7 @@ const Info = ({ navigation, route }) => {
     };
 
     fetchData();
-  }, []);
+  }, [bookId]);
 
   if (!book || !book.volumeInfo) {
     return <Text>Loading...</Text>;
@@ -40,15 +41,20 @@ const Info = ({ navigation, route }) => {
           <TouchableOpacity>
             <Image source={require("../assets/img/favorite.svg")} />
           </TouchableOpacity>
+
           <TouchableOpacity>
             <Image source={require("../assets/img/share.svg")} />
           </TouchableOpacity>
         </View>
       </View>
 
-      <TouchableOpacity onPress={() => navigation.navigate('Modal')}>
-        <Image source={require("../assets/img/save.svg")} />
-      </TouchableOpacity>
+
+      <View style={[{ position: "absolute" }]}>
+        <TouchableOpacity onPress={() => navigation.navigate('Modal')}>
+          <Image source={require("../assets/img/save.svg")} />
+        </TouchableOpacity>
+      </View>
+
 
       <Text style={styleInfo.bookName}>{book.volumeInfo.title}</Text>
 
