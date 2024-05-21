@@ -1,20 +1,46 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image, Alert, ActivityIndicator } from "react-native";
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, Image } from 'react-native';
+import * as Google from 'expo-auth-session/providers/google';
+import * as WebBrowser from 'expo-web-browser';
+import { auth } from "../db/firebaseConfig";
+import { GoogleAuthProvider, signInWithCredential, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleLogin from "../assets/styles/login";
-import { auth } from "../db/firebaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
+
+WebBrowser.maybeCompleteAuthSession();
 
 const Login = () => {
+  const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
+    clientId: '1077605673545-ah88fdr7q6pf25hvocfk03sanrnpmdvf.apps.googleusercontent.com',
+    redirectUri: 'http://localhost:8081', // URI de redirecionamento para o localhost q o expo cria, se der erro, altere para a porta que o expo está rodando aí no seu
+  });
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-
   const navigation = useNavigation(); // hook de navegação
+
+  useEffect(() => {
+    if (response?.type === 'success') {
+      const { id_token } = response.params;
+      const credential = GoogleAuthProvider.credential(id_token);
+      signInWithCredential(auth, credential)
+        .then((userCredential) => {
+          console.log("Login com Google efetuado com sucesso!", userCredential.user);
+          setSuccess("Login com Google efetuado com sucesso!");
+          setTimeout(() => {
+            redirectHome(); // Redireciona para a home após alguns segundos para dar tempo do usuário ler a mensagem
+          }, 1000);
+        })
+        .catch((error) => {
+          console.error("Erro ao efetuar login com Google:", error);
+          setError("Ocorreu um erro ao efetuar login com Google.");
+        });
+    }
+  }, [response]);
 
   const redirectCadastro = () => {
     navigation.navigate("Cadastro"); // navegar para a tela desejada
@@ -24,49 +50,34 @@ const Login = () => {
     navigation.navigate("Home"); // navegar para a tela desejada
   };
 
-
   const efetuarLogin = async () => {
     setIsLoading(true);
     setError(""); // Resetar erro antes de tentar logar
     setSuccess(""); // Resetar mensagem de sucesso antes de tentar logar
 
-
-    /////////////////////////// Login do usuário ///////////////////////////
     try {
-      
       const userCredential = await signInWithEmailAndPassword(auth, email, senha);
       console.log("Login efetuado com sucesso!", userCredential.user);
       setSuccess("Login efetuado com sucesso!");
 
       setTimeout(() => {
         redirectHome(); // Redireciona para a home após alguns segundos para dar tempo do usuário ler a mensagem
-      }, 10);
-
-    }
-
-    /////////////////////////// Exceptions ///////////////////////////
-    catch (error) {
+      }, 1000);
+    } catch (error) {
       let errorMessage = "Ocorreu um erro ao efetuar login. Por favor, tente novamente.";
 
       if (error.code === 'auth/user-not-found') {
         errorMessage = "Usuário não encontrado.";
-      }
-
-      else if (error.code === 'auth/invalid-credential') {
+      } else if (error.code === 'auth/invalid-credential') {
         errorMessage = "Email ou senha incorretos.";
-      }
-
-      else if (error.code === 'auth/wrong-password') {
+      } else if (error.code === 'auth/wrong-password') {
         errorMessage = "Senha incorreta.";
-      }
-
-      else if (error.code === 'auth/invalid-email') {
+      } else if (error.code === 'auth/invalid-email') {
         errorMessage = "O email não é válido.";
       }
 
       console.error("Erro ao efetuar login:", error);
       setError(errorMessage);
-
     } finally {
       setIsLoading(false);
     }
@@ -114,6 +125,18 @@ const Login = () => {
         ) : (
           <Text style={styles.buttonText}>Entrar</Text>
         )}
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styleLogin.loginGoogle}
+        disabled={!request}
+        onPress={() => promptAsync()}
+      >
+        <Image
+          source={require('../assets/img/google.svg')} // Substitua pelo caminho correto do seu ícone do Google
+          style={styleLogin.googleIcon}
+        />
+        <Text style={styleLogin.buttonText}>Entrar com Google</Text>
       </TouchableOpacity>
 
       <Text onPress={redirectCadastro}>

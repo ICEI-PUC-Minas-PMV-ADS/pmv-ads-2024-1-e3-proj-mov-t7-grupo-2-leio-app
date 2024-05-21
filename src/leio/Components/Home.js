@@ -10,8 +10,8 @@ const Home = ({ navigation }) => {
     navigation.navigate("Login");
   };
 
-  const redirectInfo = () => {
-    navigation.navigate("Info");
+  const redirectInfo = (bookId) => {
+    navigation.navigate("Info", { bookId });
   };
 
   const [newestBooks, setNewestBooks] = useState([]);
@@ -60,13 +60,13 @@ const Home = ({ navigation }) => {
           <View style={styles.bookContainer}>
             {newestBooks.map((book) => (
               <TouchableOpacity
-                onPress={redirectInfo}
+                onPress={() => redirectInfo(book.id)}
                 key={book.id}
                 style={styles.book}
               >
                 <Image
                   style={styles.bookImg}
-                  source={{ uri: book.volumeInfo.imageLinks.thumbnail }}
+                  source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
                 />
               </TouchableOpacity>
             ))}
@@ -78,13 +78,13 @@ const Home = ({ navigation }) => {
           <View style={styles.bookContainer}>
             {romanceBooks.map((book) => (
               <TouchableOpacity
-                onPress={redirectInfo}
+                onPress={() => redirectInfo(book.id)}
                 key={book.id}
                 style={styles.book}
               >
                 <Image
                   style={styles.bookImg}
-                  source={{ uri: book.volumeInfo.imageLinks.thumbnail }}
+                  source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
                 />
               </TouchableOpacity>
             ))}
