@@ -63,6 +63,51 @@ const styleBiblioteca = StyleSheet.create({
   activeTabText: {
     color: "#5E41D2",
   },
+  modalContainer: {
+    backgroundColor: "#fff",
+    padding: 20,
+    borderRadius: 10,
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  modalSubtitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginVertical: 10,
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 5,
+  },
+  checkboxLabel: {
+    marginLeft: 10,
+    fontSize: 14,
+  },
+  applyButton: {
+    backgroundColor: "#5E41D2",
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 20,
+  },
+  applyButtonText: {
+    color: "#fff",
+    textAlign: "center",
+    fontWeight: "bold",
+  },
+  selected: {
+    backgroundColor: "#ddd",
+    padding: 10,
+    borderRadius: 5,
+    marginVertical: 5,
+  },
+  unselected: {
+    padding: 10,
+    marginVertical: 5,
+  },
 });
 
 export default styleBiblioteca;

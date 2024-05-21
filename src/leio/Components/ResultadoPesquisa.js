@@ -28,6 +28,11 @@ const ResultadoPesquisa = () => {
       </View>
 
       <View style={styles.bookContainer}>
+
+
+
+        {/* ///////////////////////////// pegar daqui pra baixo */}
+
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image
             source={require("../assets/img/bookOne.svg")}
@@ -74,6 +79,11 @@ const ResultadoPesquisa = () => {
             </View>
           </View>
         </View>
+
+        {/* ///////////////////////////// pegar daqui pra cima */}
+
+
+
 
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image

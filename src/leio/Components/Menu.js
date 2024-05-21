@@ -9,6 +9,7 @@ const Menu = ({ navigation }) => {
 
   return (
     <View style={styles.menuContainer}>
+
       <TouchableOpacity
         style={styles.menuItem}
         onPress={() => navigateToScreen("Home")}
@@ -18,6 +19,7 @@ const Menu = ({ navigation }) => {
           source={require("../assets/img/home.svg")}
         />
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.menuItem}
         onPress={() => navigateToScreen("Pesquisa")}
@@ -27,6 +29,7 @@ const Menu = ({ navigation }) => {
           source={require("../assets/img/search.svg")}
         />
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.menuItem}
         onPress={() => navigateToScreen("Biblioteca")}
@@ -36,15 +39,17 @@ const Menu = ({ navigation }) => {
           source={require("../assets/img/book.svg")}
         />
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.menuItem}
-        onPress={() => navigateToScreen("Cadastro")}
+        onPress={() => navigateToScreen("Perfil")}
       >
         <Image
           style={styles.menuIcon}
           source={require("../assets/img/user.svg")}
         />
       </TouchableOpacity>
+
     </View>
   );
 };
