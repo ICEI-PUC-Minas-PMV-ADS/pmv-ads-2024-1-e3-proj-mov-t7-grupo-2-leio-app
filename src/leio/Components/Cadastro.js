@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Pressable, Image, Alert, ActivityIndicator } from "react-native";
+import { View, Text, TextInput, Pressable, Image, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import styles from "../assets/styles/base";
-import styleCadastro from "../assets/styles/cadastro";
-import { auth, db } from "../db/firebaseConfig";
-import * as ImagePicker from "expo-image-picker";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import { auth, db, storage } from "../db/firebaseConfig"; // Certifique-se de importar storage corretamente
+import * as ImagePicker from "expo-image-picker";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import styleCadastro from "../assets/styles/cadastro";
+import styles from "../assets/styles/base";
 
 const Cadastro = () => {
   const [foto, setFoto] = useState(null);
@@ -38,13 +39,24 @@ const Cadastro = () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
-      aspect: [4, 3],
+      aspect: [1, 1], // Mantendo a proporção 1:1
       quality: 1,
     });
 
     if (!result.canceled) {
-      setFoto(result.uri); // Armazenando o URI da imagem
+      setFoto(result.assets[0].uri); // Armazenando o URI da imagem
     }
+  };
+
+  const uploadImageAsync = async (uri) => {
+    const response = await fetch(uri);
+    const blob = await response.blob();
+    const storageRef = ref(storage, `profilePictures/${Date.now()}`);
+    await uploadBytes(storageRef, blob);
+
+    // Obtenha o URL de download
+    const downloadURL = await getDownloadURL(storageRef);
+    return downloadURL;
   };
 
   const efetuarCadastro = async () => {
@@ -52,8 +64,6 @@ const Cadastro = () => {
     setError("");
     setSuccess("");
 
-
-    /////////////////////////// Cadastrar usuário ///////////////////////////
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
       console.log("Usuário criado com sucesso!", userCredential.user);
@@ -78,24 +88,17 @@ const Cadastro = () => {
       setSuccess("Usuário criado com sucesso!");
 
       setTimeout(() => {
-        redirectHome(); // Redireciona para a home após alguns segundos pra dar tempo do usuário ler a mensagem
+        redirectHome(); // Redireciona para a home após alguns segundos para dar tempo do usuário ler a mensagem
       }, 2000);
 
-    }
-
-    /////////////////////////// Exceptions ///////////////////////////
-    catch (error) {
+    } catch (error) {
       let errorMessage = "Ocorreu um erro ao cadastrar. Por favor, tente novamente.";
 
       if (error.code === 'auth/email-already-in-use') {
         errorMessage = "O email já está em uso.";
-      }
-
-      else if (error.code === 'auth/invalid-email') {
+      } else if (error.code === 'auth/invalid-email') {
         errorMessage = "O email não é válido.";
-      }
-
-      else if (error.code === 'auth/weak-password') {
+      } else if (error.code === 'auth/weak-password') {
         errorMessage = "A senha é muito fraca.";
       }
 
@@ -109,7 +112,6 @@ const Cadastro = () => {
 
   return (
     <View style={[styles.container, { justifyContent: "center" }]}>
-      
       <View style={styleCadastro.selectPhoto}>
         <Image
           source={
@@ -121,6 +123,7 @@ const Cadastro = () => {
           aria-label="Foto do usuário"
         />
       </View>
+
       <Pressable onPress={selecionarFoto}>
         <View>
           <Text>Selecione uma foto</Text>

@@ -136,7 +136,7 @@ const Login = () => {
           source={require('../assets/img/google.svg')} // Substitua pelo caminho correto do seu ícone do Google
           style={styleLogin.googleIcon}
         />
-        <Text style={styleLogin.buttonText}>Login com Google</Text>
+        <Text style={styleLogin.buttonText}>Entrar com Google</Text>
       </TouchableOpacity>
 
       <Text onPress={redirectCadastro}>

@@ -23,6 +23,12 @@ const styles = StyleSheet.create({
     borderColor: "transparent",
   },
   input: {
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 7,
+    paddingHorizontal: 10,
+    backgroundColor: '#fff',
     width: "100%",
   },
   button: {

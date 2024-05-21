@@ -4,7 +4,9 @@ const styleCadastro = StyleSheet.create({
   selectPhoto: {
     borderRadius: '50%',
     backgroundColor: "white",
-    padding: 50,
+    padding: 10,
+    borderStyle: "solid",
+    borderColor: "black",
   },
   buttonContainer: {
     flexDirection: "row",
@@ -13,9 +15,10 @@ const styleCadastro = StyleSheet.create({
     gap: 24,
   },
   photo: {
-    width: 100,
-    height: 100,
-    objectFit: "cover",
+    width: 200,
+    height: 200,
+    borderRadius: 100, // Deixa a imagem redonda
+    backgroundColor: 'lightgray',
   },
   errorText: {
     color: "red",
