@@ -5,7 +5,9 @@ import styles from "../assets/styles/base";
 import styleHome from "../assets/styles/home";
 import { fetchBooks } from "../api/api";
 
-const Home = ({ navigation }) => {
+const Home = ({ navigation, route }) => {
+  const { user } = route.params;
+
   const redirectLogin = () => {
     navigation.navigate("Login");
   };
@@ -14,8 +16,22 @@ const Home = ({ navigation }) => {
     navigation.navigate("Info", { bookId });
   };
 
-  const [newestBooks, setNewestBooks] = useState([]);
   const [romanceBooks, setRomanceBooks] = useState([]);
+  const [newestBooks, setNewestBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedBooks = await fetchBooks("romance", 6, "relevance");
+        setRomanceBooks(fetchedBooks);
+        console.log("Romances:", fetchedBooks);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,24 +47,10 @@ const Home = ({ navigation }) => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchedBooks = await fetchBooks("romance", 6, "newest");
-        setRomanceBooks(fetchedBooks);
-        console.log("Romances:", fetchedBooks);
-      } catch (error) {
-        console.error("Error fetching books:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <View style={styles.container}>
       <View style={styleHome.containerName}>
-        <Text style={styleHome.containerName}>Olá, Maria</Text>
+        <Text style={styleHome.containerName}>Olá, {user.displayName}</Text>
         <TouchableOpacity onPress={redirectLogin}>
           <Image source={require("../assets/img/logout.svg")} />
         </TouchableOpacity>
@@ -56,9 +58,9 @@ const Home = ({ navigation }) => {
 
       <View style={styleHome.body}>
         <View style={styleHome.bodyContent}>
-          <Text style={styleHome.text}>Adicionados recentemente</Text>
+          <Text style={styleHome.text}>Sugestões de romance</Text>
           <View style={styles.bookContainer}>
-            {newestBooks.map((book) => (
+            {romanceBooks.map((book) => (
               <TouchableOpacity
                 onPress={() => redirectInfo(book.id)}
                 key={book.id}
@@ -74,9 +76,9 @@ const Home = ({ navigation }) => {
         </View>
 
         <View style={styleHome.bodyContent}>
-          <Text style={styleHome.text}>Sugestões de romance</Text>
+          <Text style={styleHome.text}>Adicionados recentemente</Text>
           <View style={styles.bookContainer}>
-            {romanceBooks.map((book) => (
+            {newestBooks.map((book) => (
               <TouchableOpacity
                 onPress={() => redirectInfo(book.id)}
                 key={book.id}

@@ -1,9 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, Image } from 'react-native';
-import * as Google from 'expo-auth-session/providers/google';
-import * as WebBrowser from 'expo-web-browser';
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  ActivityIndicator,
+  Image,
+} from "react-native";
+import * as Google from "expo-auth-session/providers/google";
+import * as WebBrowser from "expo-web-browser";
 import { auth } from "../db/firebaseConfig";
-import { GoogleAuthProvider, signInWithCredential, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  GoogleAuthProvider,
+  signInWithCredential,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleLogin from "../assets/styles/login";
@@ -12,8 +23,9 @@ WebBrowser.maybeCompleteAuthSession();
 
 const Login = () => {
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
-    clientId: '1077605673545-ah88fdr7q6pf25hvocfk03sanrnpmdvf.apps.googleusercontent.com',
-    redirectUri: 'http://localhost:8081', // URI de redirecionamento para o localhost q o expo cria, se der erro, altere para a porta que o expo está rodando aí no seu
+    clientId:
+      "1077605673545-ah88fdr7q6pf25hvocfk03sanrnpmdvf.apps.googleusercontent.com",
+    redirectUri: "http://localhost:8081", // URI de redirecionamento para o localhost q o expo cria, se der erro, altere para a porta que o expo está rodando aí no seu
   });
 
   const [email, setEmail] = useState("");
@@ -24,15 +36,18 @@ const Login = () => {
   const navigation = useNavigation(); // hook de navegação
 
   useEffect(() => {
-    if (response?.type === 'success') {
+    if (response?.type === "success") {
       const { id_token } = response.params;
       const credential = GoogleAuthProvider.credential(id_token);
       signInWithCredential(auth, credential)
         .then((userCredential) => {
-          console.log("Login com Google efetuado com sucesso!", userCredential.user);
+          console.log(
+            "Login com Google efetuado com sucesso!",
+            userCredential.user
+          );
           setSuccess("Login com Google efetuado com sucesso!");
           setTimeout(() => {
-            redirectHome(); // Redireciona para a home após alguns segundos para dar tempo do usuário ler a mensagem
+            redirectHome(userCredential.user); // Passa o usuário para a função de redirecionamento
           }, 1000);
         })
         .catch((error) => {
@@ -46,8 +61,8 @@ const Login = () => {
     navigation.navigate("Cadastro"); // navegar para a tela desejada
   };
 
-  const redirectHome = () => {
-    navigation.navigate("Home"); // navegar para a tela desejada
+  const redirectHome = (user) => {
+    navigation.navigate("Home", { user }); // passar os dados do usuário para o componente Home
   };
 
   const efetuarLogin = async () => {
@@ -56,23 +71,28 @@ const Login = () => {
     setSuccess(""); // Resetar mensagem de sucesso antes de tentar logar
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, senha);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        senha
+      );
       console.log("Login efetuado com sucesso!", userCredential.user);
       setSuccess("Login efetuado com sucesso!");
 
       setTimeout(() => {
-        redirectHome(); // Redireciona para a home após alguns segundos para dar tempo do usuário ler a mensagem
+        redirectHome(userCredential.user); // Passa o usuário para a função de redirecionamento
       }, 1000);
     } catch (error) {
-      let errorMessage = "Ocorreu um erro ao efetuar login. Por favor, tente novamente.";
+      let errorMessage =
+        "Ocorreu um erro ao efetuar login. Por favor, tente novamente.";
 
-      if (error.code === 'auth/user-not-found') {
+      if (error.code === "auth/user-not-found") {
         errorMessage = "Usuário não encontrado.";
-      } else if (error.code === 'auth/invalid-credential') {
+      } else if (error.code === "auth/invalid-credential") {
         errorMessage = "Email ou senha incorretos.";
-      } else if (error.code === 'auth/wrong-password') {
+      } else if (error.code === "auth/wrong-password") {
         errorMessage = "Senha incorreta.";
-      } else if (error.code === 'auth/invalid-email') {
+      } else if (error.code === "auth/invalid-email") {
         errorMessage = "O email não é válido.";
       }
 
@@ -133,7 +153,7 @@ const Login = () => {
         onPress={() => promptAsync()}
       >
         <Image
-          source={require('../assets/img/google.svg')} // Substitua pelo caminho correto do seu ícone do Google
+          source={require("../assets/img/google.svg")} // Substitua pelo caminho correto do seu ícone do Google
           style={styleLogin.googleIcon}
         />
         <Text style={styleLogin.buttonText}>Entrar com Google</Text>

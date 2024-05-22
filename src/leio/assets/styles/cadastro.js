@@ -2,23 +2,22 @@ import { StyleSheet } from "react-native";
 
 const styleCadastro = StyleSheet.create({
   selectPhoto: {
-    borderRadius: '50%',
+    borderRadius: "50%",
     backgroundColor: "white",
-    padding: 10,
-    borderStyle: "solid",
-    borderColor: "black",
+    width: 168,
+    height: 168,
+    overflow: "hidden",
+  },
+  photo: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
   },
   buttonContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
     gap: 24,
-  },
-  photo: {
-    width: 200,
-    height: 200,
-    borderRadius: 100, // Deixa a imagem redonda
-    backgroundColor: 'lightgray',
   },
   errorText: {
     color: "red",

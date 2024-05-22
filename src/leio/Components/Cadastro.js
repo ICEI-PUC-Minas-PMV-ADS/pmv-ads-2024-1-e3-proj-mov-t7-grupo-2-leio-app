@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Pressable, Image, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Pressable,
+  Image,
+  ActivityIndicator,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -65,7 +72,11 @@ const Cadastro = () => {
     setSuccess("");
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        senha
+      );
       console.log("Usuário criado com sucesso!", userCredential.user);
 
       let photoURL = "";
@@ -90,21 +101,20 @@ const Cadastro = () => {
       setTimeout(() => {
         redirectHome(); // Redireciona para a home após alguns segundos para dar tempo do usuário ler a mensagem
       }, 2000);
-
     } catch (error) {
-      let errorMessage = "Ocorreu um erro ao cadastrar. Por favor, tente novamente.";
+      let errorMessage =
+        "Ocorreu um erro ao cadastrar. Por favor, tente novamente.";
 
-      if (error.code === 'auth/email-already-in-use') {
+      if (error.code === "auth/email-already-in-use") {
         errorMessage = "O email já está em uso.";
-      } else if (error.code === 'auth/invalid-email') {
+      } else if (error.code === "auth/invalid-email") {
         errorMessage = "O email não é válido.";
-      } else if (error.code === 'auth/weak-password') {
+      } else if (error.code === "auth/weak-password") {
         errorMessage = "A senha é muito fraca.";
       }
 
       console.error("Erro ao cadastrar usuário:", error);
       setError(errorMessage);
-
     } finally {
       setIsLoading(false);
     }
@@ -131,7 +141,10 @@ const Cadastro = () => {
       </Pressable>
 
       <View style={styles.inputContainer}>
-        <Image source={require("../assets/img/user.svg")} aria-label="Ícone de usuário" />
+        <Image
+          source={require("../assets/img/user.svg")}
+          aria-label="Ícone de usuário"
+        />
         <TextInput
           style={styles.input}
           placeholder="Usuário"
@@ -141,7 +154,10 @@ const Cadastro = () => {
       </View>
 
       <View style={styles.inputContainer}>
-        <Image source={require("../assets/img/email.svg")} aria-label="Ícone de email" />
+        <Image
+          source={require("../assets/img/email.svg")}
+          aria-label="Ícone de email"
+        />
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -151,7 +167,10 @@ const Cadastro = () => {
       </View>
 
       <View style={styles.inputContainer}>
-        <Image source={require("../assets/img/password.svg")} aria-label="Ícone de senha" />
+        <Image
+          source={require("../assets/img/password.svg")}
+          aria-label="Ícone de senha"
+        />
         <TextInput
           style={styles.input}
           placeholder="Senha"
@@ -162,10 +181,15 @@ const Cadastro = () => {
       </View>
 
       {error ? <Text style={styleCadastro.errorText}>{error}</Text> : null}
-      {success ? <Text style={styleCadastro.successText}>{success}</Text> : null}
+      {success ? (
+        <Text style={styleCadastro.successText}>{success}</Text>
+      ) : null}
 
       <View style={styleCadastro.buttonContainer}>
-        <Pressable style={[styles.button, { backgroundColor: "#F7C31F" }]} onPress={redirectLogin}>
+        <Pressable
+          style={[styles.button, { backgroundColor: "#F7C31F" }]}
+          onPress={redirectLogin}
+        >
           <Text style={styles.buttonText}>Cancelar</Text>
         </Pressable>
 
