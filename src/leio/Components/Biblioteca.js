@@ -15,8 +15,8 @@ const Biblioteca = ({ navigation }) => {
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
   const [filters, setFilters] = useState({});
 
-  const redirectInfo = () => {
-    navigation.navigate("Info");
+  const redirectInfo = (bookId) => {
+    navigation.navigate("Info", { bookId });
   };
 
   useEffect(() => {
@@ -130,7 +130,7 @@ const Biblioteca = ({ navigation }) => {
         {filteredBooks.map((book) => (
           <View key={book.id} style={styles.book}>
             <TouchableOpacity
-              onPress={redirectInfo}
+              onPress={() => redirectInfo(book.id)}
               key={book.id}
               style={styles.book}
             >
