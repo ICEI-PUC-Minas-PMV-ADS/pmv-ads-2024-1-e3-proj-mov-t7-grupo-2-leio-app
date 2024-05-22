@@ -14,6 +14,7 @@ import { fetchBooks } from "../api/api";
 
 
 const Pesquisa = () => {
+  
   const [pesquisa, setPesquisa] = useState("");
 
   return (
@@ -35,9 +36,12 @@ const Pesquisa = () => {
       </View>
 
       <ScrollView style={stylePesquisa.bodyContent}>
+
         <Text style={stylePesquisa.titleText}>Categorias</Text>
+
         <ScrollView style={{ width: "100%" }}>
           <View style={stylePesquisa.imgsContainer}>
+
             <TouchableOpacity style={stylePesquisa.imageView}>
               <Image
                 source={require("../assets/img/ficcao.svg")}
@@ -45,6 +49,7 @@ const Pesquisa = () => {
               />
               <Text style={stylePesquisa.imageText}>Ficção Científica</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={stylePesquisa.imageView}>
               <Image
                 source={require("../assets/img/romance.svg")}
@@ -52,6 +57,7 @@ const Pesquisa = () => {
               />
               <Text style={stylePesquisa.imageText}>Romance</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={stylePesquisa.imageView}>
               <Image
                 source={require("../assets/img/hqs.svg")}
@@ -59,6 +65,7 @@ const Pesquisa = () => {
               />
               <Text style={stylePesquisa.imageText}>HQs</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={stylePesquisa.imageView}>
               <Image
                 source={require("../assets/img/terror.svg")}
@@ -66,12 +73,15 @@ const Pesquisa = () => {
               />
               <Text style={stylePesquisa.imageText}>Terror</Text>
             </TouchableOpacity>
+
           </View>
         </ScrollView>
 
         <Text style={stylePesquisa.titleText}>Autores</Text>
+
         <ScrollView>
           <View style={stylePesquisa.imgsContainer}>
+
             <TouchableOpacity style={stylePesquisa.imageView}>
               <Image
                 source={require("../assets/img/autorRowling.svg")}
@@ -79,6 +89,7 @@ const Pesquisa = () => {
               />
               <Text style={stylePesquisa.imageText}>J. K. Rowling</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={stylePesquisa.imageView}>
               <Image
                 source={require("../assets/img/autorTolkien.svg")}
@@ -86,6 +97,7 @@ const Pesquisa = () => {
               />
               <Text style={stylePesquisa.imageText}>J. R. R. Tolkien</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={stylePesquisa.imageView}>
               <Image
                 source={require("../assets/img/autorKing.jpg")}
@@ -93,6 +105,7 @@ const Pesquisa = () => {
               />
               <Text style={stylePesquisa.imageText}>Stephen King</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={stylePesquisa.imageView}>
               <Image
                 source={require("../assets/img/autorCassandra.jpeg")}
@@ -100,8 +113,10 @@ const Pesquisa = () => {
               />
               <Text style={stylePesquisa.imageText}>Cassandra Clare</Text>
             </TouchableOpacity>
+
           </View>
         </ScrollView>
+
       </ScrollView>
       <Menu navigation={navigation} />
     </View>

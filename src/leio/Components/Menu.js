@@ -2,7 +2,9 @@ import React from "react";
 import { View, Image, TouchableOpacity } from "react-native";
 import styles from "../assets/styles/base";
 
-const Menu = ({ navigation }) => {
+const Menu = () => {
+  const navigation = useNavigation(); // hook de navegação
+
   const navigateToScreen = (screenName) => {
     navigation.navigate(screenName);
   };
