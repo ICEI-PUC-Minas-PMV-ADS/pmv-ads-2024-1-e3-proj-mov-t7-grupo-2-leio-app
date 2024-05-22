@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Image, TouchableOpacity } from "react-native";
 import styles from "../assets/styles/base";
+import { useNavigation } from "@react-navigation/native";
 
 const Menu = () => {
   const navigation = useNavigation(); // hook de navegação
