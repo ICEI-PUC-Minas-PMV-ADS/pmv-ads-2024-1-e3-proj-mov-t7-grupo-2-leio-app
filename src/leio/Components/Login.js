@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   View,
   Text,
@@ -18,10 +18,13 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleLogin from "../assets/styles/login";
+import { UserContext  } from "./UserContext"; // Importa o contexto do usuário
+
 
 WebBrowser.maybeCompleteAuthSession();
 
 const Login = () => {
+  const { setUser } = useContext(UserContext ); // Usa o contexto do usuário
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
     clientId:
       "1077605673545-ah88fdr7q6pf25hvocfk03sanrnpmdvf.apps.googleusercontent.com",
@@ -45,9 +48,10 @@ const Login = () => {
             "Login com Google efetuado com sucesso!",
             userCredential.user
           );
+          setUser(userCredential.user); // Define o usuário no contexto
           setSuccess("Login com Google efetuado com sucesso!");
           setTimeout(() => {
-            redirectHome(userCredential.user); // Passa o usuário para a função de redirecionamento
+            redirectHome(); // Passa o usuário para a função de redirecionamento
           }, 1000);
         })
         .catch((error) => {
@@ -61,8 +65,8 @@ const Login = () => {
     navigation.navigate("Cadastro"); // navegar para a tela desejada
   };
 
-  const redirectHome = (user) => {
-    navigation.navigate("Home", { user }); // passar os dados do usuário para o componente Home
+  const redirectHome = () => {
+    navigation.navigate("Home"); // Redireciona para a home
   };
 
   const efetuarLogin = async () => {
@@ -77,10 +81,11 @@ const Login = () => {
         senha
       );
       console.log("Login efetuado com sucesso!", userCredential.user);
+      setUser(userCredential.user); // Define o usuário no contexto
       setSuccess("Login efetuado com sucesso!");
 
       setTimeout(() => {
-        redirectHome(userCredential.user); // Passa o usuário para a função de redirecionamento
+        redirectHome(); // Passa o usuário para a função de redirecionamento
       }, 1000);
     } catch (error) {
       let errorMessage =
