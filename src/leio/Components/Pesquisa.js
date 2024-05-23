@@ -1,21 +1,46 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  ScrollView,
-  TextInput,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { View, Text, ScrollView, TextInput, TouchableOpacity, Image } from "react-native";
+import { useFocusEffect } from '@react-navigation/native';
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import stylePesquisa from "../assets/styles/pesquisa";
 import { fetchBooks } from "../api/api";
+import FiltroModal from "./FiltroModal"; // Import FiltroModal
 
 
-const Pesquisa = () => {
-  
-  const [pesquisa, setPesquisa] = useState("");
+const Pesquisa = ({ navigation }) => {
+
+  //const [pesquisa, setPesquisa] = useState("");
+
+  //const [books, setBooks] = useState([]);
+  const [query, setQuery] = useState("");
+  //const [filteredBooks, setFilteredBooks] = useState([]);
+  const [isFilterModalVisible, setFilterModalVisible] = useState(false);
+  const [filters, setFilters] = useState({});
+  const [activeTab, setActiveTab] = useState("Pesquisa"); // Adiciona estado para a aba ativa
+
+
+    // Limpa os estados de query e resultados dos livros quando a tela ganha o foco
+    useFocusEffect(
+      React.useCallback(() => {
+        setQuery("");
+        setFilters({});
+        // Qualquer outro estado que precise ser limpo pode ser adicionado aqui
+      }, [])
+    );
+
+  // Função para lidar com a pesquisa ao clicar na lupa
+  const handleSearch = async () => {
+    if (query.trim() !== "") {
+      try {
+        const books = await fetchBooks(query, 12, "relevance");
+        // Navega para a tela de ResultadoPesquisa passando os livros como parâmetro
+        navigation.navigate("ResultadoPesquisa", { books, query });
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -25,11 +50,11 @@ const Pesquisa = () => {
         <TextInput
           style={styles.input}
           placeholder="O que você quer ler?"
-          value={pesquisa}
-          onChangeText={(text) => setPesquisa(text)}
+          value={query}
+          onChangeText={(text) => setQuery(text)}
         />
         <View>
-          <TouchableOpacity onPress={() => console.log("Research complete")}>
+          <TouchableOpacity onPress={handleSearch}>
             <Image source={require("../assets/img/search.svg")} />
           </TouchableOpacity>
         </View>
@@ -79,7 +104,7 @@ const Pesquisa = () => {
 
         <Text style={stylePesquisa.titleText}>Autores</Text>
 
-        <ScrollView>
+        <ScrollView >
           <View style={stylePesquisa.imgsContainer}>
 
             <TouchableOpacity style={stylePesquisa.imageView}>
@@ -114,10 +139,19 @@ const Pesquisa = () => {
               <Text style={stylePesquisa.imageText}>Cassandra Clare</Text>
             </TouchableOpacity>
 
+
+
           </View>
         </ScrollView>
 
       </ScrollView>
+
+      <FiltroModal
+        isVisible={isFilterModalVisible}
+        onClose={() => setFilterModalVisible(false)}
+        onApply={(appliedFilters) => setFilters(appliedFilters)}
+      />
+
       <Menu navigation={navigation} />
     </View>
   );
