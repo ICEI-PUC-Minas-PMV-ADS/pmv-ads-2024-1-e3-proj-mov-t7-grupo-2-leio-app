@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
 import Menu from "./Menu";
-// import { fetchBooks } from "../api/api";
 import styles from "../assets/styles/base";
 import styleInfo from "../assets/styles/info";
 
@@ -16,7 +15,13 @@ const Info = ({ navigation, route }) => {
           `https://www.googleapis.com/books/v1/volumes/${bookId}`
         );
         const bookData = await response.json();
-        setBook(bookData);
+        setBook({
+          ...bookData,
+          volumeInfo: {
+            ...bookData.volumeInfo,
+            description: removeHtmlTags(bookData.volumeInfo.description),
+          },
+        });
         console.log(bookData);
       } catch (error) {
         console.error("Error fetching book data:", error);
@@ -26,35 +31,45 @@ const Info = ({ navigation, route }) => {
     fetchData();
   }, [bookId]);
 
+  const removeHtmlTags = (description) => {
+    if (!description) return "";
+
+    // Expressão regular para remover as tags HTML
+    return description.replace(/<[^>]*>?/gm, "");
+  };
+
   if (!book || !book.volumeInfo) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={[styles.container, styleInfo.loading]}>
+        <Text style={styleInfo.loadingText}>Loading...</Text>
+      </View>
+    );
   }
 
+  const openExternalLink = () => {
+    Linking.openURL(book.volumeInfo.infoLink);
+  };
+
   return (
-    <View style={[styles.container, { position: "relative" }]}>
+    <View style={styles.container}>
       <View style={styleInfo.book}>
         <Image
           style={styles.bookImg}
           source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
         />
         <View style={styleInfo.btnsContainer}>
-          <TouchableOpacity>
-            <Image source={require("../assets/img/favorite.svg")} />
+          <TouchableOpacity
+            style={styleInfo.btn}
+            onPress={() => navigation.navigate("Modal")}
+          >
+            <Image source={require("../assets/img/save.svg")} />
           </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Image source={require("../assets/img/share.svg")} />
+          <TouchableOpacity style={styleInfo.btn}>
+            <Image source={require("../assets/img/favorite.svg")} />
           </TouchableOpacity>
         </View>
       </View>
-
-
-      <View style={[{ position: "absolute" }]}>
-        <TouchableOpacity onPress={() => navigation.navigate('Modal')}>
-          <Image source={require("../assets/img/save.svg")} />
-        </TouchableOpacity>
-      </View>
-
 
       <Text style={styleInfo.bookName}>{book.volumeInfo.title}</Text>
 
@@ -76,17 +91,18 @@ const Info = ({ navigation, route }) => {
         ))}
       </View>
 
-
-
       <Text style={styleInfo.summary}>{book.volumeInfo.description}</Text>
 
       <View style={styleInfo.buttonContainer}>
-        <TouchableOpacity style={[styles.button, styleInfo.lerPreviaButton]}>
-          <Text style={styles.buttonText}>Ler prévia</Text>
+        <TouchableOpacity
+          style={[styles.button, styleInfo.lerPreviaButton]}
+          onPress={openExternalLink}
+        >
+          <Text style={styles.buttonText}>Comprar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={[styles.button, styleInfo.buscarEbookButton]}>
-          <Text style={styles.buttonText}>Buscar e-book</Text>
+          <Text style={styles.buttonText}>Download</Text>
         </TouchableOpacity>
       </View>
 

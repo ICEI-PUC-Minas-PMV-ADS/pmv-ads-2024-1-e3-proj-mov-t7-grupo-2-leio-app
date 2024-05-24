@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import Modal from "../../Components/Modal";
 
 const styleInfo = StyleSheet.create({
   book: {
     width: 165,
     height: 250,
+    position: "relative",
   },
   bookName: {
     fontSize: 24,
@@ -12,12 +12,25 @@ const styleInfo = StyleSheet.create({
   },
   btnsContainer: {
     flexWrap: "wrap",
-    flexDirection: "row",
+    flexDirection: "column",
     gap: 8,
     alignItems: "center",
     position: "absolute",
     top: 0,
     right: -60,
+  },
+  btn: {
+    padding: 8,
+    width: 50,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
+    borderRadius: "50%",
+    shadowColor: "#939393",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
   },
   author: {
     fontSize: 15,
@@ -42,6 +55,13 @@ const styleInfo = StyleSheet.create({
   },
   buscarEbookButton: {
     backgroundColor: "#7B9FE1",
+  },
+  loading: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  loadingText: {
+    fontSize: 25,
   },
 });
 
