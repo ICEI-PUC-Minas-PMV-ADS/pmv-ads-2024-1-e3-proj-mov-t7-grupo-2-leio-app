@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderWidth: 1,
     borderRadius: 7,
     paddingHorizontal: 10,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     width: "100%",
   },
   button: {
@@ -80,12 +80,20 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
   },
   menuItem: {
-    width: 35,
-    height: 35,
+    width: 40,
+    height: 40,
+    padding: 6,
+  },
+  menuItemAtivo: {
+    backgroundColor: "#8872DE",
+    borderRadius: 12,
   },
   menuIcon: {
     width: "100%",
     height: "100%",
+  },
+  menuIconAtivo: {
+    tintColor: "white",
   },
 });
 
