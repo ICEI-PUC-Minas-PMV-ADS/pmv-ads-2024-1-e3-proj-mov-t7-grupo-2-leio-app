@@ -94,6 +94,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
+      <li>../Components/Menu.js</li>
         <li>../Components/Home.js</li>
         <li>../assets/styles/base.js</li>
         <li>../assets/styles/home.js</li>
@@ -111,7 +112,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-Pesquisa.png" alt="Tela pesquisa" title="Tela pesquisa">
+      <img src="img/Tela-Pesquisa.jpg" alt="Tela pesquisa" title="Tela pesquisa">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -120,6 +121,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
+      <li>../Components/Menu.js</li>
         <li>../Components/Pesquisa.js</li>
         <li>../assets/styles/base.js</li>
         <li>../assets/styles/pesquisa.js</li>
@@ -146,6 +148,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
+      <li>../Components/Menu.js</li>
         <li>../Components/ResultadoPesquisa.js</li>
         <li>../assets/styles/base.js</li>
         <li>../assets/styles/resultadoPesquisa.js</li>
@@ -153,6 +156,33 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       <h3>Desenvolvedora</h3>
       <ul>
         <li>Sandra Matos</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## Tela Info
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-Info.jpg" alt="Tela de informações" title="Tela de informações" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF04 - O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, gênero, sinopse e avaliações.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+      <li>../Components/Menu.js</li>
+        <li>../Components/Info.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/info.js</li>
+      </ul>
+      <h3>Desenvolvedora</h3>
+      <ul>
+        <li>Aline Azedias</li>
       </ul>
     </td>
   </tr>
@@ -172,6 +202,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
+         <li>../Components/Menu.js</li>
         <li>../Components/Biblioteca.js</li>
         <li>../assets/styles/base.js</li>
         <li>../assets/styles/biblioteca.js</li>

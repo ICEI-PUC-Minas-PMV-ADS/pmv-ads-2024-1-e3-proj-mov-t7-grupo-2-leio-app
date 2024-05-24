@@ -39,14 +39,13 @@ O arquivo contendo os scripts de criação das tabelas do banco de dados SQLite 
 | ------------------------------------- | --------------------------------- |
 | Linguagem                             | JavaScript                        |
 | Framework                             | ReactNative                       |
-| Bibliotecas                           | React Native Paper                |
-| IDE                                   | Visual Studio Code e Expo Dev     |
+| IDE                                   | Visual Studio Code                |
 | Ferramentas Wireframes                | Figma                             |
 | Ferramentas de Comunicação            | Microsoft Teams, GitHub, Whatsapp |
 | Ferramentas de Gestão de Projeto      | Github Projects                   |
-| Ferramentas de versionamento          | Github Desktop                    |
+| Ferramentas de versionamento          | Github Desktop e Git              |
 | Ferramentas para criação de diagramas | Draw.io                           |
-| Banco de dados                        | SQLite                            |
+| Banco de dados                        | Firebase                          |
 
 O usuário interage com a interface do usuário, que é construída utilizando React Native. Quando o usuário executa uma ação na interface, como clicar em um botão, uma requisição é enviada para o banco de dados. O banco de dados, processa a requisição, conforme necessário, e executa a query. Após o processamento, o banco de dados envia uma resposta de volta para o React Native frontend. O React Native frontend recebe a resposta e atualiza a interface do usuário conforme necessário para refletir o resultado da ação do usuário.
 
@@ -54,7 +53,7 @@ O usuário interage com a interface do usuário, que é construída utilizando R
 
 ## Hospedagem
 
-A aplicação está hospedada no Github e <a href="https://snack.expo.dev/@lucasgdev/login-leio-app">Expo</a>.
+A aplicação está hospedada no Github, ela pode ser executada localmente.
 
 ## Qualidade de Software
 
