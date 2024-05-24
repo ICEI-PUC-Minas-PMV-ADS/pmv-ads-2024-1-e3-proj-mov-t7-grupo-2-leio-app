@@ -25,6 +25,16 @@ export default function App() {
       <NavigationContainer>
 
         <Stack.Navigator>
+        <Stack.Screen
+            name="Pesquisa"
+            component={Pesquisa}
+            options={{
+              title: "",
+              headerTintColor: "#8872DE",
+              headerBackTitle: "Voltar",
+              headerStyle: { backgroundColor: "#F4F3FF" },
+            }}
+          />
 
           <Stack.Screen
             name="Login"
@@ -51,7 +61,7 @@ export default function App() {
               headerStyle: { backgroundColor: "#F4F3FF" },
             }}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Pesquisa"
             component={Pesquisa}
             options={{
@@ -60,7 +70,7 @@ export default function App() {
               headerBackTitle: "Voltar",
               headerStyle: { backgroundColor: "#F4F3FF" },
             }}
-          />
+          /> */}
           <Stack.Screen
             name="ResultadoPesquisa"
             component={ResultadoPesquisa}
