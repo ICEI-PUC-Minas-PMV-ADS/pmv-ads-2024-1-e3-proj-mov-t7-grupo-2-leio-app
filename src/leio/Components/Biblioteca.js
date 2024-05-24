@@ -6,7 +6,6 @@ import styleBiblioteca from "../assets/styles/biblioteca";
 import { fetchBooks } from "../api/api";
 import FiltroModal from "./FiltroModal"; // Import FiltroModal
 
-
 const Biblioteca = ({ navigation }) => {
   const [activeTab, setActiveTab] = useState("Estante");
   const [books, setBooks] = useState([]);
@@ -19,23 +18,26 @@ const Biblioteca = ({ navigation }) => {
     navigation.navigate("Info", { bookId });
   };
 
+  const loadBooks = async (searchQuery, tab) => {
+    try {
+      const books = await fetchBooks(searchQuery, 36, tab === "Biblioteca" ? "newest" : "relevance");
+      const filtered = tab === "Biblioteca" && searchQuery
+        ? books.filter(book => book.accessInfo.pdf?.isAvailable)
+        : books;
+      setBooks(filtered);
+      setFilteredBooks(filtered);
+    } catch (error) {
+      console.error("Error fetching books:", error);
+    }
+  };
+
   useEffect(() => {
-    const loadBooks = async () => {
-
-      try {
-        const books = await fetchBooks(query, 12, "relevance");
-        setBooks(books);
-        setFilteredBooks(books);
-      }
-
-      catch (error) {
-        console.error("Error fetching books:", error);
-      }
-    };
-
-    loadBooks();
-
-  }, [query]);
+    if (activeTab === "Biblioteca" && !query) {
+      loadBooks("all", activeTab);
+    } else {
+      loadBooks(query, activeTab);
+    }
+  }, [activeTab, query]);
 
   const applyFilters = (books, filters) => {
     let filtered = books;
@@ -59,15 +61,12 @@ const Biblioteca = ({ navigation }) => {
 
   const handleSearch = (text) => {
     setQuery(text);
+  };
 
-    if (text) {
-      const filtered = applyFilters(books.filter(book =>
-        book.volumeInfo.title.toLowerCase().includes(text.toLowerCase())
-      ), filters);
-      setFilteredBooks(filtered);
-    }
-    else {
-      setFilteredBooks(applyFilters(books, filters));
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    if (tab === "Biblioteca") {
+      loadBooks(query || "all", tab);  // Load books immediately when tab changes
     }
   };
 
@@ -110,7 +109,7 @@ const Biblioteca = ({ navigation }) => {
             styleBiblioteca.tab,
             activeTab === "Estante" && styleBiblioteca.activeTab,
           ]}
-          onPress={() => setActiveTab("Estante")}
+          onPress={() => handleTabChange("Estante")}
         >
           <Text style={styleBiblioteca.tabText}>Estante</Text>
         </TouchableOpacity>
@@ -120,24 +119,22 @@ const Biblioteca = ({ navigation }) => {
             styleBiblioteca.tab,
             activeTab === "Biblioteca" && styleBiblioteca.activeTab,
           ]}
-          onPress={() => setActiveTab("Biblioteca")}
+          onPress={() => handleTabChange("Biblioteca")}
         >
           <Text style={styleBiblioteca.tabText}>Biblioteca</Text>
         </TouchableOpacity>
       </View>
 
       <ScrollView contentContainerStyle={styles.bookContainer}>
-        {filteredBooks.map((book) => (
-          <View key={book.id} style={styles.book}>
+        {filteredBooks.map((book, index) => (
+          <View key={`${book.id}-${index}`} style={styles.book}>
             <TouchableOpacity
               onPress={() => redirectInfo(book.id)}
-              key={book.id}
+              key={`${book.id}-${index}`}
               style={styles.book}
             >
               <Image source={{ uri: book.volumeInfo.imageLinks?.thumbnail }} style={styles.bookImg} />
-
             </TouchableOpacity>
-            {/* <Image source={{ uri: book.volumeInfo.imageLinks?.thumbnail }} style={styles.bookImg} /> */}
           </View>
         ))}
       </ScrollView>

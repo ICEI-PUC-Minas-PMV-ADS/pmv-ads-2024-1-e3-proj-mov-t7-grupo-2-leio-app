@@ -4,10 +4,10 @@ import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleHome from "../assets/styles/home";
 import { fetchBooks } from "../api/api";
-import { UserContext  } from "./UserContext"; // Importa o contexto do user
+import { UserContext } from "./UserContext"; // Importa o contexto do user
 
 const Home = ({ navigation }) => {
-  const { user } = useContext(UserContext ); // Usa o contexto do usuário
+  const { user } = useContext(UserContext); // Usa o contexto do usuário
 
   const redirectLogin = () => {
     navigation.navigate("Login");
@@ -51,7 +51,9 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styleHome.containerName}>
-        <Text style={styleHome.containerName}>Olá, {user.displayName}</Text>
+        <Text style={styleHome.containerName}>
+          Olá, {user?.displayName ?? "Usuário"}
+        </Text>
         <TouchableOpacity onPress={redirectLogin}>
           <Image source={require("../assets/img/logout.svg")} />
         </TouchableOpacity>

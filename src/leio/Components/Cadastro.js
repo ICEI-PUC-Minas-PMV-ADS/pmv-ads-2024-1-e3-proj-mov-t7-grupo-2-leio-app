@@ -10,7 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { auth, db, storage } from "../db/firebaseConfig"; // Certifique-se de importar storage corretamente
+import { auth, db, storage } from "../db/firebaseConfig";
 import * as ImagePicker from "expo-image-picker";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import styleCadastro from "../assets/styles/cadastro";
