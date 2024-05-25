@@ -64,6 +64,10 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 | :---------------------: | :--------------------------------------------------: | :-------: | :------------------------------: |
 |   Faça uma pesquisa.    | <img width="250px" src = "./img/Tela-Pesquisa.jpg"/> |    Sim    | Não foi possível fazer pesquisa. |
 
+| **Descrição da Tarefa** |                       **Foto**                       | **Erros** |          **Resultado**           |
+| :---------------------: | :--------------------------------------------------: | :-------: | :------------------------------: |
+|   Faça uma pesquisa.    | <img width="250px" src = "./img/Tela-ResultadoPesquisa.jpg"/> |    Não    | Foi possível fazer pesquisa. |
+
 ### Métricas:
 
 - Taxa de Sucesso: Não aplicável devido à impossibilidade de realizar a pesquisa.
