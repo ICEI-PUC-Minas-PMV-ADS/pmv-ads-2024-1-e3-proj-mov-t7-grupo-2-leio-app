@@ -234,28 +234,7 @@ const Pesquisa = ({ navigation }) => {
         </ScrollView>
       )}
 
-      {/*       <Text style={stylePesquisa.titleText}>Resultados</Text>
-        <ScrollView contentContainerStyle={styles.bookContainer}>
-          {filteredBooks.length > 0 ? (
-            filteredBooks.map((book) => (
-              <View key={book.id} style={styles.book}>
-                <TouchableOpacity
-                  onPress={() => redirectInfo(book.id)}
-                  key={book.id}
-                  style={styles.book}
-                >
-                  <Image
-                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                    style={styles.bookImg}
-                  />
-                  <Text style={styles.bookTitle}>{book.volumeInfo.title}</Text>
-                </TouchableOpacity>
-              </View>
-            ))
-          ) : (
-            <Text style={stylePesquisa.noResultsText}>Nenhum resultado encontrado</Text>
-          )}
-        </ScrollView> */}
+      
 
       <FiltroModal
         isVisible={isFilterModalVisible}
