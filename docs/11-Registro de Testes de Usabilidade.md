@@ -66,7 +66,7 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 | **Descrição da Tarefa** |                       **Foto**                       | **Erros** |          **Resultado**           |
 | :---------------------: | :--------------------------------------------------: | :-------: | :------------------------------: |
-|   Faça uma pesquisa.    | <img width="250px" src = "./img/Tela-ResultadoPesquisa.jpg"/> |    Não    | Foi possível fazer pesquisa. |
+|   Faça uma pesquisa.    | <img width="250px" src = "./img/Tela-ResultadoPesquisa2.jpg"/> |    Não    | Foi possível fazer pesquisa. |
 
 ### Métricas:
 
