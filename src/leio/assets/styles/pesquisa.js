@@ -1,9 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const stylePesquisa = StyleSheet.create({
-  bodyContent: {
+  bodyContainer: {
     gap: 24,
     width: "100%",
+  },
+  bodyContent: {
+    gap: 16,
   },
   imgsContainer: {
     flexDirection: "row",
@@ -28,7 +31,6 @@ const stylePesquisa = StyleSheet.create({
     fontWeight: 600,
     fontSize: 18,
     color: "#8872DE",
-    marginBottom: 12,
   },
 });
 

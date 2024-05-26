@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, ScrollView, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleBiblioteca from "../assets/styles/biblioteca";
@@ -27,11 +34,23 @@ const Biblioteca = ({ navigation }) => {
 
   const loadBooks = async (searchQuery, tab, appliedFilters = {}) => {
     try {
-      const books = appliedFilters.genres || appliedFilters.formats
-        ? await fetchFilteredBooks(searchQuery || "i", 36, tab === "Biblioteca" ? "newest" : "relevance", appliedFilters)
-        : await fetchBooks(searchQuery || "i", 36, tab === "Biblioteca" ? "newest" : "relevance");
+      const books =
+        appliedFilters.genres || appliedFilters.formats
+          ? await fetchFilteredBooks(
+              searchQuery || "i",
+              36,
+              tab === "Biblioteca" ? "newest" : "relevance",
+              appliedFilters
+            )
+          : await fetchBooks(
+              searchQuery || "i",
+              36,
+              tab === "Biblioteca" ? "newest" : "relevance"
+            );
 
-      const filteredBooks = books.filter(book => book.accessInfo.epub?.isAvailable);
+      const filteredBooks = books.filter(
+        (book) => book.accessInfo.epub?.isAvailable
+      );
 
       setBooks(filteredBooks);
       setFilteredBooks(filteredBooks);
@@ -48,7 +67,9 @@ const Biblioteca = ({ navigation }) => {
               categorySet.add(category);
               extractedCategories.push({
                 name: category,
-                image: book.volumeInfo.imageLinks?.thumbnail || require("../assets/img/no_photo.png"),
+                image:
+                  book.volumeInfo.imageLinks?.thumbnail ||
+                  require("../assets/img/no_photo.png"),
               });
             }
           });
@@ -59,7 +80,9 @@ const Biblioteca = ({ navigation }) => {
               authorSet.add(author);
               extractedAuthors.push({
                 name: author,
-                image: book.volumeInfo.imageLinks?.thumbnail || require("../assets/img/no_photo.png"),
+                image:
+                  book.volumeInfo.imageLinks?.thumbnail ||
+                  require("../assets/img/no_photo.png"),
               });
             }
           });
@@ -95,44 +118,40 @@ const Biblioteca = ({ navigation }) => {
   };
 
   const renderEstanteContent = () => (
-    <ScrollView style={stylePesquisa.bodyContent}>
-      <Text style={stylePesquisa.titleText}>Categorias</Text>
-      <ScrollView horizontal style={{ width: "100%" }}>
-        <View style={stylePesquisa.imgsContainer}>
-          {categories.map((category, index) => (
-            <TouchableOpacity
-              key={index}
-              style={stylePesquisa.imageView}
-              onPress={() => redirectToSearchResults(category.name)}
-            >
-              <Image
-                source={category.image}
-                style={stylePesquisa.image}
-              />
-              <Text style={stylePesquisa.imageText}>{category.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </ScrollView>
+    <ScrollView style={stylePesquisa.bodyContainer}>
+      <View style={stylePesquisa.bodyContent}>
+        <Text style={stylePesquisa.titleText}>Categorias</Text>
+        <ScrollView style={styleBiblioteca.topicContainer}>
+          <View style={stylePesquisa.imgsContainer}>
+            {categories.map((category, index) => (
+              <TouchableOpacity
+                key={index}
+                style={stylePesquisa.imageView}
+                onPress={() => redirectToSearchResults(category.name)}
+              >
+                <Image source={category.image} style={stylePesquisa.image} />
+                <Text style={stylePesquisa.imageText}>{category.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
 
-      <Text style={stylePesquisa.titleText}>Autores</Text>
-      <ScrollView horizontal style={{ width: "100%" }}>
-        <View style={stylePesquisa.imgsContainer}>
-          {authors.map((author, index) => (
-            <TouchableOpacity
-              key={index}
-              style={stylePesquisa.imageView}
-              onPress={() => redirectToSearchResults(author.name)}
-            >
-              <Image
-                source={author.image}
-                style={stylePesquisa.image}
-              />
-              <Text style={stylePesquisa.imageText}>{author.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </ScrollView>
+        <Text style={stylePesquisa.titleText}>Autores</Text>
+        <ScrollView style={styleBiblioteca.topicContainer}>
+          <View style={stylePesquisa.imgsContainer}>
+            {authors.map((author, index) => (
+              <TouchableOpacity
+                key={index}
+                style={stylePesquisa.imageView}
+                onPress={() => redirectToSearchResults(author.name)}
+              >
+                <Image source={author.image} style={stylePesquisa.image} />
+                <Text style={stylePesquisa.imageText}>{author.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+      </View>
     </ScrollView>
   );
 
@@ -157,9 +176,12 @@ const Biblioteca = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        <TouchableOpacity onPress={() => setFilterModalVisible(true)}>
+        <TouchableOpacity
+          style={styleBiblioteca.searchFilter}
+          onPress={() => setFilterModalVisible(true)}
+        >
           <Image
-            style={styleBiblioteca.searchFilter}
+            style={styleBiblioteca.filterImg}
             source={require("../assets/img/filter.svg")}
           />
         </TouchableOpacity>
@@ -196,7 +218,11 @@ const Biblioteca = ({ navigation }) => {
                 style={styles.book}
               >
                 <Image
-                  source={{ uri: book.volumeInfo.imageLinks?.thumbnail || require("../assets/img/no_photo.png") }}
+                  source={{
+                    uri:
+                      book.volumeInfo.imageLinks?.thumbnail ||
+                      require("../assets/img/no_photo.png"),
+                  }}
                   style={styles.bookImg}
                 />
               </TouchableOpacity>

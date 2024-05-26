@@ -1,17 +1,23 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, CheckBox, Modal as RNModal } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  CheckBox,
+  Modal as RNModal,
+} from "react-native";
 import styles from "../assets/styles/base";
 import styleModal from "../assets/styles/modal";
 
 // Mapa de tradução de português para inglês, o usuário lê em portugues e passamos ingles pra API
 const translationMap = {
-  "Ficção": "Fiction",
+  Ficção: "Fiction",
   "Não-Ficção": "Non-Fiction",
-  "Romance": "Romance",
-  "Mistério": "Mystery",
-  "Fantasia": "Fantasy",
-  "eBook": "eBook",
-  "Audiobook": "Audiobook",
+  Romance: "Romance",
+  Mistério: "Mystery",
+  Fantasia: "Fantasy",
+  eBook: "eBook",
+  Audiobook: "Audiobook",
   "Capa Dura": "Hardcover",
   "Capa Mole": "Paperback",
 };
@@ -31,7 +37,9 @@ const FiltroModal = ({ isVisible, onClose, onApply }) => {
 
   const handleFormatChange = (format) => {
     setSelectedFormats((prev) =>
-      prev.includes(format) ? prev.filter((f) => f !== format) : [...prev, format]
+      prev.includes(format)
+        ? prev.filter((f) => f !== format)
+        : [...prev, format]
     );
   };
 
@@ -77,12 +85,17 @@ const FiltroModal = ({ isVisible, onClose, onApply }) => {
             </View>
           ))}
 
-          <TouchableOpacity onPress={applyFilters} style={styleModal.applyButton}>
-            <Text style={styleModal.applyButtonText}>Aplicar Filtros</Text>
+          <TouchableOpacity
+            onPress={applyFilters}
+            style={[styles.button, styleModal.applyButton]}
+          >
+            <Text style={[styles.buttonText, styleModal.applyButtonText]}>
+              Aplicar Filtros
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={onClose} style={styleModal.closeButton}>
-            <Text style={styleModal.closeButtonText}>Fechar</Text>
+            <Text style={styleModal.closeButtonText}>X</Text>
           </TouchableOpacity>
         </View>
       </View>

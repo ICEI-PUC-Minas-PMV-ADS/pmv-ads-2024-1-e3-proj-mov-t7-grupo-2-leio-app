@@ -17,6 +17,9 @@ const stylePerfil = StyleSheet.create({
     justifyContent: "center",
     gap: 24,
   },
+  photo: {
+    height: "100%",
+  },
 });
 
 export default stylePerfil;

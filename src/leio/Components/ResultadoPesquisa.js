@@ -117,7 +117,7 @@ const ResultadoPesquisa = ({ navigation, route }) => {
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => console.log("Favorite")}>
                       <Image
-                        source={require("../assets/img/favorite.svg")}
+                        source={require("../assets/img/favorite_full.svg")}
                         style={styleResPesquisa.icon}
                       />
                     </TouchableOpacity>

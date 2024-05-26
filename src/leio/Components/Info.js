@@ -8,7 +8,7 @@ import Modal from "./Modal";
 const Info = ({ navigation, route }) => {
   const [book, setBook] = useState(null);
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
-
+  const [isFavorite, setIsFavorite] = useState(false);
   const { bookId } = route.params;
 
   useEffect(() => {
@@ -36,7 +36,6 @@ const Info = ({ navigation, route }) => {
 
   const removeHtmlTags = (description) => {
     if (!description) return "";
-
     // Expressão regular para remover as tags HTML
     return description.replace(/<[^>]*>?/gm, "");
   };
@@ -61,6 +60,10 @@ const Info = ({ navigation, route }) => {
         ))}
       </View>
     );
+  };
+
+  const handleIsFavorite = () => {
+    setIsFavorite(!isFavorite);
   };
 
   if (!book || !book.volumeInfo) {
@@ -102,15 +105,18 @@ const Info = ({ navigation, route }) => {
           />
         )}
         <View style={styleInfo.btnsContainer}>
-          <TouchableOpacity
-            style={styleInfo.btn}
-            onPress={openModal}
-          >
+          <TouchableOpacity style={styleInfo.btn} onPress={openModal}>
             <Image source={require("../assets/img/save.svg")} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styleInfo.btn}>
-            <Image source={require("../assets/img/favorite.svg")} />
+          <TouchableOpacity onPress={handleIsFavorite} style={styleInfo.btn}>
+            <Image
+              source={
+                isFavorite
+                  ? require("../assets/img/favorite_full.svg")
+                  : require("../assets/img/favorite_empty.svg")
+              }
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -143,10 +149,7 @@ const Info = ({ navigation, route }) => {
 
       <Menu navigation={navigation} />
 
-      <Modal
-        isVisible={isFilterModalVisible}
-        onClose={closeModal}
-      />
+      <Modal isVisible={isFilterModalVisible} onClose={closeModal} />
     </View>
   );
 };
