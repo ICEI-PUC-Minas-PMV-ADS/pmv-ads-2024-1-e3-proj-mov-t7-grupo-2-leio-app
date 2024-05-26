@@ -99,7 +99,7 @@ const Cadastro = () => {
       setSuccess("Usuário criado com sucesso!");
 
       setTimeout(() => {
-        redirectHome(); // Redireciona para a home após alguns segundos para dar tempo do usuário ler a mensagem
+        redirectLogin(); // Redireciona para a login após alguns segundos para dar tempo do usuário ler a mensagem
       }, 2000);
     } catch (error) {
       let errorMessage =

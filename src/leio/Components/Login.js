@@ -86,7 +86,7 @@ const Login = () => {
 
       setTimeout(() => {
         redirectHome(); // Passa o usuário para a função de redirecionamento
-      }, 1000);
+      }, 2000);
     } catch (error) {
       let errorMessage =
         "Ocorreu um erro ao efetuar login. Por favor, tente novamente.";

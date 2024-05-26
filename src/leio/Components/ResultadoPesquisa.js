@@ -10,15 +10,17 @@ import {
 import styles from "../assets/styles/base";
 import resultadoPesquisa from "../assets/styles/resultadoPesquisa";
 import Menu from "./Menu";
+import styleBiblioteca from "../assets/styles/biblioteca";
 
-const ResultadoPesquisa = () => {
+const ResultadoPesquisa = ({ route }) => {
+  const { searchTerm } = route.params;
   const [resultados, setResultados] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchQuery, setSearchQuery] = useState(searchTerm);
 
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`
+        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`
       );
       const data = await response.json();
       setResultados(data.items || []);
@@ -27,29 +29,21 @@ const ResultadoPesquisa = () => {
     }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, [searchQuery]);
+
   return (
     <View style={[styles.container, { justifyContent: "center" }]}>
       <View style={{ flex: 1, padding: 20 }}>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            borderColor: "gray",
-            marginBottom: 20,
-            paddingHorizontal: 10,
-          }}
-        >
+
+        <View style={styles.inputContainer}>
+
         <TextInput
-            style={{ 
-              height: 40, 
-              backgroundColor: 'white', 
-              borderRadius: 16, 
-              borderColor: 'gray', 
-              paddingHorizontal: 10 
-            }}
+            style={styles.input}
             placeholder="Digite sua pesquisa aqui"
-            value={searchTerm}
-            onChangeText={(text) => setSearchTerm(text)}
+            value={searchQuery}
+            onChangeText={(text) => setSearchQuery(text)}
           />
           <TouchableOpacity onPress={fetchData}>
             <Image
@@ -57,13 +51,8 @@ const ResultadoPesquisa = () => {
               style={{ width: 20, height: 20, marginLeft: 10 }}
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => console.log("Research Two")}>
-            <Image
-              source={require("../assets/img/filter.svg")}
-              style={{ width: 20, height: 20, marginLeft: 10 }}
-            />
-          </TouchableOpacity>
         </View>
+
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,

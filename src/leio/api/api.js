@@ -3,7 +3,7 @@ export const fetchBooks = async (query, maxResults, orderBy) => {
     if (!query || !maxResults || !orderBy) {
       throw new Error('Missing required parameters');
     }
-    
+
     const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=${maxResults}&orderBy=${orderBy}`;
     console.log('Fetching books from URL:', url);
 
