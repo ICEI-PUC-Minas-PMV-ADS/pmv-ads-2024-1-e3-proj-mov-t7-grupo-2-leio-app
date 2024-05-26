@@ -7,9 +7,8 @@ const styleHome = StyleSheet.create({
     justifyContent: "space-between",
     gap: 16,
     color: "#8872DE",
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 700,
-    fontFamily: "Dongle",
   },
   body: {
     width: "100%",

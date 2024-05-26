@@ -26,14 +26,10 @@ const Cadastro = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const navigation = useNavigation(); // hook de navegação
+  const navigation = useNavigation();
 
   const redirectLogin = () => {
-    navigation.navigate("Login"); // navegar para a tela desejada
-  };
-
-  const redirectHome = () => {
-    navigation.navigate("Home"); // navegar para a tela desejada
+    navigation.navigate("Login");
   };
 
   const selecionarFoto = async () => {
@@ -113,10 +109,8 @@ const Cadastro = () => {
 
       else if (error.code === "auth/invalid-email") {
         errorMessage = "O email não é válido.";
-      }
-
-      else if (error.code === "auth/weak-password") {
-        errorMessage = "A senha é muito fraca.";
+      } else if (error.code === "auth/weak-password") {
+        errorMessage = "A senha precisa ter no mínimo 6 caracteres.";
       }
 
       console.error("Erro ao cadastrar usuário:", error);
@@ -129,22 +123,19 @@ const Cadastro = () => {
 
   return (
     <View style={[styles.container, { justifyContent: "center" }]}>
-      <View style={styleCadastro.selectPhoto}>
-        <Image
-          source={
-            foto
-              ? { uri: foto }
-              : require("../assets/img/upload_photo_camera.svg")
-          }
-          style={styleCadastro.photo}
-          aria-label="Foto do usuário"
-        />
-      </View>
-
       <Pressable onPress={selecionarFoto}>
-        <View>
-          <Text>Selecione uma foto</Text>
+        <View style={styleCadastro.selectPhoto}>
+          <Image
+            source={
+              foto
+                ? { uri: foto }
+                : require("../assets/img/upload_photo_camera.svg")
+            }
+            style={styleCadastro.photo}
+            aria-label="Foto do usuário"
+          />
         </View>
+        <Text style={styleCadastro.selectPhotoText}>Selecione uma foto</Text>
       </Pressable>
 
       <View style={styles.inputContainer}>

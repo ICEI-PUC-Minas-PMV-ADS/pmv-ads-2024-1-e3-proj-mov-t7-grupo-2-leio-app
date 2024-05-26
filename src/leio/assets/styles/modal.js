@@ -1,25 +1,31 @@
 import { StyleSheet } from "react-native";
 
 const styleModal = StyleSheet.create({
-    container: {
+    modalBackground: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 16,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Cor escura semi-transparente para destacar o modal
+        justifyContent: 'center', // Centraliza verticalmente
+        alignItems: 'center', // Centraliza horizontalmente
+    },
+    container: {
         backgroundColor: '#fff',
+        padding: 20,
+        borderRadius: 10,
+        width: '80%', // Largura do modal
+        maxWidth: 300, // Largura máxima do modal
     },
     headerText: {
         fontSize: 20,
-        marginBottom: 16,
+        marginBottom: 10,
+        textAlign: 'center',
     },
     optionContainer: {
-        width: '100%',
-        marginBottom: 16,
+        marginBottom: 10,
     },
     option: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: 8,
+        marginBottom: 5,
     },
     icon: {
         width: 24,
@@ -32,7 +38,7 @@ const styleModal = StyleSheet.create({
     ratingContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom: 16,
+        marginBottom: 10,
     },
     starIcon: {
         width: 24,

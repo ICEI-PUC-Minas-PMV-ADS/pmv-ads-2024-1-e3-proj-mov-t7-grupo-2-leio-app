@@ -13,6 +13,9 @@ const styleCadastro = StyleSheet.create({
     height: "100%",
     objectFit: "cover",
   },
+  selectPhotoText: {
+    textAlign: "center",
+  },
   buttonContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
