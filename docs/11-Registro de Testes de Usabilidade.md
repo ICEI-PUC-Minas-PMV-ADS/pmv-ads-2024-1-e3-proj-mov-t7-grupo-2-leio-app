@@ -70,11 +70,11 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ### Métricas:
 
-- Taxa de Sucesso: Não aplicável devido à impossibilidade de realizar a pesquisa.
-- Tempo Médio de Conclusão: Não aplicável devido à impossibilidade realizar a pesquisa.
-- Erros Cometidos: Os participantes relataram tentativas malsucedidas em fazer uma pesquisa devido a falhas no funcionamento do aplicativo.
-- Facilidade de Uso: Não aplicável devido à impossibilidade de não ser possível redirecionar para o resultado da pesquisa.
-- Satisfação: Não aplicável devido à impossibilidade de avaliar a satisfação dos participantes.
+- Taxa de Sucesso: A pesquisa foi realizada com sucesso.
+- Tempo Médio de Conclusão: O tempo médio para concluir a pesquisa foi satisfatório e dentro do esperado.
+- Erros Cometidos: Não foram relatados erros significativos durante a realização da pesquisa.
+- Facilidade de Uso: Os participantes consideraram o aplicativo fácil de usar.
+- Satisfação: Os participantes ficaram muito satisfeitos com os resultados.
 
 ## Tela da Estante/Biblioteca
 
