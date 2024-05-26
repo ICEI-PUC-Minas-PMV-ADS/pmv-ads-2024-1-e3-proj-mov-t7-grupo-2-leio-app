@@ -6,7 +6,6 @@ import styleInfo from "../assets/styles/info";
 
 const Info = ({ navigation, route }) => {
   const [book, setBook] = useState(null);
-  const [rating, setRating] = useState(0); // Estado para armazenar a avaliação
 
   const { bookId } = route.params;
 
@@ -40,16 +39,26 @@ const Info = ({ navigation, route }) => {
     return description.replace(/<[^>]*>?/gm, "");
   };
 
-  const handleStarClick = (index) => {
-    setRating(index === rating ? 0 : index); // Altera a avaliação se clicar na mesma estrela duas vezes
-  };
+  const renderAverageRatingStars = (averageRating) => {
+    if (averageRating === undefined) return null;
 
-  const renderStarIcon = (index) => {
-    if (index <= rating) {
-      return require("../assets/img/star_full.svg"); // Se a estrela estiver selecionada
-    } else {
-      return require("../assets/img/star_empty.svg"); // Se a estrela não estiver selecionada
-    }
+    const starIcons = [1, 2, 3, 4, 5].map((index) => {
+      if (averageRating >= index) {
+        return require("../assets/img/star_full.svg");
+      } else if (averageRating >= index - 0.5) {
+        return require("../assets/img/star_half.svg");
+      } else {
+        return require("../assets/img/star_empty.svg");
+      }
+    });
+
+    return (
+      <View style={styleInfo.ratingContainer}>
+        {starIcons.map((icon, index) => (
+          <Image key={index} source={icon} style={styleInfo.starIcon} />
+        ))}
+      </View>
+    );
   };
 
   if (!book || !book.volumeInfo) {
@@ -60,8 +69,12 @@ const Info = ({ navigation, route }) => {
     );
   }
 
-  const openExternalLink = () => {
+  const openExternalLinkPS = () => {
     Linking.openURL(book.volumeInfo.infoLink);
+  };
+
+  const openExternalLink = () => {
+    Linking.openURL(book.volumeInfo.previewLink);
   };
 
   return (
@@ -91,32 +104,23 @@ const Info = ({ navigation, route }) => {
         {book.volumeInfo.authors?.join(", ")}
       </Text>
 
-      <View style={styleInfo.ratingContainer}>
-        {[1, 2, 3, 4, 5].map((index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => handleStarClick(index)} // Chama a função ao clicar em uma estrela
-          >
-            <Image
-              source={renderStarIcon(index)} // Renderiza o ícone da estrela com base no estado de avaliação
-              style={styleInfo.starIcon}
-            />
-          </TouchableOpacity>
-        ))}
-      </View>
+      {renderAverageRatingStars(book.volumeInfo.averageRating)}
 
       <Text style={styleInfo.summary}>{book.volumeInfo.description}</Text>
 
       <View style={styleInfo.buttonContainer}>
         <TouchableOpacity
           style={[styles.button, styleInfo.lerPreviaButton]}
-          onPress={openExternalLink}
+          onPress={openExternalLinkPS}
         >
           <Text style={styles.buttonText}>Comprar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.button, styleInfo.buscarEbookButton]}>
-          <Text style={styles.buttonText}>Download</Text>
+        <TouchableOpacity
+          style={[styles.button, styleInfo.buscarEbookButton]}
+          onPress={openExternalLink}
+        >
+          <Text style={styles.buttonText}>Ler prévia</Text>
         </TouchableOpacity>
       </View>
 
