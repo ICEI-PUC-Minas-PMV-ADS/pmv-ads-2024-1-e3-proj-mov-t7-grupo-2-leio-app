@@ -6,6 +6,8 @@ import styleInfo from "../assets/styles/info";
 
 const Info = ({ navigation, route }) => {
   const [book, setBook] = useState(null);
+  const [rating, setRating] = useState(0); // Estado para armazenar a avaliação
+
   const { bookId } = route.params;
 
   useEffect(() => {
@@ -36,6 +38,18 @@ const Info = ({ navigation, route }) => {
 
     // Expressão regular para remover as tags HTML
     return description.replace(/<[^>]*>?/gm, "");
+  };
+
+  const handleStarClick = (index) => {
+    setRating(index === rating ? 0 : index); // Altera a avaliação se clicar na mesma estrela duas vezes
+  };
+
+  const renderStarIcon = (index) => {
+    if (index <= rating) {
+      return require("../assets/img/star.svg"); // Se a estrela estiver selecionada
+    } else {
+      return require("../assets/img/star1.svg"); // Se a estrela não estiver selecionada
+    }
   };
 
   if (!book || !book.volumeInfo) {
@@ -81,10 +95,10 @@ const Info = ({ navigation, route }) => {
         {[1, 2, 3, 4, 5].map((index) => (
           <TouchableOpacity
             key={index}
-            onPress={() => console.log(`Pressed star ${index}`)}
+            onPress={() => handleStarClick(index)} // Chama a função ao clicar em uma estrela
           >
             <Image
-              source={require("../assets/img/star.svg")}
+              source={renderStarIcon(index)} // Renderiza o ícone da estrela com base no estado de avaliação
               style={styleInfo.starIcon}
             />
           </TouchableOpacity>
