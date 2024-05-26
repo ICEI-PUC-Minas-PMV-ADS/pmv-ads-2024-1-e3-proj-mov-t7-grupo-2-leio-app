@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db, storage, storage } from "../db/firebaseConfig";
+import * as ImagePicker from "expo-image-picker";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import stylePerfil from "../assets/styles/perfil";
@@ -11,7 +16,15 @@ const Perfil = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const navigation = useNavigation(); // hook de navegação
+
+  const redirectHome = () => {
+    navigation.navigate("Home"); // navegar para a tela desejada
+  };
 
   const redirectLogin = () => {
     navigation.navigate("Login"); // navegar para a tela desejada
@@ -21,10 +34,37 @@ const Perfil = () => {
     navigation.navigate("Perfil"); // navegar para a tela desejada
   };
 
-  const handleSelecionarFoto = () => {
-    // Lógica para selecionar uma foto
+  const selecionarFoto = async () => {
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (status !== "granted") {
+      alert("Precisamos da permissão para acessar a galeria de fotos!");
+      return;
+    }
+
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [1, 1], // Mantendo a proporção 1:1
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setFoto(result.assets[0].uri); // Armazenando o URI da imagem
+    }
   };
 
+  const uploadImageAsync = async (uri) => {
+    const response = await fetch(uri);
+    const blob = await response.blob();
+    const storageRef = ref(storage, `profilePictures/${Date.now()}`);
+    await uploadBytes(storageRef, blob);
+
+    // Obtenha o URL de download
+    const downloadURL = await getDownloadURL(storageRef);
+    return downloadURL;
+  };
+
+  
   const handleCadastrar = async () => {
     //Lógica para o cadastro do usuário
     try {
@@ -42,9 +82,12 @@ const Perfil = () => {
   return (
     <View style={[styles.container, { justifyContent: "center" }]}>
       <View style={stylePerfil.selectPhoto}>
-        <Image source={require("../assets/img/Maria-perfil.png")} />
+        <Image source={
+          foto
+          ? { uri: foto }
+          : require("../assets/img/Maria-perfil.png")} />
       </View>
-      <TouchableOpacity onPress={handleSelecionarFoto}>
+      <TouchableOpacity onPress={selecionarFoto}>
         <View>
           <Text>Substituir foto</Text>
         </View>
@@ -85,16 +128,15 @@ const Perfil = () => {
         <TouchableOpacity
           style={[styles.button, { backgroundColor: "#F7C31F" }]}
         >
-          <Text onPress={redirectLogin} style={styles.buttonText}>
+          <Text onPress={redirectHome} style={styles.buttonText}>
             Cancelar
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[styles.button, { backgroundColor: "#8872DE" }]}
-          onPress={handleCadastrar}
         >
-          <Text onPress={redirectLogin} style={styles.buttonText}>
+          <Text onPress={redirectHome} style={styles.buttonText}>
             Salvar alterações
           </Text>
         </TouchableOpacity>
@@ -103,7 +145,6 @@ const Perfil = () => {
       <View>
         <TouchableOpacity
           style={[styles.button, { backgroundColor: "#FC6681" }]}
-          onPress={handleCadastrar}
         >
           <Text onPress={redirectLogin} style={styles.buttonText}>
             Excluir conta
