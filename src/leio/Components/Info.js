@@ -80,10 +80,17 @@ const Info = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <View style={styleInfo.book}>
-        <Image
-          style={styles.bookImg}
-          source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-        />
+        {book.volumeInfo.imageLinks?.thumbnail ? (
+          <Image
+            style={styles.bookImg}
+            source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+          />
+        ) : (
+          <Image
+            style={styles.bookImg}
+            source={require("../assets/img/no_photo.png")}
+          />
+        )}
         <View style={styleInfo.btnsContainer}>
           <TouchableOpacity
             style={styleInfo.btn}

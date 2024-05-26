@@ -87,10 +87,17 @@ const Home = ({ navigation }) => {
                 key={book.id}
                 style={styles.book}
               >
-                <Image
-                  style={styles.bookImg}
-                  source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                />
+                {book.volumeInfo.imageLinks?.thumbnail ? (
+                  <Image
+                    style={styles.bookImg}
+                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                  />
+                ) : (
+                  <Image
+                    style={styles.bookImg}
+                    source={require("../assets/img/no_photo.png")}
+                  />
+                )}
               </TouchableOpacity>
             ))}
           </View>

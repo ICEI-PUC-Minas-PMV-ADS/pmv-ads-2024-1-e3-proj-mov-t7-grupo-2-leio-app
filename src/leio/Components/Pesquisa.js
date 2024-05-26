@@ -252,10 +252,17 @@ const Pesquisa = ({ navigation }) => {
                 key={book.id}
                 style={styles.book}
               >
-                <Image
-                  source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                  style={styles.bookImg}
-                />
+                {book.volumeInfo.imageLinks?.thumbnail ? (
+                  <Image
+                    style={styles.bookImg}
+                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                  />
+                ) : (
+                  <Image
+                    style={styles.bookImg}
+                    source={require("../assets/img/no_photo.png")}
+                  />
+                )}
               </TouchableOpacity>
             </View>
           ))}

@@ -2,8 +2,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-
-import { UserProvider } from './Components/UserContext'; // Certifique-se de ajustar o caminho conforme necessário
+import { UserProvider } from "./Components/UserContext";
 
 //Importações das telas
 import Login from "./Components/Login";
@@ -21,11 +20,8 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <UserProvider>
-
       <NavigationContainer>
-
         <Stack.Navigator>
-
           <Stack.Screen
             name="Login"
             component={Login}
@@ -47,27 +43,26 @@ export default function App() {
             options={{
               title: "",
               headerTintColor: "#8872DE",
-              headerBackTitle: "Voltar",
               headerStyle: { backgroundColor: "#F4F3FF" },
             }}
           />
-          {<Stack.Screen
-            name="Pesquisa"
-            component={Pesquisa}
-            options={{
-              title: "",
-              headerTintColor: "#8872DE",
-              headerBackTitle: "Voltar",
-              headerStyle: { backgroundColor: "#F4F3FF" },
-            }}
-          />}
+          {
+            <Stack.Screen
+              name="Pesquisa"
+              component={Pesquisa}
+              options={{
+                title: "",
+                headerTintColor: "#8872DE",
+                headerStyle: { backgroundColor: "#F4F3FF" },
+              }}
+            />
+          }
           <Stack.Screen
             name="ResultadoPesquisa"
             component={ResultadoPesquisa}
             options={{
               title: "",
               headerTintColor: "#8872DE",
-              headerBackTitle: "Voltar",
               headerStyle: { backgroundColor: "#F4F3FF" },
             }}
           />
@@ -77,29 +72,21 @@ export default function App() {
             options={{
               title: "",
               headerTintColor: "#8872DE",
-              headerBackTitle: "Voltar",
               headerStyle: { backgroundColor: "#F4F3FF" },
             }}
           />
+          <Stack.Screen name="Modal" component={Modal} />
           <Stack.Screen
             name="Biblioteca"
             component={Biblioteca}
             options={{
               title: "",
               headerTintColor: "#8872DE",
-              headerBackTitle: "Voltar",
               headerStyle: { backgroundColor: "#F4F3FF" },
             }}
           />
-          <Stack.Screen
-            name="Modal"
-            component={Modal} />
-
         </Stack.Navigator>
-
       </NavigationContainer>
-
     </UserProvider>
-
   );
 }
