@@ -30,7 +30,7 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 
 |    Caso de Teste    |                                           CT-05 - Buscar livros                                           |
 | :-----------------: | :-------------------------------------------------------------------------------------------------------: |
-|       Imagem        |                                  <img src = "./img/Tela-Pesquisa.jpg"/>                                   |
+|       Imagem        |                                  <img src = "./img/Tela-pesquisa-resultado.jpg"/>                                   |
 | Requisito Associado | RF - 02 O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor. |
 |      Avaliação      |                                   Pesquisa realizada com sucesso. ✅                                    |
 
