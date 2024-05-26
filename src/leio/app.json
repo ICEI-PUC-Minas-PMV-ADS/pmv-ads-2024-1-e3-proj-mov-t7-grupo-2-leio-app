@@ -6,7 +6,6 @@
     "orientation": "portrait",
     "icon": "./assets/favicon.png",
     "userInterfaceStyle": "light",
-    "assets": ["./assets/fonts"],
     "splash": {
       "image": "./assets/favicon.png",
       "resizeMode": "contain",
