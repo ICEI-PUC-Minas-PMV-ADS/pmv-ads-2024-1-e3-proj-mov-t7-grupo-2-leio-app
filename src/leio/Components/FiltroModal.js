@@ -1,15 +1,26 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, CheckBox } from "react-native";
-import Modal from "react-native-modal";
+import { View, Text, TouchableOpacity, CheckBox, Modal as RNModal } from "react-native";
 import styles from "../assets/styles/base";
+import styleModal from "../assets/styles/modal";
+
+// Mapa de tradução de português para inglês, o usuário lê em portugues e passamos ingles pra API
+const translationMap = {
+  "Ficção": "Fiction",
+  "Não-Ficção": "Non-Fiction",
+  "Romance": "Romance",
+  "Mistério": "Mystery",
+  "Fantasia": "Fantasy",
+  "eBook": "eBook",
+  "Audiobook": "Audiobook",
+  "Capa Dura": "Hardcover",
+  "Capa Mole": "Paperback",
+};
 
 const FiltroModal = ({ isVisible, onClose, onApply }) => {
   const [selectedGenres, setSelectedGenres] = useState([]);
-  const [selectedRating, setSelectedRating] = useState(null);
-  const [selectedFormat, setSelectedFormat] = useState(null);
+  const [selectedFormats, setSelectedFormats] = useState([]);
 
   const genres = ["Ficção", "Não-Ficção", "Romance", "Mistério", "Fantasia"];
-  const ratings = [5, 4, 3, 2, 1];
   const formats = ["eBook", "Audiobook", "Capa Dura", "Capa Mole"];
 
   const handleGenreChange = (genre) => {
@@ -18,50 +29,64 @@ const FiltroModal = ({ isVisible, onClose, onApply }) => {
     );
   };
 
+  const handleFormatChange = (format) => {
+    setSelectedFormats((prev) =>
+      prev.includes(format) ? prev.filter((f) => f !== format) : [...prev, format]
+    );
+  };
+
   const applyFilters = () => {
-    onApply({ genres: selectedGenres, rating: selectedRating, format: selectedFormat });
+    const translatedFilters = {
+      genres: selectedGenres.map((genre) => translationMap[genre]),
+      formats: selectedFormats.map((format) => translationMap[format]),
+    };
+    onApply(translatedFilters);
     onClose();
   };
 
   return (
-    <Modal isVisible={isVisible} onBackdropPress={onClose}>
-      <View style={styles.modalContainer}>
-        <Text style={styles.modalTitle}>Filtros</Text>
-        
-        <Text style={styles.modalSubtitle}>Gêneros</Text>
-        {genres.map((genre) => (
-          <View key={genre} style={styles.checkboxContainer}>
-            <CheckBox
-              value={selectedGenres.includes(genre)}
-              onValueChange={() => handleGenreChange(genre)}
-            />
-            <Text style={styles.checkboxLabel}>{genre}</Text>
-          </View>
-        ))}
+    <RNModal
+      animationType="none"
+      transparent={true}
+      visible={isVisible}
+      onRequestClose={onClose}
+    >
+      <View style={styleModal.modalBackground}>
+        <View style={styleModal.container}>
+          <Text style={styleModal.headerText}>Filtros</Text>
 
-        <Text style={styles.modalSubtitle}>Avaliação</Text>
-        {ratings.map((rating) => (
-          <TouchableOpacity key={rating} onPress={() => setSelectedRating(rating)}>
-            <Text style={selectedRating === rating ? styles.selected : styles.unselected}>
-              {rating} Estrelas
-            </Text>
+          <Text style={styleModal.modalSubtitle}>Gêneros</Text>
+          {genres.map((genre) => (
+            <View key={genre} style={styleModal.checkboxContainer}>
+              <CheckBox
+                value={selectedGenres.includes(genre)}
+                onValueChange={() => handleGenreChange(genre)}
+              />
+              <Text style={styleModal.checkboxLabel}>{genre}</Text>
+            </View>
+          ))}
+
+          <Text style={styleModal.modalSubtitle}>Formatos</Text>
+          {formats.map((format) => (
+            <View key={format} style={styleModal.checkboxContainer}>
+              <CheckBox
+                value={selectedFormats.includes(format)}
+                onValueChange={() => handleFormatChange(format)}
+              />
+              <Text style={styleModal.checkboxLabel}>{format}</Text>
+            </View>
+          ))}
+
+          <TouchableOpacity onPress={applyFilters} style={styleModal.applyButton}>
+            <Text style={styleModal.applyButtonText}>Aplicar Filtros</Text>
           </TouchableOpacity>
-        ))}
 
-        <Text style={styles.modalSubtitle}>Formato</Text>
-        {formats.map((format) => (
-          <TouchableOpacity key={format} onPress={() => setSelectedFormat(format)}>
-            <Text style={selectedFormat === format ? styles.selected : styles.unselected}>
-              {format}
-            </Text>
+          <TouchableOpacity onPress={onClose} style={styleModal.closeButton}>
+            <Text style={styleModal.closeButtonText}>Fechar</Text>
           </TouchableOpacity>
-        ))}
-
-        <TouchableOpacity onPress={applyFilters} style={styles.applyButton}>
-          <Text style={styles.applyButtonText}>Aplicar Filtros</Text>
-        </TouchableOpacity>
+        </View>
       </View>
-    </Modal>
+    </RNModal>
   );
 };
 

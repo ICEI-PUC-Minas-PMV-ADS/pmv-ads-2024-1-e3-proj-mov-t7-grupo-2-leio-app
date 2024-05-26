@@ -17,7 +17,7 @@ const Modal = ({ navigation }) => {
     const renderStars = () => {
         const starIcons = [];
         for (let i = 1; i <= 5; i++) {
-            const iconSource = i <= rating ? require('../assets/img/star.svg') : require('../assets/img/star1.svg');
+            const iconSource = i <= rating ? require('../assets/img/star_full.svg') : require('../assets/img/star_empty.svg');
             starIcons.push(
                 <TouchableOpacity key={i} onPress={() => handleStarPress(i)}>
                     <Image source={iconSource} style={styleModal.starIcon} />

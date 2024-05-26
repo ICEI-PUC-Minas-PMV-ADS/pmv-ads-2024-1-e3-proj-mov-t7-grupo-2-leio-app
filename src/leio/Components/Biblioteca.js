@@ -3,7 +3,7 @@ import { View, Text, TextInput, ScrollView, TouchableOpacity, Image } from "reac
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleBiblioteca from "../assets/styles/biblioteca";
-import { fetchBooks } from "../api/api";
+import { fetchBooks, fetchFilteredBooks } from "../api/api";
 import FiltroModal from "./FiltroModal";
 import stylePesquisa from "../assets/styles/pesquisa";
 
@@ -25,39 +25,41 @@ const Biblioteca = ({ navigation }) => {
     navigation.navigate("ResultadoPesquisa", { searchTerm });
   };
 
-  const loadBooks = async (searchQuery, tab) => {
+  const loadBooks = async (searchQuery, tab, appliedFilters = {}) => {
     try {
-      const books = await fetchBooks(searchQuery || "all", 36, tab === "Biblioteca" ? "newest" : "relevance");
-      const filtered = tab === "Biblioteca" && searchQuery
-        ? books.filter(book => book.accessInfo.pdf?.isAvailable)
-        : books;
-      setBooks(filtered);
-      setFilteredBooks(filtered);
+      const books = appliedFilters.genres || appliedFilters.formats
+        ? await fetchFilteredBooks(searchQuery || "i", 36, tab === "Biblioteca" ? "newest" : "relevance", appliedFilters)
+        : await fetchBooks(searchQuery || "i", 36, tab === "Biblioteca" ? "newest" : "relevance");
+
+      const filteredBooks = books.filter(book => book.accessInfo.epub?.isAvailable);
+
+      setBooks(filteredBooks);
+      setFilteredBooks(filteredBooks);
 
       const categorySet = new Set();
       const authorSet = new Set();
       const extractedCategories = [];
       const extractedAuthors = [];
 
-      filtered.forEach(book => {
+      filteredBooks.forEach((book) => {
         if (book.volumeInfo.categories) {
-          book.volumeInfo.categories.forEach(category => {
+          book.volumeInfo.categories.forEach((category) => {
             if (!categorySet.has(category)) {
               categorySet.add(category);
               extractedCategories.push({
                 name: category,
-                image: book.volumeInfo.imageLinks?.thumbnail || 'https://example.com/default-category-image.jpg'
+                image: book.volumeInfo.imageLinks?.thumbnail || require("../assets/img/no_photo.png"),
               });
             }
           });
         }
         if (book.volumeInfo.authors) {
-          book.volumeInfo.authors.forEach(author => {
+          book.volumeInfo.authors.forEach((author) => {
             if (!authorSet.has(author)) {
               authorSet.add(author);
               extractedAuthors.push({
                 name: author,
-                image: book.volumeInfo.imageLinks?.thumbnail || 'https://example.com/default-author-image.jpg'
+                image: book.volumeInfo.imageLinks?.thumbnail || require("../assets/img/no_photo.png"),
               });
             }
           });
@@ -68,36 +70,18 @@ const Biblioteca = ({ navigation }) => {
       setAuthors(extractedAuthors);
     } catch (error) {
       console.error("Error fetching books:", error);
+      setBooks([]);
+      setFilteredBooks([]);
     }
   };
 
   useEffect(() => {
     if (activeTab === "Biblioteca" && !query) {
-      loadBooks("all", activeTab);
+      loadBooks("i", activeTab, filters);
     } else {
-      loadBooks(query, activeTab);
+      loadBooks(query, activeTab, filters);
     }
-  }, [activeTab, query]);
-
-  const applyFilters = (books, filters) => {
-    let filtered = books;
-
-    if (filters.genres && filters.genres.length > 0) {
-      filtered = filtered.filter(book =>
-        filters.genres.some(genre => book.volumeInfo.categories?.includes(genre))
-      );
-    }
-
-    if (filters.rating) {
-      filtered = filtered.filter(book => book.volumeInfo.averageRating >= filters.rating);
-    }
-
-    if (filters.format) {
-      filtered = filtered.filter(book => book.volumeInfo.printType === filters.format);
-    }
-
-    return filtered;
-  };
+  }, [activeTab, query, filters]);
 
   const handleSearch = (text) => {
     setQuery(text);
@@ -106,7 +90,7 @@ const Biblioteca = ({ navigation }) => {
   const handleTabChange = (tab) => {
     setActiveTab(tab);
     if (tab === "Biblioteca") {
-      loadBooks(query || "all", tab);
+      loadBooks(query || "i", tab, filters);
     }
   };
 
@@ -122,7 +106,7 @@ const Biblioteca = ({ navigation }) => {
               onPress={() => redirectToSearchResults(category.name)}
             >
               <Image
-                source={{ uri: category.image }}
+                source={category.image}
                 style={stylePesquisa.image}
               />
               <Text style={stylePesquisa.imageText}>{category.name}</Text>
@@ -141,7 +125,7 @@ const Biblioteca = ({ navigation }) => {
               onPress={() => redirectToSearchResults(author.name)}
             >
               <Image
-                source={{ uri: author.image }}
+                source={author.image}
                 style={stylePesquisa.image}
               />
               <Text style={stylePesquisa.imageText}>{author.name}</Text>
@@ -173,9 +157,7 @@ const Biblioteca = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        <TouchableOpacity
-          onPress={() => setFilterModalVisible(true)}
-        >
+        <TouchableOpacity onPress={() => setFilterModalVisible(true)}>
           <Image
             style={styleBiblioteca.searchFilter}
             source={require("../assets/img/filter.svg")}
@@ -213,7 +195,10 @@ const Biblioteca = ({ navigation }) => {
                 key={`${book.id}-${index}`}
                 style={styles.book}
               >
-                <Image source={{ uri: book.volumeInfo.imageLinks?.thumbnail }} style={styles.bookImg} />
+                <Image
+                  source={{ uri: book.volumeInfo.imageLinks?.thumbnail || require("../assets/img/no_photo.png") }}
+                  style={styles.bookImg}
+                />
               </TouchableOpacity>
             </View>
           ))}
