@@ -88,7 +88,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 |       Passos        | 1. Acessar o Aplicativo; <br> 2. Realizar login; <br> 3. Ser redirecionado para a página inicial <br> 4. Pesquisar um livro <br> 5. Selecionar o livro <br> 6. Adicionar à estante              |
 |  Critério de Êxito  |                                                                          Livro adicionado com sucesso.                                                                                          |
 
-|  **Caso de Teste**  |                                                                                **CT-13 - Buscar PDF's gratuitos na Biblioteca                                                                   |
+|  **Caso de Teste**  |                                                                                **CT-13 - Buscar PDF's gratuitos na Biblioteca**                                                                 |
 | :-----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | 
 | Requisito Associado |                                            RF - 09 O sistema deve permitir ao usuário buscar livros com PDF's gratuitos em uma Biblioteca.                                                      |
 |  Objetivo do Teste  |                                                                Verificar se após buscar por livros na biblioteca, aparecem e são gratuitos                                                      |
