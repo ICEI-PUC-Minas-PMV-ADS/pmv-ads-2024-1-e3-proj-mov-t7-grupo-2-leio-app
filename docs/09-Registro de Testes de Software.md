@@ -8,25 +8,25 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                          <img src = "./img/Tela-Cadastro.jpg"/>                          |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                            Não foi possível criar a conta. ❌                            |
+|      Avaliação      |                            Conta criada com sucesso!                                     |
 
 |    Caso de Teste    |                                   CT-02 - Editar conta                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                           Não foi possível editar a conta. ❌                            |
+|      Avaliação      |                           Conta editada com sucesso!                                     |
 
 |    Caso de Teste    |                                 CT-03 - Visualizar conta                                 |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                         Não foi possível visualizar a conta. ❌                          |
+|      Avaliação      |                         Não foi possível visualizar a imagem do usuário. ❌              |
 
 |    Caso de Teste    |                                  CT-04 - Excluir conta                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
 |       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                           Não foi possível excluir a conta. ❌                           |
+|      Avaliação      |                           Conta excluída com sucesso!                                    |
 
 |    Caso de Teste    |                                           CT-05 - Buscar livros                                           |
 | :-----------------: | :-------------------------------------------------------------------------------------------------------: |
