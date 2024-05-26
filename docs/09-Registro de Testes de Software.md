@@ -12,19 +12,19 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 
 |    Caso de Teste    |                                   CT-02 - Editar conta                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpeg"/>                           |
+|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                           Conta editada com sucesso! ✅                                  |
 
 |    Caso de Teste    |                                 CT-03 - Visualizar conta                                 |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpeg"/>                           |
+|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                         Conta visualizada com sucesso! ✅              |
 
 |    Caso de Teste    |                                  CT-04 - Excluir conta                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpeg"/>                           |
+|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
 |      Avaliação      |                           Conta excluída com sucesso! ✅                                 |
 
