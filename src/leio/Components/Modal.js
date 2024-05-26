@@ -3,7 +3,7 @@ import { View, Text, Button, TouchableOpacity, Image, Modal as RNModal } from 'r
 import styles from "../assets/styles/base";
 import styleModal from "../assets/styles/modal";
 
-const Modal = ({ navigation }) => {
+const Modal = ({ isVisible, onClose }) => {
     const [image1, setImage1] = useState(require('../assets/img/save1-1.svg'));
     const [image2, setImage2] = useState(require('../assets/img/save2-2.svg'));
     const [image3, setImage3] = useState(require('../assets/img/save3-3.svg'));
@@ -33,7 +33,6 @@ const Modal = ({ navigation }) => {
                 ? require('../assets/img/save1.svg')
                 : require('../assets/img/save1-1.svg')
         );
-        // Desmarcar as outras imagens
         setImage2(require('../assets/img/save2-2.svg'));
         setImage3(require('../assets/img/save3-3.svg'));
         setImage4(require('../assets/img/save4-4.svg'));
@@ -45,7 +44,6 @@ const Modal = ({ navigation }) => {
                 ? require('../assets/img/save2.svg')
                 : require('../assets/img/save2-2.svg')
         );
-        // Desmarcar as outras imagens
         setImage1(require('../assets/img/save1-1.svg'));
         setImage3(require('../assets/img/save3-3.svg'));
         setImage4(require('../assets/img/save4-4.svg'));
@@ -57,7 +55,6 @@ const Modal = ({ navigation }) => {
                 ? require('../assets/img/save3.svg')
                 : require('../assets/img/save3-3.svg')
         );
-        // Desmarcar as outras imagens
         setImage1(require('../assets/img/save1-1.svg'));
         setImage2(require('../assets/img/save2-2.svg'));
         setImage4(require('../assets/img/save4-4.svg'));
@@ -69,7 +66,6 @@ const Modal = ({ navigation }) => {
                 ? require('../assets/img/save4.svg')
                 : require('../assets/img/save4-4.svg')
         );
-        // Desmarcar as outras imagens
         setImage1(require('../assets/img/save1-1.svg'));
         setImage2(require('../assets/img/save2-2.svg'));
         setImage3(require('../assets/img/save3-3.svg'));
@@ -79,7 +75,8 @@ const Modal = ({ navigation }) => {
         <RNModal
             animationType="none"
             transparent={true}
-            visible={true}
+            visible={isVisible}
+            onRequestClose={onClose}
         >
             <View style={styleModal.modalBackground}>
                 <View style={styleModal.container}>
@@ -108,10 +105,11 @@ const Modal = ({ navigation }) => {
                         {renderStars()}
                     </View>
 
-                    <Button title="Close" onPress={() => navigation.goBack()} />
+                    <Button title="Fechar" onPress={onClose} />
                 </View>
             </View>
         </RNModal>
     );
 };
+
 export default Modal;

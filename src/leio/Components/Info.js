@@ -3,9 +3,11 @@ import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleInfo from "../assets/styles/info";
+import Modal from "./Modal";
 
 const Info = ({ navigation, route }) => {
   const [book, setBook] = useState(null);
+  const [isFilterModalVisible, setFilterModalVisible] = useState(false);
 
   const { bookId } = route.params;
 
@@ -77,6 +79,14 @@ const Info = ({ navigation, route }) => {
     Linking.openURL(book.volumeInfo.previewLink);
   };
 
+  const openModal = () => {
+    setFilterModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setFilterModalVisible(false);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styleInfo.book}>
@@ -94,7 +104,7 @@ const Info = ({ navigation, route }) => {
         <View style={styleInfo.btnsContainer}>
           <TouchableOpacity
             style={styleInfo.btn}
-            onPress={() => navigation.navigate("Modal")}
+            onPress={openModal}
           >
             <Image source={require("../assets/img/save.svg")} />
           </TouchableOpacity>
@@ -132,6 +142,11 @@ const Info = ({ navigation, route }) => {
       </View>
 
       <Menu navigation={navigation} />
+
+      <Modal
+        isVisible={isFilterModalVisible}
+        onClose={closeModal}
+      />
     </View>
   );
 };
