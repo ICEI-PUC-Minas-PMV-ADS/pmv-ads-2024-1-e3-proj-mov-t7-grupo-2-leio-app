@@ -77,7 +77,10 @@ const Perfil = () => {
   return (
     <View style={[styles.container, { justifyContent: "center" }]}>
       <View style={stylePerfil.selectPhoto}>
-        <Image source={require("../assets/img/Maria-perfil.png")} />
+        <Image source={
+          foto
+          ? { uri: foto }
+          : require("../assets/img/Maria-perfil.png")} />
       </View>
       <TouchableOpacity onPress={selecionarFoto}>
         <View>
