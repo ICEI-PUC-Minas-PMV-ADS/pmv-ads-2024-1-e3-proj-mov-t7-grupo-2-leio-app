@@ -32,7 +32,7 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | :-----------------: | :-------------------------------------------------------------------------------------------------------: |
 |       Imagem        |                                  <img src = "./img/Tela-Pesquisa.jpg"/>                                   |
 | Requisito Associado | RF - 02 O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor. |
-|      Avaliação      |                                   Não foi possível fazer a pesquisa. ❌                                   |
+|      Avaliação      |                                   Pesquisa realizada com sucesso. ✅                                    |
 
 
 |    Caso de Teste    |                                           CT-11 - Entrar na conta                                                     |
