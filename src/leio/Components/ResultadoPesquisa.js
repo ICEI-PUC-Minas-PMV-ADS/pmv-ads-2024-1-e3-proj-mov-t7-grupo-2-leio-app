@@ -7,15 +7,18 @@ import {
   Image,
   TextInput,
 } from "react-native";
-import styles from "../assets/styles/base";
-import resultadoPesquisa from "../assets/styles/resultadoPesquisa";
 import Menu from "./Menu";
-import styleBiblioteca from "../assets/styles/biblioteca";
+import styles from "../assets/styles/base";
+import styleResPesquisa from "../assets/styles/resultadoPesquisa";
 
-const ResultadoPesquisa = ({ route }) => {
+const ResultadoPesquisa = ({ navigation, route }) => {
   const { searchTerm } = route.params;
   const [resultados, setResultados] = useState([]);
   const [searchQuery, setSearchQuery] = useState(searchTerm);
+
+  const redirectInfo = (bookId) => {
+    navigation.navigate("Info", { bookId });
+  };
 
   const fetchData = async () => {
     try {
@@ -33,94 +36,100 @@ const ResultadoPesquisa = ({ route }) => {
     fetchData();
   }, [searchQuery]);
 
+  const renderStars = (averageRating) => {
+    if (averageRating === undefined) return null;
+
+    const starIcons = [1, 2, 3, 4, 5].map((index) => {
+      if (averageRating >= index) {
+        return require("../assets/img/star_full.svg");
+      } else if (averageRating >= index - 0.5) {
+        return require("../assets/img/star_half.svg");
+      } else {
+        return require("../assets/img/star_empty.svg");
+      }
+    });
+
+    return (
+      <View style={styleResPesquisa.icons}>
+        {starIcons.map((icon, index) => (
+          <Image key={index} source={icon} style={styleResPesquisa.icon} />
+        ))}
+      </View>
+    );
+  };
+
   return (
-    <View style={[styles.container, { justifyContent: "center" }]}>
-      <View style={{ flex: 1, padding: 20 }}>
-
-        <View style={styles.inputContainer}>
-
+    <View style={styles.container}>
+      <View style={styles.inputContainer}>
         <TextInput
-            style={styles.input}
-            placeholder="Digite sua pesquisa aqui"
-            value={searchQuery}
-            onChangeText={(text) => setSearchQuery(text)}
+          style={styles.input}
+          placeholder="Digite sua pesquisa aqui"
+          value={searchQuery}
+          onChangeText={(text) => setSearchQuery(text)}
+        />
+        <TouchableOpacity onPress={fetchData}>
+          <Image
+            source={require("../assets/img/search.svg")}
+            style={styleResPesquisa.icon}
           />
-          <TouchableOpacity onPress={fetchData}>
-            <Image
-              source={require("../assets/img/search.svg")}
-              style={{ width: 20, height: 20, marginLeft: 10 }}
-            />
-          </TouchableOpacity>
-        </View>
+        </TouchableOpacity>
+      </View>
 
-        <ScrollView
-          contentContainerStyle={{
-            flexGrow: 1,
-            justifyContent: "center",
-            marginTop: 20,
-          }}
-        >
-          <View style={styles.bookContainer}>
-            {resultados.map((book, index) => (
-              <View
-                key={index}
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  marginBottom: 20,
-                }}
+      <ScrollView vertical>
+        <View style={styles.bookContainer}>
+          {resultados.map((book) => (
+            <View style={styleResPesquisa.bookContent} key={book.id}>
+              <TouchableOpacity
+                onPress={() => redirectInfo(book.id)}
+                style={styles.book}
               >
-                {book.volumeInfo.imageLinks?.thumbnail && (
+                {book.volumeInfo.imageLinks?.thumbnail ? (
                   <Image
-                    source={{ uri: book.volumeInfo.imageLinks.thumbnail }}
-                    style={{ width: 100, height: 150 }}
+                    style={styles.bookImg}
+                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                  />
+                ) : (
+                  <Image
+                    style={styles.bookImg}
+                    source={require("../assets/img/no_photo.png")}
                   />
                 )}
-                <View style={{ marginLeft: 10 }}>
+              </TouchableOpacity>
+              <View style={styleResPesquisa.bookInfos}>
+                <View style={styleResPesquisa.bookDiv}>
                   <Text>{book.volumeInfo.title}</Text>
                   <Text>{book.volumeInfo.authors?.join(", ")}</Text>
-                  <View style={{ flexDirection: "row", marginTop: 10 }}>
-                    {[1, 2, 3, 4, 5].map((starIndex) => (
-                      <TouchableOpacity
-                        key={starIndex}
-                        onPress={() => console.log(`Pressed star ${starIndex}`)}
-                      >
-                        <Image
-                          source={require("../assets/img/star.svg")}
-                          style={{ width: 20, height: 20, marginRight: 5 }}
-                        />
-                      </TouchableOpacity>
-                    ))}
-                  </View>
-                  <View style={{ flexDirection: "row", marginTop: 10 }}>
-                    <TouchableOpacity onPress={() => console.log("Info")}>
+                </View>
+                <View style={styleResPesquisa.bookDiv}>
+                  {renderStars(book.volumeInfo.averageRating)}
+                  <View style={styleResPesquisa.icons}>
+                    <TouchableOpacity onPress={() => redirectInfo(book.id)}>
                       <Image
                         source={require("../assets/img/info.svg")}
-                        style={{ width: 20, height: 20, marginRight: 20 }}
+                        style={styleResPesquisa.icon}
                       />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => console.log("Download")}>
                       <Image
                         source={require("../assets/img/download.svg")}
-                        style={{ width: 20, height: 20, marginRight: 20 }}
+                        style={styleResPesquisa.icon}
                       />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => console.log("Favorite")}>
                       <Image
                         source={require("../assets/img/favorite.svg")}
-                        style={{ width: 20, height: 20 }}
+                        style={styleResPesquisa.icon}
                       />
                     </TouchableOpacity>
                   </View>
                 </View>
               </View>
-            ))}
-          </View>
-        </ScrollView>
-        <Menu /> 
-      </View>
+            </View>
+          ))}
+        </View>
+      </ScrollView>
+      <Menu navigation={navigation} />
     </View>
-  
   );
 };
 

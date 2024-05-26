@@ -46,9 +46,9 @@ const Info = ({ navigation, route }) => {
 
   const renderStarIcon = (index) => {
     if (index <= rating) {
-      return require("../assets/img/star.svg"); // Se a estrela estiver selecionada
+      return require("../assets/img/star_full.svg"); // Se a estrela estiver selecionada
     } else {
-      return require("../assets/img/star1.svg"); // Se a estrela não estiver selecionada
+      return require("../assets/img/star_empty.svg"); // Se a estrela não estiver selecionada
     }
   };
 
