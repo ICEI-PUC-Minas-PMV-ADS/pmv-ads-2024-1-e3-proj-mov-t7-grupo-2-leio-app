@@ -74,16 +74,23 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 |       Passos        | 1. Acessar o Aplicativo; <br> 2. Acessar a área de login. <br> 3. Efetuar login. <br> 4. Clicar na área de busca. <br> 5. Digitar nome do livro ou nome do autor. <br> 6. Clicar em "Buscar"; <br> 7. Selecione o livro desejado. <br> 8. Clique em avaliar. <br> 9. Selecione a quantidade de estrelas. <br> |
 |  Critério de Êxito  |                                                                                                                                        Avaliação efetuada com sucesso.                                                                                                                                        |
 
-|  **Caso de Teste**  |                                       **CT-11 - Entrar na conta**                                        |
-| :-----------------: | :------------------------------------------------------------------------------------------------------: |
-| Requisito Associado |         RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.         |
-|  Objetivo do Teste  |                                           Visualizar sua conta                                           |
-|       Passos        | 1. Acessar o Aplicativo; <br> 2. Colocar e-mail e senha. <br> 3. Ser redirecionado para a página inicial |
-|  Critério de Êxito  |                                        Login efetuado com sucesso                                        |
+|  **Caso de Teste**  |                                                                                  **CT-11 - Entrar na conta**                                                                                    |
+| :-----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Requisito Associado |                                                    RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                                                     |
+|  Objetivo do Teste  |                                                                                      Visualizar sua conta                                                                                       |
+|       Passos        | 1. Acessar o Aplicativo; <br> 2. Colocar e-mail e senha. <br> 3. Ser redirecionado para a página inicial                                                                                        |
+|  Critério de Êxito  |                                                                                   Login efetuado com sucesso                                                                                    |
 
-|  **Caso de Teste**  |                                                               **CT-12 - Armazenar livros na Estante/Biblioteca**                                                                |
-| :-----------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Requisito Associado |                                            RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca.                                            |
-|  Objetivo do Teste  |                                                                Salvar os livros na estante para consultar depois                                                                |
-|       Passos        | 1. Acessar o Aplicativo; <br> 2. Realizar login; <br> 3. Ser redirecionado para a página inicial <br> 4. Pesquisar um livro <br> 5. Selecionar o livro <br> Adicionar a estante |
-|  Critério de Êxito  |                                                                          Livro adicionado com sucesso                                                                           |
+|  **Caso de Teste**  |                                                                                  **CT-12 - Armazenar livros na Estante**                                                                        |
+| :-----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | 
+| Requisito Associado |                                            RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante.                                                                       |
+|  Objetivo do Teste  |                                                                Salvar os livros na estante para consultar depois                                                                                |
+|       Passos        | 1. Acessar o Aplicativo; <br> 2. Realizar login; <br> 3. Ser redirecionado para a página inicial <br> 4. Pesquisar um livro <br> 5. Selecionar o livro <br> 6. Adicionar à estante              |
+|  Critério de Êxito  |                                                                          Livro adicionado com sucesso.                                                                                          |
+
+|  **Caso de Teste**  |                                                                                **CT-13 - Buscar PDF's gratuitos na Biblioteca**                                                                 |
+| :-----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | 
+| Requisito Associado |                                            RF - 09 O sistema deve permitir ao usuário buscar livros com PDF's gratuitos em uma Biblioteca.                                                      |
+|  Objetivo do Teste  |                                                                Verificar se após buscar por livros na biblioteca, aparecem e são gratuitos                                                      |
+|       Passos        | 1. Acessar o Aplicativo; <br> 2. Realizar login; <br> 3. Navegar até a biblioteca <br> 4. Pesquisar um livro <br> 5. Clicar no livro <br> 6. Verificar se é possível realizar o download do PDF |
+|  Critério de Êxito  |                                                                          Download do PDF realizado com sucesso.                                                                                 |

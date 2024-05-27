@@ -4,11 +4,21 @@ const stylePerfil = StyleSheet.create({
   selectPhoto: {
     borderRadius: "50%",
     backgroundColor: "white",
-    padding: 50,
+    overflow: "hidden",
+    objectFit: "cover",
+    width: "100%",
+    maxWidth: 168,
+    height: "100%",
+    maxHeight: 168,
   },
   buttonContainer: {
     flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
     gap: 24,
+  },
+  photo: {
+    height: "100%",
   },
 });
 

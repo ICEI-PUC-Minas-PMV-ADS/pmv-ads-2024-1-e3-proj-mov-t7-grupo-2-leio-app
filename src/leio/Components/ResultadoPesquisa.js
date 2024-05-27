@@ -1,320 +1,136 @@
-// Importações gerais
-import React, { useState } from "react";
-import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  ScrollView,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  TextInput,
+} from "react-native";
+import Menu from "./Menu";
 import styles from "../assets/styles/base";
-import stylePesquisa from "../assets/styles/resultadoPesquisa";
+import styleResPesquisa from "../assets/styles/resultadoPesquisa";
 
-const ResultadoPesquisa = () => {
-  const [pesquisa, setPesquisa] = useState("");
+const ResultadoPesquisa = ({ navigation, route }) => {
+  const { searchTerm } = route.params;
+  const [resultados, setResultados] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(searchTerm);
+
+  const redirectInfo = (bookId) => {
+    navigation.navigate("Info", { bookId });
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`
+      );
+      const data = await response.json();
+      setResultados(data.items || []);
+    } catch (error) {
+      console.error("Error fetching book data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [searchQuery]);
+
+  const renderStars = (averageRating) => {
+    if (averageRating === undefined) return null;
+
+    const starIcons = [1, 2, 3, 4, 5].map((index) => {
+      if (averageRating >= index) {
+        return require("../assets/img/star_full.svg");
+      } else if (averageRating >= index - 0.5) {
+        return require("../assets/img/star_half.svg");
+      } else {
+        return require("../assets/img/star_empty.svg");
+      }
+    });
+
+    return (
+      <View style={styleResPesquisa.icons}>
+        {starIcons.map((icon, index) => (
+          <Image key={index} source={icon} style={styleResPesquisa.icon} />
+        ))}
+      </View>
+    );
+  };
 
   return (
-    <View style={[styles.container, { flex: "initial" }]}>
-      <View
-        style={[styles.inputContainer, { justifyContent: "space-between" }]}
-      >
+    <View style={styles.container}>
+      <View style={styles.inputContainer}>
         <TextInput
-          placeholder="O que você quer ler?"
-          value={pesquisa}
-          onChangeText={(text) => setPesquisa(text)}
+          style={styles.input}
+          placeholder="Digite sua pesquisa aqui"
+          value={searchQuery}
+          onChangeText={(text) => setSearchQuery(text)}
         />
-        <View style={stylePesquisa.icons}>
-          <TouchableOpacity onPress={() => console.log("Research One")}>
-            <Image source={require("../assets/img/search.svg")} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => console.log("Research Two")}>
-            <Image source={require("../assets/img/filter.svg")} />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity onPress={fetchData}>
+          <Image
+            source={require("../assets/img/search.svg")}
+            style={styleResPesquisa.icon}
+          />
+        </TouchableOpacity>
       </View>
 
-      <View style={styles.bookContainer}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Image
-            source={require("../assets/img/bookOne.svg")}
-            style={{ width: 100, height: 150 }}
-          />
-          <View style={{ marginLeft: 10, marginTop: -20, marginBottom: -30 }}>
-            <Text>Amor & gelato</Text>
-            <Text>Jenna Evans Welch</Text>
-
-            <View style={{ flexDirection: "row", marginTop: 45 }}>
-              {[1, 2, 3, 4, 5].map((index) => (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => console.log(`Pressed star ${index}`)}
-                >
+      <ScrollView vertical>
+        <View style={styles.bookContainer}>
+          {resultados.map((book) => (
+            <View style={styleResPesquisa.bookContent} key={book.id}>
+              <TouchableOpacity
+                onPress={() => redirectInfo(book.id)}
+                style={styles.book}
+              >
+                {book.volumeInfo.imageLinks?.thumbnail ? (
                   <Image
-                    source={require("../assets/img/star.svg")}
-                    style={{ width: 10, height: 15, marginRight: 5 }}
+                    style={styles.bookImg}
+                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
                   />
-                </TouchableOpacity>
-              ))}
-            </View>
-
-            <View style={{ flexDirection: "row", marginTop: 25 }}>
-              {/* Botões */}
-              <TouchableOpacity onPress={() => console.log("Info")}>
-                <Image
-                  source={require("../assets/img/info.svg")}
-                  style={{ width: 10, height: 15, marginRight: 20 }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log("Download")}>
-                <Image
-                  source={require("../assets/img/download.svg")}
-                  style={{ width: 10, height: 15, marginRight: 20 }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log("Favorite")}>
-                <Image
-                  source={require("../assets/img/favorite.svg")}
-                  style={{ width: 10, height: 15 }}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Image
-            source={require("../assets/img/bookTwo.svg")}
-            style={{ width: 100, height: 150 }}
-          />
-          <View style={{ marginLeft: 10, marginTop: -20, marginBottom: -30 }}>
-            <Text>Amor & gelato</Text>
-            <Text>Jenna Evans Welch</Text>
-
-            <View style={{ flexDirection: "row", marginTop: 45 }}>
-              {[1, 2, 3, 4, 5].map((index) => (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => console.log(`Pressed star ${index}`)}
-                >
+                ) : (
                   <Image
-                    source={require("../assets/img/star.svg")}
-                    style={{ width: 10, height: 15, marginRight: 5 }}
+                    style={styles.bookImg}
+                    source={require("../assets/img/no_photo.png")}
                   />
-                </TouchableOpacity>
-              ))}
+                )}
+              </TouchableOpacity>
+              <View style={styleResPesquisa.bookInfos}>
+                <View style={styleResPesquisa.bookDiv}>
+                  <Text>{book.volumeInfo.title}</Text>
+                  <Text>{book.volumeInfo.authors?.join(", ")}</Text>
+                </View>
+                <View style={styleResPesquisa.bookDiv}>
+                  {renderStars(book.volumeInfo.averageRating)}
+                  <View style={styleResPesquisa.icons}>
+                    <TouchableOpacity onPress={() => redirectInfo(book.id)}>
+                      <Image
+                        source={require("../assets/img/info.svg")}
+                        style={styleResPesquisa.icon}
+                      />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => console.log("Download")}>
+                      <Image
+                        source={require("../assets/img/download.svg")}
+                        style={styleResPesquisa.icon}
+                      />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => console.log("Favorite")}>
+                      <Image
+                        source={require("../assets/img/favorite_full.svg")}
+                        style={styleResPesquisa.icon}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
             </View>
-
-            <View style={{ flexDirection: "row", marginTop: 25 }}>
-              {/* Botões */}
-              <TouchableOpacity onPress={() => console.log("Info")}>
-                <Image
-                  source={require("../assets/img/info.svg")}
-                  style={{ width: 10, height: 15, marginRight: 20 }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log("Download")}>
-                <Image
-                  source={require("../assets/img/download.svg")}
-                  style={{ width: 10, height: 15, marginRight: 20 }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log("Favorite")}>
-                <Image
-                  source={require("../assets/img/favorite.svg")}
-                  style={{ width: 10, height: 15 }}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
+          ))}
         </View>
-
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Image
-            source={require("../assets/img/bookOne.svg")}
-            style={{ width: 100, height: 150 }}
-          />
-          <View style={{ marginLeft: 10, marginTop: -20, marginBottom: -30 }}>
-            <Text>Amor & gelato</Text>
-            <Text>Jenna Evans Welch</Text>
-
-            <View style={{ flexDirection: "row", marginTop: 45 }}>
-              {[1, 2, 3, 4, 5].map((index) => (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => console.log(`Pressed star ${index}`)}
-                >
-                  <Image
-                    source={require("../assets/img/star.svg")}
-                    style={{ width: 10, height: 15, marginRight: 5 }}
-                  />
-                </TouchableOpacity>
-              ))}
-            </View>
-
-            <View style={{ flexDirection: "row", marginTop: 25 }}>
-              {/* Botões */}
-              <TouchableOpacity onPress={() => console.log("Info")}>
-                <Image
-                  source={require("../assets/img/info.svg")}
-                  style={{ width: 10, height: 15, marginRight: 20 }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log("Download")}>
-                <Image
-                  source={require("../assets/img/download.svg")}
-                  style={{ width: 10, height: 15, marginRight: 20 }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log("Favorite")}>
-                <Image
-                  source={require("../assets/img/favorite.svg")}
-                  style={{ width: 10, height: 15 }}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Image
-            source={require("../assets/img/bookTwo.svg")}
-            style={{ width: 100, height: 150 }}
-          />
-          <View style={{ marginLeft: 10, marginTop: -20, marginBottom: -30 }}>
-            <Text>Amor & gelato</Text>
-            <Text>Jenna Evans Welch</Text>
-
-            <View style={{ flexDirection: "row", marginTop: 45 }}>
-              {[1, 2, 3, 4, 5].map((index) => (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => console.log(`Pressed star ${index}`)}
-                >
-                  <Image
-                    source={require("../assets/img/star.svg")}
-                    style={{ width: 10, height: 15, marginRight: 5 }}
-                  />
-                </TouchableOpacity>
-              ))}
-            </View>
-
-            <View style={{ flexDirection: "row", marginTop: 25 }}>
-              {/* Botões */}
-              <TouchableOpacity onPress={() => console.log("Info")}>
-                <Image
-                  source={require("../assets/img/info.svg")}
-                  style={{ width: 10, height: 15, marginRight: 20 }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log("Download")}>
-                <Image
-                  source={require("../assets/img/download.svg")}
-                  style={{ width: 10, height: 15, marginRight: 20 }}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log("Favorite")}>
-                <Image
-                  source={require("../assets/img/favorite.svg")}
-                  style={{ width: 10, height: 15 }}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </View>
+      </ScrollView>
+      <Menu navigation={navigation} />
     </View>
   );
 };
 
 export default ResultadoPesquisa;
-
-//LÓGICA DA API
-
-// const ResultadoPesquisa = () => {
-
-//   const [pesquisa, setPesquisa] = useState("");
-//   const [livros, setLivros] = useState([]);
-
-//   useEffect(() => {
-//     // Função para buscar os dados da API
-//     const fetchLivros = async () => {
-//       try {
-//         // Fazer a requisição para a API
-//         const response = await fetch("URL_DA_API_AQUI");
-//         const data = await response.json();
-//         setLivros(data); // Atualizar o estado com os dados recebidos
-//       } catch (error) {
-//         console.error("Erro ao buscar livros:", error);
-//       }
-//     };
-
-//     fetchLivros();
-//   }, []);
-
-//   return (
-//     <View style={styles.container}>
-//       <View style={styles.inputContainer}>
-//         <TextInput
-//           placeholder="O que você quer ler?"
-//           value={pesquisa}
-//           onChangeText={(text) => setPesquisa(text)}
-//         />
-//         <View style={stylePesquisa.icons}>
-//           <TouchableOpacity
-//             onPress={() => console.log("Research One")}
-//           >
-//             <Image source={require("../assets/img/search.svg")} />
-//           </TouchableOpacity>
-//           <TouchableOpacity onPress={() => console.log("Research Two")}>
-//             <Image source={require("../assets/img/filter.svg")} />
-//           </TouchableOpacity>
-//         </View>
-//       </View>
-
-//       {livros.map((livro, index) => (
-//         <View key={index} style={{ flexDirection: "row", alignItems: "center" }}>
-//           <Image
-//             source={{ uri: livro.imagem }}
-//             style={{ width: 100, height: 150 }}
-//           />
-//           <View style={{ marginLeft: 10, marginTop: -20, marginBottom: -30 }}>
-//             <Text>{livro.titulo}</Text>
-//             <Text>{livro.autor}</Text>
-
-//             <View style={{ flexDirection: "row", marginTop: 45 }}>
-//               {[1, 2, 3, 4, 5].map((index) => (
-//                 <TouchableOpacity
-//                   key={index}
-//                   onPress={() => console.log(`Pressed star ${index}`)}
-//                 >
-//                   <Image
-//                     source={require("../assets/img/star.svg")}
-//                     style={{ width: 10, height: 15, marginRight: 5 }}
-//                   />
-//                 </TouchableOpacity>
-//               ))}
-//             </View>
-
-//             <View style={{ flexDirection: "row", marginTop: 25 }}>
-//               {/* Botões */}
-//               <TouchableOpacity onPress={() => console.log("Info")}>
-//                 <Image
-//                   source={require("../assets/img/info.svg")}
-//                   style={{ width: 10, height: 15, marginRight: 20 }}
-//                 />
-//               </TouchableOpacity>
-//               <TouchableOpacity onPress={() => console.log("Download")}>
-//                 <Image
-//                   source={require("../assets/img/download.svg")}
-//                   style={{ width: 10, height: 15, marginRight: 20 }}
-//                 />
-//               </TouchableOpacity>
-//               <TouchableOpacity onPress={() => console.log("Favorite")}>
-//                 <Image
-//                   source={require("../assets/img/favorite.svg")}
-//                   style={{ width: 10, height: 15 }}
-//                 />
-//               </TouchableOpacity>
-//             </View>
-//           </View>
-//         </View>
-//       ))}
-//     </View>
-//   );
-// };
-
-// export default ResultadoPesquisa;

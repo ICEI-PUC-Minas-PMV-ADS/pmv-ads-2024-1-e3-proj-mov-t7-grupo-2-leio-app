@@ -6,45 +6,58 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 
 |    Caso de Teste    |                                   CT-01 - Criar conta                                    |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                          <img src = "./img/Tela-Cadastro.jpg"/>                          |
+|       Imagem        |                          <img src = "./img/Tela-CadastroConcluido.jpeg"/>                |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                            Não foi possível criar a conta. ❌                            |
+|      Avaliação      |                            A conta foi criada com sucesso. ✅                            |
 
 |    Caso de Teste    |                                   CT-02 - Editar conta                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
+|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                           Não foi possível editar a conta. ❌                            |
+|      Avaliação      |                           Conta editada com sucesso! ✅                                  |
 
 |    Caso de Teste    |                                 CT-03 - Visualizar conta                                 |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
+|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                         Não foi possível visualizar a conta. ❌                          |
+|      Avaliação      |                         Conta visualizada com sucesso! ✅              |
 
 |    Caso de Teste    |                                  CT-04 - Excluir conta                                   |
 | :-----------------: | :--------------------------------------------------------------------------------------: |
-|       Imagem        |                           <img src = "./img/Tela-Perfil.jpg"/>                           |
+|       Imagem        |                           <img src = "./img/Tela-PerfilConcluido.jpg"/>                           |
 | Requisito Associado | RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta. |
-|      Avaliação      |                           Não foi possível excluir a conta. ❌                           |
+|      Avaliação      |                           Conta excluída com sucesso! ✅                                 |
 
 |    Caso de Teste    |                                           CT-05 - Buscar livros                                           |
 | :-----------------: | :-------------------------------------------------------------------------------------------------------: |
-|       Imagem        |                                  <img src = "./img/Tela-Pesquisa.png"/>                                   |
+|       Imagem        |                                  <img src = "./img/Tela-pesquisa-resultado.jpg"/>                                   |
 | Requisito Associado | RF - 02 O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor. |
-|      Avaliação      |                                   Não foi possível fazer a pesquisa. ❌                                   |
+|      Avaliação      |                                   Pesquisa realizada com sucesso. ✅                                    |
 
-|    Caso de Teste    |                                     CT-11 - Entrar na conta                                     |
-| :-----------------: | :---------------------------------------------------------------------------------------------: |
-|       Imagem        | <img src="img/Tela-Login.jpg" alt="Tela de login" title="Tela de login" style="height: 800px;"> |
-| Requisito Associado |    RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.     |
-|      Avaliação      |                              Não foi possível entrar na conta. ❌                               |
 
-|    Caso de Teste    |                                 CT-12 - Armazenar livros na Estante/Biblioteca                                 |
-| :-----------------: | :------------------------------------------------------------------------------------------------------------: |
-|       Imagem        | <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;"> |
-| Requisito Associado |           RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca.            |
-|      Avaliação      |                              Não existem livros reais para serem armazenados. ❌                               |
+|    Caso de Teste    |                                           CT-11 - Entrar na conta                                                     |
+| :-----------------: | :-------------------------------------------------------------------------------------------------------------------: |
+|       Imagem        | <img src="img/Tela-LoginNormal.jpeg" alt="Tela de login" title="Tela de login" style="height: 800px;">                |
+| Requisito Associado |    RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                           |
+|      Avaliação      |                              O login foi efetuado com sucesso. ✅                                                     |
+
+|    Caso de Teste    |                                           CT-11 - Entrar na conta com Google                                          |
+| :-----------------: | :-------------------------------------------------------------------------------------------------------------------: |
+|       Imagem        | <img src="img/Tela-LoginGoogle.jpg.png" alt="Tela de login" title="Tela de login" style="height: 800px;">             |
+| Requisito Associado |    RF - 01 O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                           |
+|      Avaliação      |                              O login com a conta do Google foi efetuado com sucesso. ✅                               |
+
+|    Caso de Teste    |                                           CT-12 - Armazenar livros na Estante                                          |
+| :-----------------: | :--------------------------------------------------------------------------------------------------------------------: |
+|       Imagem        | <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">         |
+| Requisito Associado |           RF - 08 O sistema deve permitir ao usuário armazenar os livros em uma Estante.                               |
+|      Avaliação      |                             O "RF-03" ainda não foi atendido, impossibilitando o êxito do CT-12 . ❌                   |
+
+|    Caso de Teste    |                                           CT-13 - Buscar PDF's gratuitos na Biblioteca                                  |
+| :-----------------: | :---------------------------------------------------------------------------------------------------------------------: |
+|       Imagem        | <img src="img/Tela-BibliotecaPesquisa.jpeg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;"> |
+| Requisito Associado |           RF - 09 O sistema deve permitir ao usuário buscar livros com PDF's gratuitos em uma Biblioteca                |
+|      Avaliação      |                              Os livros exibidos no resultado de pesquisa possuem PDF para download. ✅                  |
 
 ## Avaliação
 
