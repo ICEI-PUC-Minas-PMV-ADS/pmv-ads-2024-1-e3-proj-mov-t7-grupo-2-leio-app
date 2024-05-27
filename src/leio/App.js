@@ -13,7 +13,6 @@ import Pesquisa from "./Components/Pesquisa";
 import ResultadoPesquisa from "./Components/ResultadoPesquisa";
 import Info from "./Components/Info";
 import Biblioteca from "./Components/Biblioteca";
-import Modal from "./Components/Modal";
 
 const Stack = createStackNavigator();
 
@@ -75,7 +74,6 @@ export default function App() {
               headerStyle: { backgroundColor: "#F4F3FF" },
             }}
           />
-          <Stack.Screen name="Modal" component={Modal} />
           <Stack.Screen
             name="Biblioteca"
             component={Biblioteca}

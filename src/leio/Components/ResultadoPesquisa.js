@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
+  Linking,
 } from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
@@ -15,6 +16,14 @@ const ResultadoPesquisa = ({ navigation, route }) => {
   const { searchTerm } = route.params;
   const [resultados, setResultados] = useState([]);
   const [searchQuery, setSearchQuery] = useState(searchTerm);
+
+  const openExternalLinkPS = (book) => {
+    Linking.openURL(book.volumeInfo.infoLink);
+  };
+
+  const openExternalLink = (book) => {
+    Linking.openURL(book.volumeInfo.previewLink);
+  };
 
   const redirectInfo = (bookId) => {
     navigation.navigate("Info", { bookId });
@@ -99,9 +108,9 @@ const ResultadoPesquisa = ({ navigation, route }) => {
                 <View style={styleResPesquisa.bookDiv}>
                   <Text>{book.volumeInfo.title}</Text>
                   <Text>{book.volumeInfo.authors?.join(", ")}</Text>
+                  {renderStars(book.volumeInfo.averageRating)}
                 </View>
                 <View style={styleResPesquisa.bookDiv}>
-                  {renderStars(book.volumeInfo.averageRating)}
                   <View style={styleResPesquisa.icons}>
                     <TouchableOpacity onPress={() => redirectInfo(book.id)}>
                       <Image
@@ -109,15 +118,15 @@ const ResultadoPesquisa = ({ navigation, route }) => {
                         style={styleResPesquisa.icon}
                       />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => console.log("Download")}>
+                    <TouchableOpacity onPress={() => openExternalLink(book)}>
                       <Image
                         source={require("../assets/img/download.svg")}
                         style={styleResPesquisa.icon}
                       />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => console.log("Favorite")}>
+                    <TouchableOpacity onPress={() => openExternalLinkPS(book)}>
                       <Image
-                        source={require("../assets/img/favorite_full.svg")}
+                        source={require("../assets/img/money.svg")}
                         style={styleResPesquisa.icon}
                       />
                     </TouchableOpacity>

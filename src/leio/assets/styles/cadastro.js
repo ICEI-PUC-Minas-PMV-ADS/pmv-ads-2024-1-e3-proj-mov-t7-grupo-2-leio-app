@@ -15,6 +15,7 @@ const styleCadastro = StyleSheet.create({
   },
   selectPhotoText: {
     textAlign: "center",
+    marginTop: 8,
   },
   buttonContainer: {
     flexDirection: "row",

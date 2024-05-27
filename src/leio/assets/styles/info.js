@@ -63,6 +63,10 @@ const styleInfo = StyleSheet.create({
   loadingText: {
     fontSize: 25,
   },
+  starIcon: {
+    width: 22,
+    height: 22,
+  },
 });
 
 export default styleInfo;

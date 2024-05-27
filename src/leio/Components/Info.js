@@ -127,6 +127,12 @@ const Info = ({ navigation, route }) => {
         {book.volumeInfo.authors?.join(", ")}
       </Text>
 
+      {book.volumeInfo.publisher ? (
+        <Text style={styleInfo.author}>
+          Editora: {book.volumeInfo.publisher}
+        </Text>
+      ) : null}
+
       {renderAverageRatingStars(book.volumeInfo.averageRating)}
 
       <Text style={styleInfo.summary}>{book.volumeInfo.description}</Text>
