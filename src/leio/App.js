@@ -21,6 +21,18 @@ export default function App() {
     <UserProvider>
       <NavigationContainer>
         <Stack.Navigator>
+        {
+            <Stack.Screen
+              name="Pesquisa"
+              component={Pesquisa}
+              options={{
+                title: "",
+                headerTintColor: "#8872DE",
+                headerStyle: { backgroundColor: "#F4F3FF" },
+              }}
+            />
+          }
+          
           <Stack.Screen
             name="Login"
             component={Login}
@@ -45,7 +57,7 @@ export default function App() {
               headerStyle: { backgroundColor: "#F4F3FF" },
             }}
           />
-          {
+          {/* {
             <Stack.Screen
               name="Pesquisa"
               component={Pesquisa}
@@ -55,7 +67,7 @@ export default function App() {
                 headerStyle: { backgroundColor: "#F4F3FF" },
               }}
             />
-          }
+          } */}
           <Stack.Screen
             name="ResultadoPesquisa"
             component={ResultadoPesquisa}

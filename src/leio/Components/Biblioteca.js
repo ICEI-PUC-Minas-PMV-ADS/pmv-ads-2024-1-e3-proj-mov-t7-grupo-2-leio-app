@@ -28,8 +28,8 @@ const Biblioteca = ({ navigation }) => {
     navigation.navigate("Info", { bookId });
   };
 
-  const redirectToSearchResults = (searchTerm) => {
-    navigation.navigate("ResultadoPesquisa", { searchTerm });
+  const redirectToSearchResultsBiblioteca = (searchTerm) => {
+    navigation.navigate("ResultadoPesquisaBiblioteca", { searchTerm });
   };
 
   const loadBooks = async (searchQuery, tab, appliedFilters = {}) => {
@@ -127,7 +127,7 @@ const Biblioteca = ({ navigation }) => {
               <TouchableOpacity
                 key={index}
                 style={stylePesquisa.imageView}
-                onPress={() => redirectToSearchResults(category.name)}
+                onPress={() => redirectToSearchResultsBiblioteca(category.name)}
               >
                 <Image source={category.image} style={stylePesquisa.image} />
                 <Text style={stylePesquisa.imageText}>{category.name}</Text>
@@ -143,7 +143,7 @@ const Biblioteca = ({ navigation }) => {
               <TouchableOpacity
                 key={index}
                 style={stylePesquisa.imageView}
-                onPress={() => redirectToSearchResults(author.name)}
+                onPress={() => redirectToSearchResultsBiblioteca(author.name)}
               >
                 <Image source={author.image} style={stylePesquisa.image} />
                 <Text style={stylePesquisa.imageText}>{author.name}</Text>
