@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, Text, View, TouchableOpacity, Image, Linking } from "react-native";
+import { ScrollView, Text, View, TouchableOpacity, Image, Linking, TextInput } from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleResPesquisa from "../assets/styles/resultadoPesquisa";
-import Autocomplete from 'react-native-autocomplete-input';
 import SvgUri from 'react-native-svg-uri';
 import { fetchBooks, fetchFilteredBooks }from "../api/api";
 
@@ -12,6 +11,8 @@ const ResultadoPesquisa = ({ navigation, route }) => {
 
   const [resultados, setResultados] = useState([]);
   const [searchQuery, setSearchQuery] = useState(searchTerm);
+  const [filteredBooks, setFilteredBooks] = useState([]);
+  const [filters, setFilters] = useState({});
 
   const openExternalLinkPS = (book) => {
     Linking.openURL(book.volumeInfo.infoLink);
@@ -32,6 +33,7 @@ const ResultadoPesquisa = ({ navigation, route }) => {
       );
       const data = await response.json();
       setResultados(data.items || []);
+      setFilteredBooks(data.items || []);
     } catch (error) {
       console.error("Error fetching book data:", error);
     }
@@ -42,6 +44,49 @@ const ResultadoPesquisa = ({ navigation, route }) => {
       fetchData(searchQuery);
     }
   }, [searchQuery]);
+
+  const applyFilters = (books, filters) => {
+    let filtered = books;
+
+    if (filters.genres && filters.genres.length > 0) {
+      filtered = filtered.filter((book) =>
+        filters.genres.some((genre) =>
+          book.volumeInfo.categories?.includes(genre)
+        )
+      );
+    }
+
+    if (filters.rating) {
+      filtered = filtered.filter(
+        (book) => book.volumeInfo.averageRating >= filters.rating
+      );
+    }
+
+    if (filters.format) {
+      filtered = filtered.filter(
+        (book) => book.volumeInfo.printType === filters.format
+      );
+    }
+
+    return filtered;
+  };
+
+  const handleSearch = (text) => {
+    setSearchQuery(text);
+
+    if (text.trim() !== "") {
+      const filtered = applyFilters(
+        resultados.filter((book) =>
+          book.volumeInfo.title.toLowerCase().includes(text.toLowerCase())
+        ),
+        filters
+      );
+      setFilteredBooks(filtered);
+      // Redireciona para a página de resultados da pesquisa, se necessário
+    } else {
+      setFilteredBooks([]);
+    }
+  };
 
   const renderStars = (averageRating) => {
     if (averageRating === undefined) return null;
@@ -67,22 +112,23 @@ const ResultadoPesquisa = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
-      <Autocomplete
-        autoCapitalize="none"
-        autoCorrect={false}
-        containerStyle={styles.inputContainer}
-        data={resultados}
-        value={searchQuery}
-        onChangeText={(text) => setSearchQuery(text)}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => setSearchQuery(item.volumeInfo.title)}>
-            <Text>{item.volumeInfo.title}</Text>
+      <View style={[styles.inputContainer, { justifyContent: "space-between" }]}>
+        <TextInput
+          style={styles.input}
+          placeholder="O que você quer ler?"
+          value={searchQuery}
+          onChangeText={(text) => handleSearch(text)}
+        />
+        <View>
+          <TouchableOpacity onPress={() => handleSearch(searchQuery)}>
+            <Image source={require("../assets/img/search.svg")} />
           </TouchableOpacity>
-        )}
-      />
+        </View>
+      </View>
+
       <ScrollView vertical>
         <View style={styles.bookContainer}>
-          {resultados.map((book) => (
+          {filteredBooks.map((book) => (
             <View style={styleResPesquisa.bookContent} key={book.id}>
               <TouchableOpacity
                 onPress={() => redirectInfo(book.id)}
