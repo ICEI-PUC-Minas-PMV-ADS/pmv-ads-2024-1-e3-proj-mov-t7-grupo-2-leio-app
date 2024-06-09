@@ -43,10 +43,7 @@ const Login = () => {
       const credential = GoogleAuthProvider.credential(id_token);
       signInWithCredential(auth, credential)
         .then((userCredential) => {
-          console.log(
-            "Login com Google efetuado com sucesso!",
-            userCredential.user
-          );
+          //  console.log("Login com Google efetuado com sucesso!", userCredential.user);
           setUser(userCredential.user); // Define o usuário no contexto
           setSuccess("Login com Google efetuado com sucesso!");
           setTimeout(() => {
@@ -79,7 +76,7 @@ const Login = () => {
         email,
         senha
       );
-      console.log("Login efetuado com sucesso!", userCredential.user);
+      // console.log("Login efetuado com sucesso!", userCredential.user);
       setUser(userCredential.user); // Define o usuário no contexto
       setSuccess("Login efetuado com sucesso!");
 

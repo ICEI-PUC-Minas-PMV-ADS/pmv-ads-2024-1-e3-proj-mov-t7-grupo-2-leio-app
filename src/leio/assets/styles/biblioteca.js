@@ -69,6 +69,11 @@ const styleBiblioteca = StyleSheet.create({
   topicContainer: {
     width: "100%",
   },
+  noBooksText: {
+    fontSize: 20,
+    fontWeight: "500",
+    textAlign: "center",
+  },
 });
 
 export default styleBiblioteca;

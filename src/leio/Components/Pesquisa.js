@@ -18,7 +18,6 @@ const Pesquisa = ({ navigation }) => {
   const [query, setQuery] = useState("");
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
-  const [isSearching, setIsSearching] = useState(false);
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
   const [filters, setFilters] = useState({});
 
@@ -97,7 +96,7 @@ const Pesquisa = ({ navigation }) => {
   };
 
   const handleSelection = async (selectionType, selection) => {
-    console.log("Selecionou", selectionType + ":", selection);
+    //  console.log("Selecionou", selectionType + ":", selection);
     try {
       const books = await fetchBooks(selection, 12, "relevance");
       setBooks(books);

@@ -29,7 +29,7 @@ const Biblioteca = ({ navigation }) => {
   };
 
   const redirectToSearchResultsBiblioteca = (searchTerm) => {
-    navigation.navigate("ResultadoPesquisaBiblioteca", { searchTerm });
+    navigation.navigate("ResultadoPesquisa", { searchTerm });
   };
 
   const loadBooks = async (searchQuery, tab, appliedFilters = {}) => {
@@ -118,41 +118,62 @@ const Biblioteca = ({ navigation }) => {
   };
 
   const renderEstanteContent = () => (
-    <ScrollView style={stylePesquisa.bodyContainer}>
+    <View style={stylePesquisa.bodyContainer}>
       <View style={stylePesquisa.bodyContent}>
-        <Text style={stylePesquisa.titleText}>Categorias</Text>
-        <ScrollView style={styleBiblioteca.topicContainer}>
-          <View style={stylePesquisa.imgsContainer}>
-            {categories.map((category, index) => (
-              <TouchableOpacity
-                key={index}
-                style={stylePesquisa.imageView}
-                onPress={() => redirectToSearchResultsBiblioteca(category.name)}
-              >
-                <Image source={category.image} style={stylePesquisa.image} />
-                <Text style={stylePesquisa.imageText}>{category.name}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </ScrollView>
+        {categories.length > 0 || authors.length > 0 ? (
+          <>
+            <Text style={stylePesquisa.titleText}>Categorias</Text>
+            <ScrollView
+              vertical
+              contentContainerStyle={styleBiblioteca.topicContainer}
+            >
+              <View style={stylePesquisa.imgsContainer}>
+                {categories.map((category, index) => (
+                  <TouchableOpacity
+                    key={index}
+                    style={stylePesquisa.imageView}
+                    onPress={() =>
+                      redirectToSearchResultsBiblioteca(category.name)
+                    }
+                  >
+                    <Image
+                      source={category.image}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>{category.name}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </ScrollView>
 
-        <Text style={stylePesquisa.titleText}>Autores</Text>
-        <ScrollView style={styleBiblioteca.topicContainer}>
-          <View style={stylePesquisa.imgsContainer}>
-            {authors.map((author, index) => (
-              <TouchableOpacity
-                key={index}
-                style={stylePesquisa.imageView}
-                onPress={() => redirectToSearchResultsBiblioteca(author.name)}
-              >
-                <Image source={author.image} style={stylePesquisa.image} />
-                <Text style={stylePesquisa.imageText}>{author.name}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </ScrollView>
+            <Text style={stylePesquisa.titleText}>Autores</Text>
+            <ScrollView
+              vertical
+              contentContainerStyle={styleBiblioteca.topicContainer}
+            >
+              <View style={stylePesquisa.imgsContainer}>
+                {authors.map((author, index) => (
+                  <TouchableOpacity
+                    key={index}
+                    style={stylePesquisa.imageView}
+                    onPress={() =>
+                      redirectToSearchResultsBiblioteca(author.name)
+                    }
+                  >
+                    <Image source={author.image} style={stylePesquisa.image} />
+                    <Text style={stylePesquisa.imageText}>{author.name}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </ScrollView>
+          </>
+        ) : (
+          <Text style={styleBiblioteca.noBooksText}>
+            Nenhuma categoria ou autor encontrados
+          </Text>
+        )}
       </View>
-    </ScrollView>
+    </View>
   );
 
   return (
@@ -209,25 +230,31 @@ const Biblioteca = ({ navigation }) => {
       {activeTab === "Estante" ? (
         renderEstanteContent()
       ) : (
-        <ScrollView contentContainerStyle={styles.bookContainer}>
-          {filteredBooks.map((book, index) => (
-            <View key={`${book.id}-${index}`} style={styles.book}>
-              <TouchableOpacity
-                onPress={() => redirectInfo(book.id)}
-                key={`${book.id}-${index}`}
-                style={styles.book}
-              >
-                <Image
-                  source={{
-                    uri:
-                      book.volumeInfo.imageLinks?.thumbnail ||
-                      require("../assets/img/no_photo.png"),
-                  }}
-                  style={styles.bookImg}
-                />
-              </TouchableOpacity>
-            </View>
-          ))}
+        <ScrollView vertical contentContainerStyle={styles.bookContainer}>
+          {filteredBooks.length > 0 ? (
+            filteredBooks.map((book, index) => (
+              <View key={`${book.id}-${index}`} style={styles.book}>
+                <TouchableOpacity
+                  onPress={() => redirectInfo(book.id)}
+                  key={`${book.id}-${index}`}
+                  style={styles.book}
+                >
+                  <Image
+                    source={{
+                      uri:
+                        book.volumeInfo.imageLinks?.thumbnail ||
+                        require("../assets/img/no_photo.png"),
+                    }}
+                    style={styles.bookImg}
+                  />
+                </TouchableOpacity>
+              </View>
+            ))
+          ) : (
+            <Text style={styleBiblioteca.noBooksText}>
+              Nenhum livro encontrado
+            </Text>
+          )}
         </ScrollView>
       )}
       <FiltroModal

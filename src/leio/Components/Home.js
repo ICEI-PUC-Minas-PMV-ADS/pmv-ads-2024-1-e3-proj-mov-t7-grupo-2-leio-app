@@ -26,7 +26,6 @@ const Home = ({ navigation }) => {
       try {
         const fetchedBooks = await fetchBooks("romance", 20, "relevance");
         setRomanceBooks(fetchedBooks);
-        //   console.log("Romances:", fetchedBooks);
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -40,7 +39,6 @@ const Home = ({ navigation }) => {
       try {
         const fetchedBooks = await fetchBooks("Mystery", 20, "relevance");
         setMysteryBooks(fetchedBooks);
-        //  console.log("Mystery:", fetchedBooks);
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -54,7 +52,6 @@ const Home = ({ navigation }) => {
       try {
         const fetchedBooks = await fetchBooks("all", 20, "newest");
         setNewestBooks(fetchedBooks);
-        //   console.log("Recentes:", fetchedBooks);
       } catch (error) {
         console.error("Error fetching books:", error);
       }

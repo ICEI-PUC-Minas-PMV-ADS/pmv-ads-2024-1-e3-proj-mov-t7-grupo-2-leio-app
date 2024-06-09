@@ -25,7 +25,6 @@ const Info = ({ navigation, route }) => {
             description: removeHtmlTags(bookData.volumeInfo.description),
           },
         });
-        console.log(bookData);
       } catch (error) {
         console.error("Error fetching book data:", error);
       }

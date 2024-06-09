@@ -106,7 +106,7 @@ const Perfil = () => {
     );
     try {
       await reauthenticateWithCredential(auth.currentUser, credential);
-      console.log("Reautenticação bem-sucedida");
+      // console.log("Reautenticação bem-sucedida");
     } catch (error) {
       console.error("Erro na reautenticação:", error);
       throw error;
@@ -210,14 +210,14 @@ const Perfil = () => {
         />
       </View>
 
-      <View style={styles.inputContainer}>
+      {/* <View style={styles.inputContainer}>
         <Image source={require("../assets/img/email.svg")} />
         <TextInput
           style={styles.input}
           value={email}
           onChangeText={(text) => setEmail(text)}
         />
-      </View>
+      </View> */}
 
       {!isGoogleUser && (
         <>
