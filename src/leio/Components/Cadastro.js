@@ -73,7 +73,7 @@ const Cadastro = () => {
         email,
         senha
       );
-      console.log("Usuário criado com sucesso!", userCredential.user);
+      // console.log("Usuário criado com sucesso!", userCredential.user);
 
       let photoURL = "";
       if (foto) {
@@ -91,23 +91,19 @@ const Cadastro = () => {
         foto: photoURL,
       });
 
-      console.log("Detalhes do usuário adicionados ao Firestore!");
+      // console.log("Detalhes do usuário adicionados ao Firestore!");
       setSuccess("Usuário criado com sucesso!");
 
       setTimeout(() => {
         redirectLogin(); // Redireciona para a login após alguns segundos para dar tempo do usuário ler a mensagem
       }, 2000);
-    } 
-    
-    catch (error) {
+    } catch (error) {
       let errorMessage =
         "Ocorreu um erro ao cadastrar. Por favor, tente novamente.";
 
       if (error.code === "auth/email-already-in-use") {
         errorMessage = "O email já está em uso.";
-      }
-
-      else if (error.code === "auth/invalid-email") {
+      } else if (error.code === "auth/invalid-email") {
         errorMessage = "O email não é válido.";
       } else if (error.code === "auth/weak-password") {
         errorMessage = "A senha precisa ter no mínimo 6 caracteres.";
@@ -115,7 +111,6 @@ const Cadastro = () => {
 
       console.error("Erro ao cadastrar usuário:", error);
       setError(errorMessage);
-      
     } finally {
       setIsLoading(false);
     }

@@ -6,6 +6,10 @@ const styleResPesquisa = StyleSheet.create({
     alignItems: "center",
     gap: 8,
   },
+  iconStars: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   icon: {
     width: 20,
     height: 20,
@@ -21,10 +25,23 @@ const styleResPesquisa = StyleSheet.create({
     gap: 12,
     width: "100%",
     height: "100%",
+    flex: 1,
   },
   bookDiv: {
     gap: 8,
     width: "100%",
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: "600",
+    flexShrink: 1,
+    maxHeight: 45,
+    overflow: "hidden",
+  },
+  author: {
+    flexShrink: 1,
+    maxHeight: 35,
+    overflow: "hidden",
   },
 });
 

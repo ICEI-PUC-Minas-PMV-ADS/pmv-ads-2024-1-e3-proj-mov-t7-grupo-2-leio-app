@@ -22,9 +22,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-autocomplete-input": "^5.4.0",
     "react-native-image-picker": "^7.1.2",
     "react-native-modal": "^13.0.1",
-    "react-native-web": "~0.19.6"
+    "react-native-svg": "^15.3.0",
+    "react-native-svg-uri": "^0.0.1",
+    "react-native-web": "~0.19.6",
+    "xmldom": "^0.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

@@ -31,6 +31,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     width: "100%",
   },
+  errorText: {
+    color: "red",
+    textAlign: "center",
+    marginTop: 10,
+  },
+  successText: {
+    color: "green",
+    textAlign: "center",
+    marginTop: 10,
+  },
+  //Estilos de botão
   button: {
     color: "white",
     borderRadius: 12,
@@ -41,6 +52,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 14,
   },
+  //Estilos dos livros
   bookContainer: {
     gap: 16,
     width: "100%",
@@ -57,6 +69,7 @@ const styles = StyleSheet.create({
     objectFit: "cover",
     borderRadius: 12,
   },
+  //Estilos do menu
   menuContainer: {
     position: "fixed",
     width: "100%",

@@ -18,22 +18,22 @@ const Pesquisa = ({ navigation }) => {
   const [query, setQuery] = useState("");
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
-  const [isSearching, setIsSearching] = useState(false);
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
   const [filters, setFilters] = useState({});
 
-  // Limpa os estados de query e resultados dos livros quando a tela ganha o foco
+  const redirectToSearchResults = (searchTerm) => {
+    navigation.navigate("ResultadoPesquisa", { searchTerm });
+  };
+
   useFocusEffect(
     React.useCallback(() => {
       setQuery("");
       setBooks([]);
       setFilteredBooks([]);
       setFilters({});
-      // Qualquer outro estado que precise ser limpo pode ser adicionado aqui
     }, [])
   );
 
-  // Função para carregar livros com base na query
   useEffect(() => {
     const loadBooks = async () => {
       if (query.trim() !== "") {
@@ -52,7 +52,6 @@ const Pesquisa = ({ navigation }) => {
     loadBooks();
   }, [query]);
 
-  // Função para aplicar filtros aos livros
   const applyFilters = (books, filters) => {
     let filtered = books;
 
@@ -79,7 +78,6 @@ const Pesquisa = ({ navigation }) => {
     return filtered;
   };
 
-  // Função para lidar com a pesquisa
   const handleSearch = (text) => {
     setQuery(text);
 
@@ -91,14 +89,14 @@ const Pesquisa = ({ navigation }) => {
         filters
       );
       setFilteredBooks(filtered);
+      redirectToSearchResults(text); // Redireciona para a página de resultados da pesquisa
     } else {
       setFilteredBooks([]);
     }
   };
 
-  // Função para lidar com a seleção de categoria ou autor
   const handleSelection = async (selectionType, selection) => {
-    console.log("Selecionou", selectionType + ":", selection);
+    //  console.log("Selecionou", selectionType + ":", selection);
     try {
       const books = await fetchBooks(selection, 12, "relevance");
       setBooks(books);
@@ -108,17 +106,14 @@ const Pesquisa = ({ navigation }) => {
     }
   };
 
-  // Função para lidar com a seleção de categoria
   const handleCategorySelection = async (category) => {
     await handleSearch(category);
   };
 
-  // Função para lidar com a seleção de autor
   const handleAuthorSelection = async (author) => {
     await handleSearch(author);
   };
 
-  // Função para redirecionar para a página de informações do livro
   const redirectInfo = (bookId) => {
     navigation.navigate("Info", { bookId });
   };
@@ -141,7 +136,7 @@ const Pesquisa = ({ navigation }) => {
         </View>
       </View>
 
-      {query.trim() === "" ? ( //Renderização Condicional - renderização dos livros ocorre apenas quando há uma consulta ativa.
+      {query.trim() === "" ? (
         <ScrollView style={stylePesquisa.bodyContainer}>
           <View style={stylePesquisa.bodyContent}>
             <Text style={stylePesquisa.titleText}>Categorias</Text>

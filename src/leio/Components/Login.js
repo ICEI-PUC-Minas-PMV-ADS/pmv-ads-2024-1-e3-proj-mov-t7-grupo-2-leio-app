@@ -18,13 +18,12 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import styles from "../assets/styles/base";
 import styleLogin from "../assets/styles/login";
-import { UserContext  } from "./UserContext"; // Importa o contexto do usuário
-
+import { UserContext } from "./UserContext"; // Importa o contexto do usuário
 
 WebBrowser.maybeCompleteAuthSession();
 
 const Login = () => {
-  const { setUser } = useContext(UserContext ); // Usa o contexto do usuário
+  const { setUser } = useContext(UserContext); // Usa o contexto do usuário
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
     clientId:
       "1077605673545-ah88fdr7q6pf25hvocfk03sanrnpmdvf.apps.googleusercontent.com",
@@ -44,10 +43,7 @@ const Login = () => {
       const credential = GoogleAuthProvider.credential(id_token);
       signInWithCredential(auth, credential)
         .then((userCredential) => {
-          console.log(
-            "Login com Google efetuado com sucesso!",
-            userCredential.user
-          );
+          //  console.log("Login com Google efetuado com sucesso!", userCredential.user);
           setUser(userCredential.user); // Define o usuário no contexto
           setSuccess("Login com Google efetuado com sucesso!");
           setTimeout(() => {
@@ -80,7 +76,7 @@ const Login = () => {
         email,
         senha
       );
-      console.log("Login efetuado com sucesso!", userCredential.user);
+      // console.log("Login efetuado com sucesso!", userCredential.user);
       setUser(userCredential.user); // Define o usuário no contexto
       setSuccess("Login efetuado com sucesso!");
 
@@ -137,8 +133,8 @@ const Login = () => {
         />
       </View>
 
-      {error ? <Text style={styleLogin.errorText}>{error}</Text> : null}
-      {success ? <Text style={styleLogin.successText}>{success}</Text> : null}
+      {error ? <Text style={styles.errorText}>{error}</Text> : null}
+      {success ? <Text style={styles.successText}>{success}</Text> : null}
 
       <TouchableOpacity
         style={[styles.button, { backgroundColor: "#8872DE" }]}
@@ -161,7 +157,7 @@ const Login = () => {
           source={require("../assets/img/google.svg")} // Substitua pelo caminho correto do seu ícone do Google
           style={styleLogin.googleIcon}
         />
-        <Text style={styleLogin.buttonText}>Entrar com Google</Text>
+        <Text style={styles.buttonText}>Entrar com Google</Text>
       </TouchableOpacity>
 
       <Text onPress={redirectCadastro}>

@@ -25,7 +25,6 @@ const Info = ({ navigation, route }) => {
             description: removeHtmlTags(bookData.volumeInfo.description),
           },
         });
-        console.log(bookData);
       } catch (error) {
         console.error("Error fetching book data:", error);
       }
@@ -126,6 +125,12 @@ const Info = ({ navigation, route }) => {
       <Text style={styleInfo.author}>
         {book.volumeInfo.authors?.join(", ")}
       </Text>
+
+      {book.volumeInfo.publisher ? (
+        <Text style={styleInfo.author}>
+          Editora: {book.volumeInfo.publisher}
+        </Text>
+      ) : null}
 
       {renderAverageRatingStars(book.volumeInfo.averageRating)}
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleHome from "../assets/styles/home";
@@ -19,13 +19,13 @@ const Home = ({ navigation }) => {
 
   const [romanceBooks, setRomanceBooks] = useState([]);
   const [newestBooks, setNewestBooks] = useState([]);
+  const [mysteryBooks, setMysteryBooks] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const fetchedBooks = await fetchBooks("romance", 6, "relevance");
+        const fetchedBooks = await fetchBooks("romance", 20, "relevance");
         setRomanceBooks(fetchedBooks);
-        console.log("Romances:", fetchedBooks);
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -37,9 +37,21 @@ const Home = ({ navigation }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const fetchedBooks = await fetchBooks("all", 6, "newest");
+        const fetchedBooks = await fetchBooks("Mystery", 20, "relevance");
+        setMysteryBooks(fetchedBooks);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedBooks = await fetchBooks("all", 20, "newest");
         setNewestBooks(fetchedBooks);
-        console.log("Recentes:", fetchedBooks);
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -62,25 +74,75 @@ const Home = ({ navigation }) => {
       <View style={styleHome.body}>
         <View style={styleHome.bodyContent}>
           <Text style={styleHome.text}>Sugestões de romance</Text>
-          <View style={styles.bookContainer}>
+          <ScrollView
+            horizontal
+            contentContainerStyle={[
+              styles.bookContainer,
+              styleHome.bookContainer,
+            ]}
+          >
             {romanceBooks.map((book) => (
               <TouchableOpacity
                 onPress={() => redirectInfo(book.id)}
                 key={book.id}
                 style={styles.book}
               >
-                <Image
-                  style={styles.bookImg}
-                  source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                />
+                {book.volumeInfo.imageLinks?.thumbnail ? (
+                  <Image
+                    style={styles.bookImg}
+                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                  />
+                ) : (
+                  <Image
+                    style={styles.bookImg}
+                    source={require("../assets/img/no_photo.png")}
+                  />
+                )}
               </TouchableOpacity>
             ))}
-          </View>
+          </ScrollView>
+        </View>
+
+        <View style={styleHome.bodyContent}>
+          <Text style={styleHome.text}>Sugestões de mistério</Text>
+          <ScrollView
+            horizontal
+            contentContainerStyle={[
+              styles.bookContainer,
+              styleHome.bookContainer,
+            ]}
+          >
+            {mysteryBooks.map((book) => (
+              <TouchableOpacity
+                onPress={() => redirectInfo(book.id)}
+                key={book.id}
+                style={styles.book}
+              >
+                {book.volumeInfo.imageLinks?.thumbnail ? (
+                  <Image
+                    style={styles.bookImg}
+                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                  />
+                ) : (
+                  <Image
+                    style={styles.bookImg}
+                    source={require("../assets/img/no_photo.png")}
+                  />
+                )}
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
         </View>
 
         <View style={styleHome.bodyContent}>
           <Text style={styleHome.text}>Adicionados recentemente</Text>
-          <View style={styles.bookContainer}>
+          <ScrollView
+            horizontal
+            contentContainerStyle={[
+              styles.bookContainer,
+              styleHome.bookContainer,
+            ]}
+          >
             {newestBooks.map((book) => (
               <TouchableOpacity
                 onPress={() => redirectInfo(book.id)}
@@ -100,7 +162,7 @@ const Home = ({ navigation }) => {
                 )}
               </TouchableOpacity>
             ))}
-          </View>
+          </ScrollView>
         </View>
       </View>
       <Menu navigation={navigation} />
