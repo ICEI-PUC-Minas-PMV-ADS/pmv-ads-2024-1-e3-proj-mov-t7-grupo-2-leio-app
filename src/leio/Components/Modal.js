@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import styleModal from "../assets/styles/modal";
 
-const Modal = ({ isVisible, onClose }) => {
+const Modal = ({ isVisible, onClose, onSelectCategory }) => {
   const [image1, setImage1] = useState(require("../assets/img/save1-1.svg"));
   const [image2, setImage2] = useState(require("../assets/img/save2-2.svg"));
   const [image3, setImage3] = useState(require("../assets/img/save3-3.svg"));
@@ -79,6 +79,10 @@ const Modal = ({ isVisible, onClose }) => {
     setImage2(require("../assets/img/save2-2.svg"));
     setImage3(require("../assets/img/save3-3.svg"));
   };
+  const selectCategory = (category) => {
+    onSelectCategory(category);
+    onClose();
+  };
 
   return (
     <RNModal
@@ -92,19 +96,19 @@ const Modal = ({ isVisible, onClose }) => {
           <Text style={styleModal.headerText}>Marcar como:</Text>
 
           <View style={styleModal.optionContainer}>
-            <TouchableOpacity style={styleModal.option} onPress={toggleImage1}>
+            <TouchableOpacity style={styleModal.option} onPress={() => selectCategory('Lido')}>
               <Image source={image1} style={styleModal.icon} />
               <Text style={styleModal.optionText}>Lido</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styleModal.option} onPress={toggleImage2}>
+            <TouchableOpacity style={styleModal.option} onPress={() => selectCategory('Quero ler')}>
               <Image source={image2} style={styleModal.icon} />
               <Text style={styleModal.optionText}>Quero ler</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styleModal.option} onPress={toggleImage3}>
+            <TouchableOpacity style={styleModal.option} onPress={() => selectCategory('Relendo')}>
               <Image source={image3} style={styleModal.icon} />
               <Text style={styleModal.optionText}>Relendo</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styleModal.option} onPress={toggleImage4}>
+            <TouchableOpacity style={styleModal.option} onPress={() => selectCategory('Abandonei')}>
               <Image source={image4} style={styleModal.icon} />
               <Text style={styleModal.optionText}>Abandonei</Text>
             </TouchableOpacity>
