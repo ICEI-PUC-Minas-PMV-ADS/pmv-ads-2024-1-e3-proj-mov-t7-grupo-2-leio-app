@@ -117,7 +117,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
       <ul>
-        <li>RF02 - O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor.</li>
+        <li>RF02 - O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro, categoria ou autor.</li>
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
@@ -144,7 +144,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
       <ul>
-        <li>RF02 - O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro ou autor.</li>
+        <li>RF02 - O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro, categoria ou autor.</li>
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
@@ -166,12 +166,12 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-Info.jpg" alt="Tela de informações" title="Tela de informações" style="height: 800px;">
+      <img src="img/Tela-Info.jpg" alt="Tela de informações" title="Tela de informações">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
       <ul>
-        <li>RF04 - O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, gênero, sinopse e avaliações.</li>
+        <li>RF04 - O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, sinopse e avaliações.</li>
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>
@@ -198,7 +198,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
       <ul>
-        <li>RF08 - O sistema deve permitir ao usuário armazenar os livros em uma Estante/Biblioteca.</li>
+        <li>RF09 - O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.</li>
       </ul>
       <h3>Artefatos produzidos</h3>
       <ul>

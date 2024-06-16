@@ -27,7 +27,8 @@ O aplicativo <strong>Le.io</strong> é voltado para organização e leitura de e
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+1. Baixe o código zip do repositório hospedado no Github
+2. Execute o código na sua máquina local
 
 # Documentação
 
