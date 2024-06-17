@@ -2,7 +2,7 @@
 
 Utilizaremos o React Native, com a base de dados hospedada localmente no SQLite.
 
-![Arquitetura da Solução](img/arquiteturasolucao.png)
+![Arquitetura da Solução](img/arquiteturaDaSolucao.png)
 
 ## Diagrama de Classes
 
@@ -49,7 +49,7 @@ O arquivo contendo os scripts de criação das tabelas do banco de dados SQLite 
 
 O usuário interage com a interface do usuário, que é construída utilizando React Native. Quando o usuário executa uma ação na interface, como clicar em um botão, uma requisição é enviada para o banco de dados. O banco de dados, processa a requisição, conforme necessário, e executa a query. Após o processamento, o banco de dados envia uma resposta de volta para o React Native frontend. O React Native frontend recebe a resposta e atualiza a interface do usuário conforme necessário para refletir o resultado da ação do usuário.
 
-![Tecnologias Utilizadas](img/tecnologia-utilizadas.png)
+![Tecnologias Utilizadas](img/tecnologiasUtilizadas.png)
 
 ## Hospedagem
 
