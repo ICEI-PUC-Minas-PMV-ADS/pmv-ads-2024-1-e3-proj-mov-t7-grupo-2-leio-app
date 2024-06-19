@@ -20,7 +20,7 @@ const Info = ({ navigation, route }) => {
           `https://www.googleapis.com/books/v1/volumes/${bookId}`
         );
         const bookData = await response.json();
-        console.log("Dados do livro:", bookData); // Log para verificar dados recebidos
+        //   console.log("Dados do livro:", bookData);
         setBook({
           ...bookData,
           volumeInfo: {
@@ -79,14 +79,14 @@ const Info = ({ navigation, route }) => {
         usuario_id: usuario.uid,
         livro_id: book.id, // Certifique-se de que book.id está correto
         categoria: categoria,
-        timestamp: new Date()
+        timestamp: new Date(),
       };
-      console.log("Tentando adicionar livro:", livroData); // Log dos dados a serem enviados
+      // console.log("Tentando adicionar livro:", livroData);
 
       // Cria um documento com um ID único baseado no usuário e no livro
-      const docRef = doc(db, 'estante', `${usuario.uid}_${book.id}`);
+      const docRef = doc(db, "estante", `${usuario.uid}_${book.id}`);
       await setDoc(docRef, livroData);
-      console.log("Livro adicionado à estante com sucesso!");
+      // console.log("Livro adicionado à estante com sucesso!");
     } catch (error) {
       console.error("Erro ao adicionar livro à estante: ", error);
     }
@@ -109,12 +109,10 @@ const Info = ({ navigation, route }) => {
   };
 
   const openModal = () => {
-    console.log("Abrindo modal"); // Log para verificar abertura do modal
     setFilterModalVisible(true);
   };
 
   const closeModal = () => {
-    console.log("Fechando modal"); // Log para verificar fechamento do modal
     setFilterModalVisible(false);
   };
 
@@ -187,6 +185,7 @@ const Info = ({ navigation, route }) => {
         isVisible={isFilterModalVisible}
         onClose={closeModal}
         onSelectCategory={adicionarLivroEstante}
+        bookId={bookId}
       />
     </View>
   );

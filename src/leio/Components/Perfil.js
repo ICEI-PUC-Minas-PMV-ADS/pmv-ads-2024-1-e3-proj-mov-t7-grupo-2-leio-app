@@ -46,9 +46,8 @@ const Perfil = () => {
     if (user) {
       setUsuario(user.displayName || "");
       setEmail(user.email || "");
-      setFoto(user.photoURL || fotoPadrao); // Atualiza o estado da foto com a URL da foto do usuário
-      setSenha(""); // Exibe a senha como asteriscos
-      // Verificar se o login foi feito pelo Google
+      setFoto(user.photoURL || fotoPadrao);
+      setSenha("");
       setIsGoogleUser(
         user.providerData.some(
           (provider) => provider.providerId === "google.com"
@@ -63,10 +62,6 @@ const Perfil = () => {
 
   const redirectHome = () => {
     navigation.navigate("Home");
-  };
-
-  const redirectPerfil = () => {
-    navigation.navigate("Perfil");
   };
 
   const selecionarFoto = async () => {
@@ -84,7 +79,7 @@ const Perfil = () => {
     });
 
     if (!result.canceled) {
-      setFoto(result.assets[0].uri); // Armazenando o URI da imagem
+      setFoto(result.assets[0].uri);
     }
   };
 
@@ -93,8 +88,6 @@ const Perfil = () => {
     const blob = await response.blob();
     const storageRef = ref(storage, `profilePictures/${Date.now()}`);
     await uploadBytes(storageRef, blob);
-
-    // Obtenha o URL de download
     const downloadURL = await getDownloadURL(storageRef);
     return downloadURL;
   };
@@ -106,7 +99,6 @@ const Perfil = () => {
     );
     try {
       await reauthenticateWithCredential(auth.currentUser, credential);
-      // console.log("Reautenticação bem-sucedida");
     } catch (error) {
       console.error("Erro na reautenticação:", error);
       throw error;
@@ -118,7 +110,6 @@ const Perfil = () => {
     setSuccess("");
 
     try {
-      // Reautenticar o usuário antes de atualizar a senha ou o email
       if (senhaAtual) {
         await reauthenticate(senhaAtual);
       }
@@ -183,7 +174,7 @@ const Perfil = () => {
 
   return (
     <View style={[styles.container, { justifyContent: "center" }]}>
-      <Pressable onPress={selecionarFoto}>
+      <Pressable onPress={isGoogleUser ? null : selecionarFoto}>
         <View style={styleCadastro.selectPhoto}>
           {foto ? (
             <Image
@@ -198,7 +189,9 @@ const Perfil = () => {
             />
           )}
         </View>
-        <Text style={styleCadastro.selectPhotoText}>Substituir foto</Text>
+        {!isGoogleUser && (
+          <Text style={styleCadastro.selectPhotoText}>Substituir foto</Text>
+        )}
       </Pressable>
 
       <View style={styles.inputContainer}>
@@ -206,18 +199,20 @@ const Perfil = () => {
         <TextInput
           style={styles.input}
           value={usuario}
+          editable={!isGoogleUser}
           onChangeText={(text) => setUsuario(text)}
         />
       </View>
 
-      {/* <View style={styles.inputContainer}>
+      <View style={styles.inputContainer}>
         <Image source={require("../assets/img/email.svg")} />
         <TextInput
           style={styles.input}
           value={email}
+          editable={!isGoogleUser}
           onChangeText={(text) => setEmail(text)}
         />
-      </View> */}
+      </View>
 
       {!isGoogleUser && (
         <>

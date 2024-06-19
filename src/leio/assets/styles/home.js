@@ -18,6 +18,7 @@ const styleHome = StyleSheet.create({
   },
   bodyContent: {
     gap: 16,
+    width: "100%",
   },
   bookContainer: {
     flexWrap: "nowrap",
