@@ -27,10 +27,10 @@ const Biblioteca = ({ navigation }) => {
   const [query, setQuery] = useState("");
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
   const [estanteBooks, setEstanteBooks] = useState({
-    Lido: [],
-    "Quero Ler": [],
-    Relendo: [],
-    Abandonei: [],
+    "Lido": [],
+    "Quero ler": [],
+    "Relendo": [],
+    "Abandonei": [],
   });
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -54,17 +54,19 @@ const Biblioteca = ({ navigation }) => {
       const querySnapshot = await getDocs(q);
 
       const booksByCategory = {
-        Lido: [],
-        "Quero Ler": [],
-        Relendo: [],
-        Abandonei: [],
+        "Lido": [],
+        "Quero ler": [],
+        "Relendo": [],
+        "Abandonei": [],
       };
 
       for (const doc of querySnapshot.docs) {
         const data = doc.data();
         const bookDetails = await fetchBookDetails(data.livro_id);
 
+        /*  ######################################################################################################################## */
         if (booksByCategory[data.categoria]) {
+          console.log("data.categoria: ", data.categoria);
           booksByCategory[data.categoria].push({
             ...data,
             title: bookDetails.title,
@@ -78,6 +80,8 @@ const Biblioteca = ({ navigation }) => {
       console.error("Erro ao carregar livros da estante:", error);
     }
   };
+
+
 
   // Função para buscar detalhes dos livros
   const fetchBookDetails = async (bookId) => {
@@ -110,16 +114,16 @@ const Biblioteca = ({ navigation }) => {
       const books =
         appliedFilters.genres || appliedFilters.formats
           ? await fetchFilteredBooks(
-              searchQuery || "i",
-              36,
-              tab === "Biblioteca" ? "newest" : "relevance",
-              appliedFilters
-            )
+            searchQuery || "i",
+            36,
+            tab === "Biblioteca" ? "newest" : "relevance",
+            appliedFilters
+          )
           : await fetchBooks(
-              searchQuery || "i",
-              36,
-              tab === "Biblioteca" ? "newest" : "relevance"
-            );
+            searchQuery || "i",
+            36,
+            tab === "Biblioteca" ? "newest" : "relevance"
+          );
 
       const filteredBooks = books.filter(
         (book) => book.accessInfo.epub?.isAvailable
