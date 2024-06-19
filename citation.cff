@@ -1,0 +1,26 @@
+message: Please cite this software using these metadata.
+title: Le.io
+authors:
+  - family-names: Azedias de Souza
+    given-names: Aline
+  - family-names: Gabriel Duarte Enis
+    given-names: Lucas
+  - family-names: de Jesus Rizzon
+    given-names: Paloma 
+  - family-names: Gonzaga Barbosa
+    given-names: Renata 
+  - family-names: Gomes Vieira
+    given-names: Ricardo 
+  - family-names: Matos Rodrigues
+    given-names: Sandra 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Nunes Bezerra
+    given-names: Sinaide 
+keywords:
+  - Gestão
+  - Biblioteca
+  - Livros
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t7-grupo-2-leio-app
+version: 1.0.0
+date-released: 2024-06-19
