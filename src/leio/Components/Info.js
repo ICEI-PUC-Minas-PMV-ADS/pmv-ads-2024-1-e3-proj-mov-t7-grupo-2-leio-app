@@ -4,6 +4,8 @@ import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleInfo from "../assets/styles/info";
 import Modal from "./Modal";
+import { db, auth } from "../db/firebaseConfig"; // Importação correta do Firebase configurado
+import { doc, setDoc } from "firebase/firestore"; // Importar as funções necessárias do Firestore
 
 const Info = ({ navigation, route }) => {
   const [book, setBook] = useState(null);
@@ -18,6 +20,7 @@ const Info = ({ navigation, route }) => {
           `https://www.googleapis.com/books/v1/volumes/${bookId}`
         );
         const bookData = await response.json();
+        //   console.log("Dados do livro:", bookData);
         setBook({
           ...bookData,
           volumeInfo: {
@@ -26,7 +29,7 @@ const Info = ({ navigation, route }) => {
           },
         });
       } catch (error) {
-        console.error("Error fetching book data:", error);
+        console.error("Erro ao buscar dados do livro:", error);
       }
     };
 
@@ -35,7 +38,6 @@ const Info = ({ navigation, route }) => {
 
   const removeHtmlTags = (description) => {
     if (!description) return "";
-    // Expressão regular para remover as tags HTML
     return description.replace(/<[^>]*>?/gm, "");
   };
 
@@ -65,10 +67,35 @@ const Info = ({ navigation, route }) => {
     setIsFavorite(!isFavorite);
   };
 
+  const adicionarLivroEstante = async (categoria) => {
+    const usuario = auth.currentUser;
+    if (!usuario) {
+      console.error("Usuário não autenticado");
+      return;
+    }
+
+    try {
+      const livroData = {
+        usuario_id: usuario.uid,
+        livro_id: book.id, // Certifique-se de que book.id está correto
+        categoria: categoria,
+        timestamp: new Date(),
+      };
+      // console.log("Tentando adicionar livro:", livroData);
+
+      // Cria um documento com um ID único baseado no usuário e no livro
+      const docRef = doc(db, "estante", `${usuario.uid}_${book.id}`);
+      await setDoc(docRef, livroData);
+      // console.log("Livro adicionado à estante com sucesso!");
+    } catch (error) {
+      console.error("Erro ao adicionar livro à estante: ", error);
+    }
+  };
+
   if (!book || !book.volumeInfo) {
     return (
       <View style={[styles.container, styleInfo.loading]}>
-        <Text style={styleInfo.loadingText}>Loading...</Text>
+        <Text style={styleInfo.loadingText}>Carregando...</Text>
       </View>
     );
   }
@@ -154,7 +181,12 @@ const Info = ({ navigation, route }) => {
 
       <Menu navigation={navigation} />
 
-      <Modal isVisible={isFilterModalVisible} onClose={closeModal} />
+      <Modal
+        isVisible={isFilterModalVisible}
+        onClose={closeModal}
+        onSelectCategory={adicionarLivroEstante}
+        bookId={bookId}
+      />
     </View>
   );
 };

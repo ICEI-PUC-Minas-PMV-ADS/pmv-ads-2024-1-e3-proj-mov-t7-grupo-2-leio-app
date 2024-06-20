@@ -14,10 +14,6 @@ Layout padrão da aplicação que será utilizado em todas as páginas como a de
 
 <img src="./img/Paleta de cores.jpg">
 
-### Tipografia
-
-<img src="./img/Tipografia.jpg">
-
 ### Ícones
 
 <img src="./img/Ícones.jpg">

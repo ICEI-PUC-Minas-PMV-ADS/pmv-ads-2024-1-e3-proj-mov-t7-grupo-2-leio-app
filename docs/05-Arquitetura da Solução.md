@@ -1,6 +1,6 @@
 # Arquitetura da Solução
 
-Utilizaremos o React Native, com a base de dados hospedada localmente no SQLite.
+Utilizaremos o React Native, com a base de dados hospedada no Firebase.
 
 ![Arquitetura da Solução](img/arquiteturaDaSolucao.png)
 
@@ -28,24 +28,48 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 ## Modelo Físico
 
-A tabela abaixo representa o modelo físico do banco de dados SQLite da aplicação.
-![Modelo Físico](img/modelo-fisico.png)
+A tabela abaixo representa o banco de dados da aplicação no firebase.
+<img src="./img/Tabelas firebase.jpg">
 
-O arquivo contendo os scripts de criação das tabelas do banco de dados SQLite está localizado na pasta src/db: <a href="../src/db/DbServices.js">src/db</a>
+O arquivo contendo o script da criação da configuração das tabelas no firebase está localizado na pasta src/leio/db: <a href="../src/leio/db/firebaseConfig.js">src/leio/db</a> e também está representado abaixo:
+
+```javascript
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+
+const firebaseConfig = {
+  apiKey: "{{numero}}",
+  authDomain: "leio-app.firebaseapp.com",
+  projectId: "leio-app",
+  storageBucket: "leio-app.appspot.com",
+  messagingSenderId: "{{numero}}",
+  appId: "{{numero}}",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+export { app, auth, db, storage };
+```
 
 ## Tecnologias Utilizadas
 
-| Função                                | Tecnologia                        |
-| ------------------------------------- | --------------------------------- |
-| Linguagem                             | JavaScript                        |
-| Framework                             | ReactNative                       |
-| IDE                                   | Visual Studio Code                |
-| Ferramentas Wireframes                | Figma                             |
-| Ferramentas de Comunicação            | Microsoft Teams, GitHub, Whatsapp |
-| Ferramentas de Gestão de Projeto      | Github Projects                   |
-| Ferramentas de versionamento          | Github Desktop e Git              |
-| Ferramentas para criação de diagramas | Draw.io                           |
-| Banco de dados                        | Firebase                          |
+| Função                                | Tecnologia                 |
+| ------------------------------------- | -------------------------- |
+| Linguagem                             | JavaScript                 |
+| Framework                             | React Native + Expo        |
+| IDE                                   | Visual Studio Code         |
+| Ferramentas Wireframes                | Figma                      |
+| Ferramentas de Comunicação            | Microsoft Teams e Whatsapp |
+| Ferramentas de Gestão de Projeto      | Github Projects            |
+| Ferramentas de versionamento          | Github Desktop e Git       |
+| Ferramentas para criação de diagramas | Draw.io                    |
+| Banco de dados                        | Firebase                   |
+| API                                   | Google Books API           |
 
 O usuário interage com a interface do usuário, que é construída utilizando React Native. Quando o usuário executa uma ação na interface, como clicar em um botão, uma requisição é enviada para o banco de dados. O banco de dados, processa a requisição, conforme necessário, e executa a query. Após o processamento, o banco de dados envia uma resposta de volta para o React Native frontend. O React Native frontend recebe a resposta e atualiza a interface do usuário conforme necessário para refletir o resultado da ação do usuário.
 
@@ -59,7 +83,7 @@ A aplicação está hospedada no Github, ela pode ser executada localmente.
 
 #### Funcionalidade
 
-- O aplicativo deve oferecer todas as funcionalidades necessárias para organizar e buscar livros, incluindo a gestão de contas de usuários, busca por livros por nome do autor, categorização de livros, visualização de informações detalhadas sobre os livros, e a capacidade de baixar e-books de domínio público.
+- O aplicativo deve oferecer todas as funcionalidades necessárias para organizar e buscar livros, incluindo a gestão de contas de usuários, busca por livros por nome, autor, categorização de livros e visualização de informações detalhadas sobre os livros.
 
 #### Confiabilidade
 
