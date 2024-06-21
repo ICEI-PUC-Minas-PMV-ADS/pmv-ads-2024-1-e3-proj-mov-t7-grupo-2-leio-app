@@ -42,7 +42,7 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 
 |    Caso de Teste    |                                                CT-07 - Ler descrição dos livros                                                |
 | :-----------------: | :-----------------------------------------------------------------------------------------------------------------: |
-|       Imagem        |                                  <img src = "./img/Tela-Descrição.jpg"/>                                   |
+|       Imagem        |                                  <img src = "./img/Tela-Descricao.jpg"/>                                   |
 | Requisito Associado | RF04 - O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, sinopse e avaliações. |
 |      Avaliação      |                                         Descrição do livro disponível com sucesso. ✅                                          |
 
