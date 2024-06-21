@@ -72,8 +72,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RF-05 | O sistema deve permitir que o usuário acesse o link para compra na Play Store.                                                                               | ALTA       |
 | RF-06 | O sistema deve permitir que o usuário possa ver uma prévia do livro na API.                                                                                  | MÉDIA      |
 | RF-07 | O sistema deve permitir que o usuário possa avaliar o livro lido entre 1 e 5 estrelas.                                                                       | MÉDIA      |
-| RF-08 | O sistema deve permitir ao usuário categorizar os livros, que irão para a estante.                                                                           | MÉDIA      |
-| RF-09 | O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.                                                                      | MÉDIA      |
+| RF-08 | O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.                                                                      | MÉDIA      |
 
 ### Requisitos não Funcionais
 
@@ -105,9 +104,9 @@ O diagrama de casos de uso é o próximo passo após a elicitação de requisito
 
 # Matriz de Rastreabilidade
 
-A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio.
+A matriz de rastreabilidade facilita a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio.
 
-A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema.
+A matriz deve contempla os elementos relevantes que fazem parte do sistema.
 
 <img src="./img/Matriz de rastreabilidade.jpg">
 

@@ -59,7 +59,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-Perfil.jpg" alt="Tela perfil" title="Tela perfil" style="height: 800px;">
+      <img src="img/Tela-PerfilConcluido.jpg" alt="Tela perfil" title="Tela perfil" style="height: 800px;">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
