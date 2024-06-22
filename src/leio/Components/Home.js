@@ -61,112 +61,114 @@ const Home = ({ navigation }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <View style={styleHome.containerName}>
-        <Text style={styleHome.containerName}>
-          Olá, {user?.displayName ?? "Usuário"}
-        </Text>
-        <TouchableOpacity onPress={redirectLogin}>
-          <Image source={require("../assets/img/logout.svg")} />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styleHome.body}>
-        <View style={styleHome.bodyContent}>
-          <Text style={styleHome.text}>Sugestões de romance</Text>
-          <ScrollView
-            horizontal
-            contentContainerStyle={[
-              styles.bookContainer,
-              styleHome.bookContainer,
-            ]}
-          >
-            {romanceBooks.map((book) => (
-              <TouchableOpacity
-                onPress={() => redirectInfo(book.id)}
-                key={book.id}
-                style={styles.book}
-              >
-                {book.volumeInfo.imageLinks?.thumbnail ? (
-                  <Image
-                    style={styles.bookImg}
-                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                  />
-                ) : (
-                  <Image
-                    style={styles.bookImg}
-                    source={require("../assets/img/no_photo.png")}
-                  />
-                )}
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
+    <>
+      <ScrollView vertical contentContainerStyle={styles.container}>
+        <View style={styleHome.containerName}>
+          <Text style={styleHome.containerName}>
+            Olá, {user?.displayName ?? "Usuário"}
+          </Text>
+          <TouchableOpacity onPress={redirectLogin}>
+            <Image source={require("../assets/img/logout.svg")} />
+          </TouchableOpacity>
         </View>
 
-        <View style={styleHome.bodyContent}>
-          <Text style={styleHome.text}>Sugestões de mistério</Text>
-          <ScrollView
-            horizontal
-            contentContainerStyle={[
-              styles.bookContainer,
-              styleHome.bookContainer,
-            ]}
-          >
-            {mysteryBooks.map((book) => (
-              <TouchableOpacity
-                onPress={() => redirectInfo(book.id)}
-                key={book.id}
-                style={styles.book}
-              >
-                {book.volumeInfo.imageLinks?.thumbnail ? (
-                  <Image
-                    style={styles.bookImg}
-                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                  />
-                ) : (
-                  <Image
-                    style={styles.bookImg}
-                    source={require("../assets/img/no_photo.png")}
-                  />
-                )}
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        </View>
+        <View style={styleHome.body}>
+          <View style={styleHome.bodyContent}>
+            <Text style={styleHome.text}>Sugestões de romance</Text>
+            <ScrollView
+              horizontal
+              contentContainerStyle={[
+                styles.bookContainer,
+                styleHome.bookContainer,
+              ]}
+            >
+              {romanceBooks.map((book) => (
+                <TouchableOpacity
+                  onPress={() => redirectInfo(book.id)}
+                  key={book.id}
+                  style={styles.book}
+                >
+                  {book.volumeInfo.imageLinks?.thumbnail ? (
+                    <Image
+                      style={styles.bookImg}
+                      source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                    />
+                  ) : (
+                    <Image
+                      style={styles.bookImg}
+                      source={require("../assets/img/no_photo.png")}
+                    />
+                  )}
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
 
-        <View style={styleHome.bodyContent}>
-          <Text style={styleHome.text}>Adicionados recentemente</Text>
-          <ScrollView
-            horizontal
-            contentContainerStyle={[
-              styles.bookContainer,
-              styleHome.bookContainer,
-            ]}
-          >
-            {newestBooks.map((book) => (
-              <TouchableOpacity
-                onPress={() => redirectInfo(book.id)}
-                key={book.id}
-                style={styles.book}
-              >
-                {book.volumeInfo.imageLinks?.thumbnail ? (
-                  <Image
-                    style={styles.bookImg}
-                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                  />
-                ) : (
-                  <Image
-                    style={styles.bookImg}
-                    source={require("../assets/img/no_photo.png")}
-                  />
-                )}
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
+          <View style={styleHome.bodyContent}>
+            <Text style={styleHome.text}>Sugestões de mistério</Text>
+            <ScrollView
+              horizontal
+              contentContainerStyle={[
+                styles.bookContainer,
+                styleHome.bookContainer,
+              ]}
+            >
+              {mysteryBooks.map((book) => (
+                <TouchableOpacity
+                  onPress={() => redirectInfo(book.id)}
+                  key={book.id}
+                  style={styles.book}
+                >
+                  {book.volumeInfo.imageLinks?.thumbnail ? (
+                    <Image
+                      style={styles.bookImg}
+                      source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                    />
+                  ) : (
+                    <Image
+                      style={styles.bookImg}
+                      source={require("../assets/img/no_photo.png")}
+                    />
+                  )}
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+
+          <View style={styleHome.bodyContent}>
+            <Text style={styleHome.text}>Adicionados recentemente</Text>
+            <ScrollView
+              horizontal
+              contentContainerStyle={[
+                styles.bookContainer,
+                styleHome.bookContainer,
+              ]}
+            >
+              {newestBooks.map((book) => (
+                <TouchableOpacity
+                  onPress={() => redirectInfo(book.id)}
+                  key={book.id}
+                  style={styles.book}
+                >
+                  {book.volumeInfo.imageLinks?.thumbnail ? (
+                    <Image
+                      style={styles.bookImg}
+                      source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                    />
+                  ) : (
+                    <Image
+                      style={styles.bookImg}
+                      source={require("../assets/img/no_photo.png")}
+                    />
+                  )}
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
         </View>
-      </View>
+      </ScrollView>
       <Menu navigation={navigation} />
-    </View>
+    </>
   );
 };
 

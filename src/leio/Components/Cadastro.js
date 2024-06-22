@@ -6,6 +6,7 @@ import {
   Pressable,
   Image,
   ActivityIndicator,
+  ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -117,7 +118,10 @@ const Cadastro = () => {
   };
 
   return (
-    <View style={[styles.container, { justifyContent: "center" }]}>
+    <ScrollView
+      vertical
+      contentContainerStyle={[styles.container, { justifyContent: "center" }]}
+    >
       <Pressable onPress={selecionarFoto}>
         <View style={styleCadastro.selectPhoto}>
           <Image
@@ -198,7 +202,7 @@ const Cadastro = () => {
           )}
         </Pressable>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

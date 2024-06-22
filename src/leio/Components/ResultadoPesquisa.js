@@ -68,81 +68,85 @@ const ResultadoPesquisa = ({ navigation, route }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite sua pesquisa aqui"
-          value={searchQuery}
-          onChangeText={(text) => setSearchQuery(text)}
-        />
-        <TouchableOpacity onPress={fetchData}>
-          <Image
-            source={require("../assets/img/search.svg")}
-            style={styleResPesquisa.icon}
+    <>
+      <ScrollView vertical contentContainerStyle={styles.container}>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Digite sua pesquisa aqui"
+            value={searchQuery}
+            onChangeText={(text) => setSearchQuery(text)}
           />
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity onPress={fetchData}>
+            <Image
+              source={require("../assets/img/search.svg")}
+              style={styleResPesquisa.icon}
+            />
+          </TouchableOpacity>
+        </View>
 
-      <ScrollView vertical>
-        <View style={styles.bookContainer}>
-          {resultados.map((book) => (
-            <View style={styleResPesquisa.bookContent} key={book.id}>
-              <TouchableOpacity
-                onPress={() => redirectInfo(book.id)}
-                style={styles.book}
-              >
-                {book.volumeInfo.imageLinks?.thumbnail ? (
-                  <Image
-                    style={styles.bookImg}
-                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                  />
-                ) : (
-                  <Image
-                    style={styles.bookImg}
-                    source={require("../assets/img/no_photo.png")}
-                  />
-                )}
-              </TouchableOpacity>
-              <View style={styleResPesquisa.bookInfos}>
-                <View style={styleResPesquisa.bookDiv}>
-                  <Text style={styleResPesquisa.title}>
-                    {book.volumeInfo.title}
-                  </Text>
-                  <Text style={styleResPesquisa.author}>
-                    {book.volumeInfo.authors?.join(", ")}
-                  </Text>
-                </View>
-                <View style={styleResPesquisa.bookDiv}>
-                  {renderStars(book.volumeInfo.averageRating)}
-                  <View style={styleResPesquisa.icons}>
-                    <TouchableOpacity onPress={() => redirectInfo(book.id)}>
-                      <Image
-                        source={require("../assets/img/info.svg")}
-                        style={styleResPesquisa.icon}
-                      />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => openExternalLink(book)}>
-                      <Image
-                        source={require("../assets/img/download.svg")}
-                        style={styleResPesquisa.icon}
-                      />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => openExternalLinkPS(book)}>
-                      <Image
-                        source={require("../assets/img/money.svg")}
-                        style={styleResPesquisa.icon}
-                      />
-                    </TouchableOpacity>
+        <ScrollView vertical>
+          <View style={styles.bookContainer}>
+            {resultados.map((book) => (
+              <View style={styleResPesquisa.bookContent} key={book.id}>
+                <TouchableOpacity
+                  onPress={() => redirectInfo(book.id)}
+                  style={styles.book}
+                >
+                  {book.volumeInfo.imageLinks?.thumbnail ? (
+                    <Image
+                      style={styles.bookImg}
+                      source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                    />
+                  ) : (
+                    <Image
+                      style={styles.bookImg}
+                      source={require("../assets/img/no_photo.png")}
+                    />
+                  )}
+                </TouchableOpacity>
+                <View style={styleResPesquisa.bookInfos}>
+                  <View style={styleResPesquisa.bookDiv}>
+                    <Text style={styleResPesquisa.title}>
+                      {book.volumeInfo.title}
+                    </Text>
+                    <Text style={styleResPesquisa.author}>
+                      {book.volumeInfo.authors?.join(", ")}
+                    </Text>
+                  </View>
+                  <View style={styleResPesquisa.bookDiv}>
+                    {renderStars(book.volumeInfo.averageRating)}
+                    <View style={styleResPesquisa.icons}>
+                      <TouchableOpacity onPress={() => redirectInfo(book.id)}>
+                        <Image
+                          source={require("../assets/img/info.svg")}
+                          style={styleResPesquisa.icon}
+                        />
+                      </TouchableOpacity>
+                      <TouchableOpacity onPress={() => openExternalLink(book)}>
+                        <Image
+                          source={require("../assets/img/download.svg")}
+                          style={styleResPesquisa.icon}
+                        />
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        onPress={() => openExternalLinkPS(book)}
+                      >
+                        <Image
+                          source={require("../assets/img/money.svg")}
+                          style={styleResPesquisa.icon}
+                        />
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 </View>
               </View>
-            </View>
-          ))}
-        </View>
+            ))}
+          </View>
+        </ScrollView>
       </ScrollView>
       <Menu navigation={navigation} />
-    </View>
+    </>
   );
 };
 

@@ -47,6 +47,10 @@ const Modal = ({ isVisible, onClose, onSelectCategory, category }) => {
         return selectedCategory === "Lido"
           ? require("../assets/img/save1.svg")
           : require("../assets/img/save1-1.svg");
+      case "Lendo":
+        return selectedCategory === "Lendo"
+          ? require("../assets/img/save5.svg")
+          : require("../assets/img/save5-5.svg");
       case "Quero ler":
         return selectedCategory === "Quero ler"
           ? require("../assets/img/save2.svg")
@@ -82,6 +86,13 @@ const Modal = ({ isVisible, onClose, onSelectCategory, category }) => {
             >
               <Image source={getImageSource("Lido")} style={styleModal.icon} />
               <Text style={styleModal.optionText}>Lido</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styleModal.option}
+              onPress={() => selectCategory("Lendo")}
+            >
+              <Image source={getImageSource("Lendo")} style={styleModal.icon} />
+              <Text style={styleModal.optionText}>Lendo</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styleModal.option}
