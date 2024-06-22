@@ -121,6 +121,7 @@ const Pesquisa = ({ navigation }) => {
   return (
     <>
       <ScrollView vertical contentContainerStyle={styles.container}>
+        
         <View
           style={[styles.inputContainer, { justifyContent: "space-between" }]}
         >
