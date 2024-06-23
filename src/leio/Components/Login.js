@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   Image,
+  ScrollView,
 } from "react-native";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
@@ -105,7 +106,10 @@ const Login = () => {
   };
 
   return (
-    <View style={[styles.container, { justifyContent: "center" }]}>
+    <ScrollView
+      vertical
+      contentContainerStyle={[styles.container, { justifyContent: "center" }]}
+    >
       <Image source={require("../assets/img/logo.svg")} />
       <Image
         source={require("../assets/img/ilustracao.svg")}
@@ -163,7 +167,7 @@ const Login = () => {
       <Text onPress={redirectCadastro}>
         Não possui uma conta? Cadastre-se aqui
       </Text>
-    </View>
+    </ScrollView>
   );
 };
 

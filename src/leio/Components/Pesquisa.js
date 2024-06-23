@@ -119,160 +119,167 @@ const Pesquisa = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View
-        style={[styles.inputContainer, { justifyContent: "space-between" }]}
-      >
-        <TextInput
-          style={styles.input}
-          placeholder="O que você quer ler?"
-          value={query}
-          onChangeText={(text) => handleSearch(text)}
-        />
-        <View>
-          <TouchableOpacity onPress={() => handleSearch(query)}>
-            <Image source={require("../assets/img/search.svg")} />
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      {query.trim() === "" ? (
-        <ScrollView style={stylePesquisa.bodyContainer}>
-          <View style={stylePesquisa.bodyContent}>
-            <Text style={stylePesquisa.titleText}>Categorias</Text>
-
-            <ScrollView style={{ width: "100%" }}>
-              <View style={stylePesquisa.imgsContainer}>
-                <TouchableOpacity
-                  style={stylePesquisa.imageView}
-                  onPress={() => handleCategorySelection("Ficção Científica")}
-                >
-                  <Image
-                    source={require("../assets/img/ficcao.svg")}
-                    style={stylePesquisa.image}
-                  />
-                  <Text style={stylePesquisa.imageText}>Ficção Científica</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={stylePesquisa.imageView}
-                  onPress={() => handleCategorySelection("Romance")}
-                >
-                  <Image
-                    source={require("../assets/img/romance.svg")}
-                    style={stylePesquisa.image}
-                  />
-                  <Text style={stylePesquisa.imageText}>Romance</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={stylePesquisa.imageView}
-                  onPress={() => handleCategorySelection("HQs")}
-                >
-                  <Image
-                    source={require("../assets/img/hqs.svg")}
-                    style={stylePesquisa.image}
-                  />
-                  <Text style={stylePesquisa.imageText}>HQs</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={stylePesquisa.imageView}
-                  onPress={() => handleCategorySelection("Terror")}
-                >
-                  <Image
-                    source={require("../assets/img/terror.svg")}
-                    style={stylePesquisa.image}
-                  />
-                  <Text style={stylePesquisa.imageText}>Terror</Text>
-                </TouchableOpacity>
-              </View>
-            </ScrollView>
-
-            <Text style={stylePesquisa.titleText}>Autores</Text>
-
-            <ScrollView>
-              <View style={stylePesquisa.imgsContainer}>
-                <TouchableOpacity
-                  style={stylePesquisa.imageView}
-                  onPress={() => handleAuthorSelection("J. K. Rowling")}
-                >
-                  <Image
-                    source={require("../assets/img/autorRowling.svg")}
-                    style={stylePesquisa.image}
-                  />
-                  <Text style={stylePesquisa.imageText}>J. K. Rowling</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={stylePesquisa.imageView}
-                  onPress={() => handleAuthorSelection("J. R. R. Tolkien")}
-                >
-                  <Image
-                    source={require("../assets/img/autorTolkien.svg")}
-                    style={stylePesquisa.image}
-                  />
-                  <Text style={stylePesquisa.imageText}>J. R. R. Tolkien</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={stylePesquisa.imageView}
-                  onPress={() => handleAuthorSelection("Stephen King")}
-                >
-                  <Image
-                    source={require("../assets/img/autorKing.jpg")}
-                    style={stylePesquisa.image}
-                  />
-                  <Text style={stylePesquisa.imageText}>Stephen King</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={stylePesquisa.imageView}
-                  onPress={() => handleAuthorSelection("Cassandra Clare")}
-                >
-                  <Image
-                    source={require("../assets/img/autorCassandra.jpeg")}
-                    style={stylePesquisa.image}
-                  />
-                  <Text style={stylePesquisa.imageText}>Cassandra Clare</Text>
-                </TouchableOpacity>
-              </View>
-            </ScrollView>
+    <>
+      <ScrollView vertical contentContainerStyle={styles.container}>
+        
+        <View
+          style={[styles.inputContainer, { justifyContent: "space-between" }]}
+        >
+          <TextInput
+            style={styles.input}
+            placeholder="O que você quer ler?"
+            value={query}
+            onChangeText={(text) => handleSearch(text)}
+          />
+          <View>
+            <TouchableOpacity onPress={() => handleSearch(query)}>
+              <Image source={require("../assets/img/search.svg")} />
+            </TouchableOpacity>
           </View>
-        </ScrollView>
-      ) : (
-        <ScrollView contentContainerStyle={styles.bookContainer}>
-          {filteredBooks.map((book) => (
-            <View key={book.id} style={styles.book}>
-              <TouchableOpacity
-                onPress={() => redirectInfo(book.id)}
-                key={book.id}
-                style={styles.book}
-              >
-                {book.volumeInfo.imageLinks?.thumbnail ? (
-                  <Image
-                    style={styles.bookImg}
-                    source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-                  />
-                ) : (
-                  <Image
-                    style={styles.bookImg}
-                    source={require("../assets/img/no_photo.png")}
-                  />
-                )}
-              </TouchableOpacity>
-            </View>
-          ))}
-        </ScrollView>
-      )}
+        </View>
 
-      <FiltroModal
-        isVisible={isFilterModalVisible}
-        onClose={() => setFilterModalVisible(false)}
-        onApply={(appliedFilters) => setFilters(appliedFilters)}
-      />
+        {query.trim() === "" ? (
+          <ScrollView style={stylePesquisa.bodyContainer}>
+            <View style={stylePesquisa.bodyContent}>
+              <Text style={stylePesquisa.titleText}>Categorias</Text>
+
+              <ScrollView style={{ width: "100%" }}>
+                <View style={stylePesquisa.imgsContainer}>
+                  <TouchableOpacity
+                    style={stylePesquisa.imageView}
+                    onPress={() => handleCategorySelection("Ficção Científica")}
+                  >
+                    <Image
+                      source={require("../assets/img/ficcao.svg")}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>
+                      Ficção Científica
+                    </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={stylePesquisa.imageView}
+                    onPress={() => handleCategorySelection("Romance")}
+                  >
+                    <Image
+                      source={require("../assets/img/romance.svg")}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>Romance</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={stylePesquisa.imageView}
+                    onPress={() => handleCategorySelection("HQs")}
+                  >
+                    <Image
+                      source={require("../assets/img/hqs.svg")}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>HQs</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={stylePesquisa.imageView}
+                    onPress={() => handleCategorySelection("Terror")}
+                  >
+                    <Image
+                      source={require("../assets/img/terror.svg")}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>Terror</Text>
+                  </TouchableOpacity>
+                </View>
+              </ScrollView>
+
+              <Text style={stylePesquisa.titleText}>Autores</Text>
+
+              <ScrollView>
+                <View style={stylePesquisa.imgsContainer}>
+                  <TouchableOpacity
+                    style={stylePesquisa.imageView}
+                    onPress={() => handleAuthorSelection("J. K. Rowling")}
+                  >
+                    <Image
+                      source={require("../assets/img/autorRowling.svg")}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>J. K. Rowling</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={stylePesquisa.imageView}
+                    onPress={() => handleAuthorSelection("J. R. R. Tolkien")}
+                  >
+                    <Image
+                      source={require("../assets/img/autorTolkien.svg")}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>
+                      J. R. R. Tolkien
+                    </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={stylePesquisa.imageView}
+                    onPress={() => handleAuthorSelection("Stephen King")}
+                  >
+                    <Image
+                      source={require("../assets/img/autorKing.jpg")}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>Stephen King</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={stylePesquisa.imageView}
+                    onPress={() => handleAuthorSelection("Cassandra Clare")}
+                  >
+                    <Image
+                      source={require("../assets/img/autorCassandra.jpeg")}
+                      style={stylePesquisa.image}
+                    />
+                    <Text style={stylePesquisa.imageText}>Cassandra Clare</Text>
+                  </TouchableOpacity>
+                </View>
+              </ScrollView>
+            </View>
+          </ScrollView>
+        ) : (
+          <ScrollView contentContainerStyle={styles.bookContainer}>
+            {filteredBooks.map((book) => (
+              <View key={book.id} style={styles.book}>
+                <TouchableOpacity
+                  onPress={() => redirectInfo(book.id)}
+                  key={book.id}
+                  style={styles.book}
+                >
+                  {book.volumeInfo.imageLinks?.thumbnail ? (
+                    <Image
+                      style={styles.bookImg}
+                      source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+                    />
+                  ) : (
+                    <Image
+                      style={styles.bookImg}
+                      source={require("../assets/img/no_photo.png")}
+                    />
+                  )}
+                </TouchableOpacity>
+              </View>
+            ))}
+          </ScrollView>
+        )}
+
+        <FiltroModal
+          isVisible={isFilterModalVisible}
+          onClose={() => setFilterModalVisible(false)}
+          onApply={(appliedFilters) => setFilters(appliedFilters)}
+        />
+      </ScrollView>
       <Menu navigation={navigation} />
-    </View>
+    </>
   );
 };
 

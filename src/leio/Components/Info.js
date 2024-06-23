@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Linking,
+  ScrollView,
+} from "react-native";
 import Menu from "./Menu";
 import styles from "../assets/styles/base";
 import styleInfo from "../assets/styles/info";
 import Modal from "./Modal";
-import { db, auth } from "../db/firebaseConfig"; // Importação correta do Firebase configurado
-import { doc, setDoc } from "firebase/firestore"; // Importar as funções necessárias do Firestore
+import { db, auth } from "../db/firebaseConfig";
+import { doc, setDoc } from "firebase/firestore";
 
 const Info = ({ navigation, route }) => {
   const [book, setBook] = useState(null);
@@ -117,77 +124,78 @@ const Info = ({ navigation, route }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styleInfo.book}>
-        {book.volumeInfo.imageLinks?.thumbnail ? (
-          <Image
-            style={styles.bookImg}
-            source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
-          />
-        ) : (
-          <Image
-            style={styles.bookImg}
-            source={require("../assets/img/no_photo.png")}
-          />
-        )}
-        <View style={styleInfo.btnsContainer}>
-          <TouchableOpacity style={styleInfo.btn} onPress={openModal}>
-            <Image source={require("../assets/img/save.svg")} />
+    <>
+      <ScrollView vertical contentContainerStyle={styles.container}>
+        <View style={styleInfo.book}>
+          {book.volumeInfo.imageLinks?.thumbnail ? (
+            <Image
+              style={styles.bookImg}
+              source={{ uri: book.volumeInfo.imageLinks?.thumbnail }}
+            />
+          ) : (
+            <Image
+              style={styles.bookImg}
+              source={require("../assets/img/no_photo.png")}
+            />
+          )}
+          <View style={styleInfo.btnsContainer}>
+            <TouchableOpacity style={styleInfo.btn} onPress={openModal}>
+              <Image source={require("../assets/img/save.svg")} />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={handleIsFavorite} style={styleInfo.btn}>
+              <Image
+                source={
+                  isFavorite
+                    ? require("../assets/img/favorite_full.svg")
+                    : require("../assets/img/favorite_empty.svg")
+                }
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <Text style={styleInfo.bookName}>{book.volumeInfo.title}</Text>
+
+        <Text style={styleInfo.author}>
+          {book.volumeInfo.authors?.join(", ")}
+        </Text>
+
+        {book.volumeInfo.publisher ? (
+          <Text style={styleInfo.author}>
+            Editora: {book.volumeInfo.publisher}
+          </Text>
+        ) : null}
+
+        {renderAverageRatingStars(book.volumeInfo.averageRating)}
+
+        <Text style={styleInfo.summary}>{book.volumeInfo.description}</Text>
+
+        <View style={styleInfo.buttonContainer}>
+          <TouchableOpacity
+            style={[styles.button, styleInfo.lerPreviaButton]}
+            onPress={openExternalLinkPS}
+          >
+            <Text style={styles.buttonText}>Comprar</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={handleIsFavorite} style={styleInfo.btn}>
-            <Image
-              source={
-                isFavorite
-                  ? require("../assets/img/favorite_full.svg")
-                  : require("../assets/img/favorite_empty.svg")
-              }
-            />
+          <TouchableOpacity
+            style={[styles.button, styleInfo.buscarEbookButton]}
+            onPress={openExternalLink}
+          >
+            <Text style={styles.buttonText}>Ler prévia</Text>
           </TouchableOpacity>
         </View>
-      </View>
 
-      <Text style={styleInfo.bookName}>{book.volumeInfo.title}</Text>
-
-      <Text style={styleInfo.author}>
-        {book.volumeInfo.authors?.join(", ")}
-      </Text>
-
-      {book.volumeInfo.publisher ? (
-        <Text style={styleInfo.author}>
-          Editora: {book.volumeInfo.publisher}
-        </Text>
-      ) : null}
-
-      {renderAverageRatingStars(book.volumeInfo.averageRating)}
-
-      <Text style={styleInfo.summary}>{book.volumeInfo.description}</Text>
-
-      <View style={styleInfo.buttonContainer}>
-        <TouchableOpacity
-          style={[styles.button, styleInfo.lerPreviaButton]}
-          onPress={openExternalLinkPS}
-        >
-          <Text style={styles.buttonText}>Comprar</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.button, styleInfo.buscarEbookButton]}
-          onPress={openExternalLink}
-        >
-          <Text style={styles.buttonText}>Ler prévia</Text>
-        </TouchableOpacity>
-      </View>
-
+        <Modal
+          isVisible={isFilterModalVisible}
+          onClose={closeModal}
+          onSelectCategory={adicionarLivroEstante}
+          bookId={bookId}
+        />
+      </ScrollView>
       <Menu navigation={navigation} />
-
-      <Modal
-        isVisible={isFilterModalVisible}
-        onClose={closeModal}
-        onSelectCategory={adicionarLivroEstante}
-        bookId={bookId}
-      />
-    </View>
+    </>
   );
 };
 

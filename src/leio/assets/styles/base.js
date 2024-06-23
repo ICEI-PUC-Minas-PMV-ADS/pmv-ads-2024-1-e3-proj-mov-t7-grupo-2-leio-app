@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     gap: 16,
     backgroundColor: "#F4F3FF",
     minHeight: "100vh",
+    overflow: "scroll",
   },
   inputContainer: {
     flexDirection: "row",
@@ -78,9 +79,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     gap: 16,
-    bottom: 0,
     left: 0,
-    right: 0,
+    bottom: -2,
     paddingHorizontal: 40,
     paddingVertical: 12,
     borderTopLeftRadius: 20,

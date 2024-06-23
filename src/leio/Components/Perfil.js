@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   Pressable,
+  ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -173,7 +174,11 @@ const Perfil = () => {
   };
 
   return (
-    <View style={[styles.container, { justifyContent: "center" }]}>
+   <>
+    <ScrollView
+      vertical
+      contentContainerStyle={[styles.container, { justifyContent: "center" }]}
+    >
       <Pressable onPress={isGoogleUser ? null : selecionarFoto}>
         <View style={styleCadastro.selectPhoto}>
           {foto ? (
@@ -267,8 +272,9 @@ const Perfil = () => {
           </TouchableOpacity>
         </View>
       )}
-      <Menu navigation={navigation} />
-    </View>
+    </ScrollView>
+    <Menu navigation={navigation} />
+    </>
   );
 };
 

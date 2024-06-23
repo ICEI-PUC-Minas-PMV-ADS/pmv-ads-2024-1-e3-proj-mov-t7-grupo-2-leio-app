@@ -1,9 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styleBiblioteca = StyleSheet.create({
-  bodyContainer: {
-    width: "100%",
-  },
   containerInput: {
     flexDirection: "row",
     justifyContent: "space-between",

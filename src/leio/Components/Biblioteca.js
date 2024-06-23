@@ -27,10 +27,11 @@ const Biblioteca = ({ navigation }) => {
   const [query, setQuery] = useState("");
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
   const [estanteBooks, setEstanteBooks] = useState({
-    "Lido": [],
+    Lido: [],
+    Lendo: [],  
     "Quero ler": [],
-    "Relendo": [],
-    "Abandonei": [],
+    Relendo: [],
+    Abandonei: [],
   });
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -54,22 +55,21 @@ const Biblioteca = ({ navigation }) => {
       const querySnapshot = await getDocs(q);
 
       const booksByCategory = {
-        "Lido": [],
+        Lido: [],
+        Lendo: [],
         "Quero ler": [],
-        "Relendo": [],
-        "Abandonei": [],
+        Relendo: [],
+        Abandonei: [],
       };
 
       for (const doc of querySnapshot.docs) {
         const data = doc.data();
         const bookDetails = await fetchBookDetails(data.livro_id);
 
-        /*  ######################################################################################################################## */
         if (booksByCategory[data.categoria]) {
-          console.log("data.categoria: ", data.categoria);
+          //  console.log("data.categoria: ", data.categoria);
           booksByCategory[data.categoria].push({
             ...data,
-            title: bookDetails.title,
             thumbnail: bookDetails.thumbnail,
           });
         }
@@ -81,8 +81,6 @@ const Biblioteca = ({ navigation }) => {
     }
   };
 
-
-
   // Função para buscar detalhes dos livros
   const fetchBookDetails = async (bookId) => {
     try {
@@ -90,20 +88,17 @@ const Biblioteca = ({ navigation }) => {
         `https://www.googleapis.com/books/v1/volumes/${bookId}`
       );
       const bookData = await response.json();
+      console.log("bookData: ", bookData)
       return {
-        title: bookData.volumeInfo.title || "Título desconhecido",
         thumbnail:
           bookData.volumeInfo.imageLinks?.thumbnail ||
           require("../assets/img/no_photo.png"),
-        authors:
-          bookData.volumeInfo.authors?.join(", ") || "Autor desconhecido",
       };
-    } catch (error) {
-      console.error("Erro ao buscar detalhes do livro:", error);
+    } 
+    catch (error) {
+      console.log("Erro ao buscar detalhes do livro:", error);
       return {
-        title: "Título desconhecido",
         thumbnail: require("../assets/img/no_photo.png"),
-        authors: "Autor desconhecido",
       };
     }
   };
@@ -143,9 +138,6 @@ const Biblioteca = ({ navigation }) => {
               categorySet.add(category);
               extractedCategories.push({
                 name: category,
-                image:
-                  book.volumeInfo.imageLinks?.thumbnail ||
-                  require("../assets/img/no_photo.png"),
               });
             }
           });
@@ -156,9 +148,6 @@ const Biblioteca = ({ navigation }) => {
               authorSet.add(author);
               extractedAuthors.push({
                 name: author,
-                image:
-                  book.volumeInfo.imageLinks?.thumbnail ||
-                  require("../assets/img/no_photo.png"),
               });
             }
           });
@@ -189,68 +178,49 @@ const Biblioteca = ({ navigation }) => {
     setActiveTab(tab);
   };
 
-  const renderCategoryBooks = (category) => (
-    <View key={category} style={styleBiblioteca.categoryContainer}>
-      <Text style={styleBiblioteca.categoryTitle}>{category}</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {estanteBooks[category].map((book, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => redirectInfo(book.livro_id)}
-            style={styles.book}
-          >
-            <Image source={{ uri: book.thumbnail }} style={styles.bookImg} />
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    </View>
-  );
-
   const renderEstanteContent = () => {
     const nonEmptyCategories = Object.keys(estanteBooks).filter(
       (category) => estanteBooks[category].length > 0
     );
 
     return (
-      <ScrollView contentContainerStyle={styleBiblioteca.bodyContainer}>
-        <View style={styleHome.body}>
-          {nonEmptyCategories.length > 0 ? (
-            nonEmptyCategories.map((category) => (
-              <View key={category} style={styleHome.bodyContent}>
-                <Text style={styleHome.text}>{category}</Text>
-                <ScrollView
-                  horizontal
-                  contentContainerStyle={[
-                    styles.bookContainer,
-                    styleHome.bookContainer,
-                  ]}
-                >
-                  {estanteBooks[category].map((book, index) => (
-                    <TouchableOpacity
-                      key={index}
-                      style={styles.book}
-                      onPress={() => redirectInfo(book.livro_id)}
-                    >
-                      <Image
-                        source={{
-                          uri:
-                            book.thumbnail ||
-                            require("../assets/img/no_photo.png"),
-                        }}
-                        style={styles.bookImg}
-                      />
-                    </TouchableOpacity>
-                  ))}
-                </ScrollView>
-              </View>
-            ))
-          ) : (
-            <Text style={styleBiblioteca.noBooksText}>
-              Nenhum livro encontrado
-            </Text>
-          )}
-        </View>
-      </ScrollView>
+      <View style={styleHome.body}>
+        {nonEmptyCategories.length > 0 ? (
+          nonEmptyCategories.map((category) => (
+            <View key={category} style={styleHome.bodyContent}>
+              <Text style={styleHome.text}>{category}</Text>
+              <ScrollView
+                horizontal
+                contentContainerStyle={[
+                  styles.bookContainer,
+                  styleHome.bookContainer,
+                ]}
+              >
+                {estanteBooks[category].map((book, index) => (
+                  <TouchableOpacity
+                    key={index}
+                    style={styles.book}
+                    onPress={() => redirectInfo(book.livro_id)}
+                  >
+                    <Image
+                      source={{
+                        uri:
+                          book.thumbnail ||
+                          require("../assets/img/no_photo.png"),
+                      }}
+                      style={styles.bookImg}
+                    />
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            </View>
+          ))
+        ) : (
+          <Text style={styleBiblioteca.noBooksText}>
+            Nenhum livro encontrado
+          </Text>
+        )}
+      </View>
     );
   };
 
@@ -282,62 +252,77 @@ const Biblioteca = ({ navigation }) => {
   );
 
   return (
-    <View style={styles.container}>
-      <View style={styleBiblioteca.containerInput}>
-        <View style={styleBiblioteca.searchContainer}>
-          <TextInput
-            placeholder="O que você quer ler?"
-            style={styles.input}
-            value={query}
-            onChangeText={handleSearch}
-          />
-          <TouchableOpacity onPress={() => handleSearch(query)}>
-            <Image
-              style={styleBiblioteca.searchIcon}
-              source={require("../assets/img/search.svg")}
+    <>
+      <ScrollView vertical contentContainerStyle={styles.container}>
+
+        <View style={styleBiblioteca.containerInput}>
+
+          <View style={activeTab === "Estante" ? styles.inputContainer : styleBiblioteca.searchContainer}>
+            <TextInput
+              placeholder="O que você quer ler?"
+              style={styles.input}
+              value={query}
+              onChangeText={handleSearch}
             />
+            <TouchableOpacity onPress={() => handleSearch(query)}>
+              <Image
+                style={styleBiblioteca.searchIcon}
+                source={require("../assets/img/search.svg")}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <TouchableOpacity
+            style={styleBiblioteca.searchFilter}
+            onPress={() => setFilterModalVisible(true)}
+          >
+            {activeTab === "Estante" ? null
+              :
+              (
+                <Image
+                  style={styleBiblioteca.filterImg}
+                  source={require("../assets/img/filter.svg")}
+                />
+              )}
           </TouchableOpacity>
         </View>
-        <TouchableOpacity
-          style={styleBiblioteca.searchFilter}
-          onPress={() => setFilterModalVisible(true)}
-        >
-          <Image
-            style={styleBiblioteca.filterImg}
-            source={require("../assets/img/filter.svg")}
-          />
-        </TouchableOpacity>
-      </View>
-      <View style={styleBiblioteca.tabs}>
-        <TouchableOpacity
-          style={[
-            styleBiblioteca.tab,
-            activeTab === "Estante" && styleBiblioteca.activeTab,
-          ]}
-          onPress={() => handleTabChange("Estante")}
-        >
-          <Text style={styleBiblioteca.tabText}>Estante</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[
-            styleBiblioteca.tab,
-            activeTab === "Biblioteca" && styleBiblioteca.activeTab,
-          ]}
-          onPress={() => handleTabChange("Biblioteca")}
-        >
-          <Text style={styleBiblioteca.tabText}>Biblioteca</Text>
-        </TouchableOpacity>
-      </View>
-      {activeTab === "Estante"
-        ? renderEstanteContent()
-        : renderBibliotecaContent()}
-      <FiltroModal
-        isVisible={isFilterModalVisible}
-        onClose={() => setFilterModalVisible(false)}
-        onApply={(appliedFilters) => setFilters(appliedFilters)}
-      />
+
+        <View style={styleBiblioteca.tabs}>
+          <TouchableOpacity
+            style={[
+              styleBiblioteca.tab,
+              activeTab === "Estante" && styleBiblioteca.activeTab,
+            ]}
+            onPress={() => handleTabChange("Estante")}
+          >
+            <Text style={styleBiblioteca.tabText}>Estante</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styleBiblioteca.tab,
+              activeTab === "Biblioteca" && styleBiblioteca.activeTab,
+            ]}
+            onPress={() => handleTabChange("Biblioteca")}
+          >
+            <Text style={styleBiblioteca.tabText}>Biblioteca</Text>
+          </TouchableOpacity>
+        </View>
+
+        {activeTab === "Estante"
+          ? renderEstanteContent()
+          : renderBibliotecaContent()}
+
+        <FiltroModal
+          isVisible={isFilterModalVisible}
+          onClose={() => setFilterModalVisible(false)}
+          onApply={(appliedFilters) => setFilters(appliedFilters)}
+        />
+
+      </ScrollView>
+
       <Menu navigation={navigation} />
-    </View>
+
+    </>
   );
 };
 
