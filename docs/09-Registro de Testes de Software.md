@@ -70,11 +70,11 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | Requisito Associado |             RF08 - O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.              |
 |      Avaliação      |                    Os livros exibidos no resultado de pesquisa possuem PDF para download na API. ✅                     |
 
-|    Caso de Teste    |                                CT-12 - Visualizar livros categorizados                                 |
-| :-----------------: | :----------------------------------------------------------------------------------------------------: |
-|       Imagem        | <img src="img/Tela-Estante.jpeg" alt="Tela da Estante" title="Tela da Estante" style="height: 800px;"> |
-| Requisito Associado |     RF08 - O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.     |
-|      Avaliação      |                     Os livros exibidos foram categorizados pelo usuário logado. ✅                     |
+|    Caso de Teste    |                                CT-12 - Visualizar livros categorizados                                |
+| :-----------------: | :---------------------------------------------------------------------------------------------------: |
+|       Imagem        | <img src="img/Tela-Estante.jpg" alt="Tela da Estante" title="Tela da Estante" style="height: 800px;"> |
+| Requisito Associado |    RF08 - O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.     |
+|      Avaliação      |                    Os livros exibidos foram categorizados pelo usuário logado. ✅                     |
 
 ## Avaliação
 

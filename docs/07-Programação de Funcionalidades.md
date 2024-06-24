@@ -7,7 +7,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-Login.jpg" alt="Tela de login" title="Tela de login" style="height: 800px;">
+      <img src="img/Tela-LoginNormal.jpeg" alt="Tela de login" title="Tela de login" style="height: 800px;">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -139,7 +139,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-ResultadoPesquisa.jpg" alt="Tela perfil" title="Tela perfil">
+      <img src="img/Tela-pesquisa-resultado.jpg" alt="Tela perfil" title="Tela perfil">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -166,7 +166,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-Info.jpg" alt="Tela de informações" title="Tela de informações">
+      <img src="img/Tela-Descricao.jpg" alt="Tela de informações" title="Tela de informações">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -188,12 +188,65 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
   </tr>
 </table>
 
+## Tela Info (Modal)
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-MarcarAvaliacao.jpg" alt="Tela de informações" title="Tela de informações">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF04 - O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, sinopse e avaliações.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+        <li>../Components/Modal.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/modal.js</li>
+      </ul>
+      <h3>Desenvolvedora</h3>
+      <ul>
+        <li>Aline Azedias</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## Tela da Estante
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/Tela-Estante.jpg" alt="Tela da Estante" title="Tela da Estante" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF03 - O sistema deve permitir que o usuário possa marcar seus livros de acordo com categorias pré estabelecidas, sendo elas: lido, lendo, quero ler, relendo e abandonei.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+         <li>../Components/Menu.js</li>
+        <li>../Components/Biblioteca.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/biblioteca.js</li>
+      </ul>
+      <h3>Desenvolvedor</h3>
+      <ul>
+        <li>Lucas Enis</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 ## Tela da Biblioteca
 
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-Biblioteca.jpg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">
+      <img src="img/Tela-Biblioteca.jpeg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -206,6 +259,33 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
         <li>../Components/Biblioteca.js</li>
         <li>../assets/styles/base.js</li>
         <li>../assets/styles/biblioteca.js</li>
+      </ul>
+      <h3>Desenvolvedor</h3>
+      <ul>
+        <li>Lucas Enis</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## Tela da Biblioteca (filtros)
+
+<table>
+  <tr>
+    <td style="width: 30%;">
+      <img src="img/telafiltros.png" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">
+    </td>
+    <td style="width: 70%;">
+      <h3>Requisitos atendidos</h3>
+      <ul>
+        <li>RF09 - O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.</li>
+      </ul>
+      <h3>Artefatos produzidos</h3>
+      <ul>
+         <li>../Components/Menu.js</li>
+        <li>../Components/FiltroModal.js</li>
+        <li>../assets/styles/base.js</li>
+        <li>../assets/styles/modal.js</li>
       </ul>
       <h3>Desenvolvedor</h3>
       <ul>

@@ -50,7 +50,7 @@ O aplicativo <strong>Le.io</strong> é voltado para organização e leitura de e
 
 # Código
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+<li><a href="src/leio"> Código Fonte</a></li>
 
 # Apresentação
 

@@ -4,8 +4,8 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ## Tela de Login
 
-|   **Descrição da Tarefa**   |                     **Foto**                      | **Erros** |      **Resultado**       |
-| :-------------------------: | :-----------------------------------------------: | :-------: | :----------------------: |
+|   **Descrição da Tarefa**   |                         **Foto**                         | **Erros** |          **Resultado**           |
+| :-------------------------: | :------------------------------------------------------: | :-------: | :------------------------------: |
 | Entrar na conta de usuário. | <img width="250px" src = "./img/Tela-LoginNormal.jpeg"/> |    Não    | O login foi efetuado com sucesso |
 
 ### Métricas:
@@ -18,8 +18,8 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ## Tela de Login com Google
 
-|   **Descrição da Tarefa**   |                     **Foto**                      | **Erros** |      **Resultado**       |
-| :-------------------------: | :-----------------------------------------------: | :-------: | :----------------------: |
+|   **Descrição da Tarefa**   |                          **Foto**                           | **Erros** |          **Resultado**           |
+| :-------------------------: | :---------------------------------------------------------: | :-------: | :------------------------------: |
 | Entrar na conta de usuário. | <img width="250px" src = "./img/Tela-LoginGoogle.jpg.png"/> |    Não    | O login foi efetuado com sucesso |
 
 ### Métricas:
@@ -32,8 +32,8 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ## Tela Cadastro
 
-|  **Descrição da Tarefa**   |                       **Foto**                       | **Erros** |        **Resultado**         |
-| :------------------------: | :--------------------------------------------------: | :-------: | :--------------------------: |
+|  **Descrição da Tarefa**   |                            **Foto**                            | **Erros** |      **Resultado**       |
+| :------------------------: | :------------------------------------------------------------: | :-------: | :----------------------: |
 | Crie uma conta de usuário. | <img width="250px" src = "./img/Tela-CadastroConcluido.jpeg"/> |    Não    | O cadastro foi concluído |
 
 ### Métricas:
@@ -46,9 +46,9 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ## Tela Perfil
 
-|                                              **Descrição da Tarefa**                                              |                      **Foto**                      | **Erros** |                                             **Resultado**                                              |
-| :---------------------------------------------------------------------------------------------------------------: | :------------------------------------------------: | :-------: | :----------------------------------------------------------------------------------------------------: |
-| Edite informações do usuário. <br> Visualize os detalhes da conta do usuário. <br> Exclua a sua conta de usuário. | <img width="250px" src = "./img/Tela-Perfil.jpg"/> |    Não    | A edição foi realizada. <br> Visualização da conta foi realizada. <br> O usuário foi excluído. |
+|                                              **Descrição da Tarefa**                                              |                          **Foto**                           | **Erros** |                                         **Resultado**                                          |
+| :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------: | :-------: | :--------------------------------------------------------------------------------------------: |
+| Edite informações do usuário. <br> Visualize os detalhes da conta do usuário. <br> Exclua a sua conta de usuário. | <img width="250px" src = "./img/Tela-PerfilConcluido.jpg"/> |    Não    | A edição foi realizada. <br> Visualização da conta foi realizada. <br> O usuário foi excluído. |
 
 ### Métricas:
 
@@ -60,8 +60,8 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ## Tela inicial/Home
 
-|  **Descrição da Tarefa**   |                     **Foto**                     | **Erros** |           **Resultado**           |
-| :------------------------: | :----------------------------------------------: | :-------: | :-------------------------------: |
+|  **Descrição da Tarefa**   |                     **Foto**                     | **Erros** |                         **Resultado**                         |
+| :------------------------: | :----------------------------------------------: | :-------: | :-----------------------------------------------------------: |
 | Navegue pela tela inicial. | <img width="250px" src = "./img/Tela-Home.jpg"/> |    Não    | Foi possível clicar no livro e ser redirecionado com sucesso. |
 
 ### Métricas:
@@ -70,13 +70,13 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 - Tempo Médio de Conclusão: 5 segundos - O tempo médio para concluir a navegação e redirecionamento para o livro clicado foi satisfatório.
 - Erros Cometidos: Nenhum erro foi relatado durante a navegação e redirecionamento para o livro clicado.
 - Facilidade de Uso: 5/5 - Os participantes avaliaram a facilidade de uso da tela inicial como uma experiência intuitiva e eficiente.
-- Satisfação: 5/5 -  Os participantes expressaram alta satisfação com a experiência de navegação e redirecionamento para os livros.
+- Satisfação: 5/5 - Os participantes expressaram alta satisfação com a experiência de navegação e redirecionamento para os livros.
 
 ## Tela Pesquisa
 
-| **Descrição da Tarefa** |                       **Foto**                       | **Erros** |          **Resultado**           |
-| :---------------------: | :--------------------------------------------------: | :-------: | :------------------------------: |
-|   Faça uma pesquisa.    | <img width="250px" src = "./img/telapesquisa.png"/> |    Não    | Foi possível fazer pesquisa. |
+| **Descrição da Tarefa** |                            **Foto**                            | **Erros** |        **Resultado**         |
+| :---------------------: | :------------------------------------------------------------: | :-------: | :--------------------------: |
+|   Faça uma pesquisa.    | <img width="250px" src = "./img/Tela-pesquisa-resultado.jpg"/> |    Não    | Foi possível fazer pesquisa. |
 
 ### Métricas:
 
@@ -88,9 +88,9 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ## Tela da Estante
 
-|         **Descrição da Tarefa**         |                        **Foto**                        | **Erros** |            **Resultado**            |
-| :-------------------------------------: | :----------------------------------------------------: | :-------: | :---------------------------------: |
-| Armazenar livros na Estante/Biblioteca. | <img width="250px" src = "./img/telaestante.png"/> |    Não    | Os livros foram armazanados na estante. |
+|         **Descrição da Tarefa**         |                      **Foto**                       | **Erros** |              **Resultado**              |
+| :-------------------------------------: | :-------------------------------------------------: | :-------: | :-------------------------------------: |
+| Armazenar livros na Estante/Biblioteca. | <img width="250px" src = "./img/Tela-Estante.jpg"/> |    Não    | Os livros foram armazanados na estante. |
 
 ### Métricas:
 
@@ -100,11 +100,10 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 - Facilidade de Uso: 5/5 - Os participantes avaliaram a facilidade de uso da página de estante como uma experiência positiva.
 - Satisfação: 5/5 - Os participantes demonstraram alta satisfação com a experiência de armazenamento dos livros
 
-
 ## Tela da Biblioteca
 
-|         **Descrição da Tarefa**         |                        **Foto**                        | **Erros** |            **Resultado**            |
-| :-------------------------------------: | :----------------------------------------------------: | :-------: | :---------------------------------: |
+|     **Descrição da Tarefa**     |                            **Foto**                             | **Erros** |               **Resultado**               |
+| :-----------------------------: | :-------------------------------------------------------------: | :-------: | :---------------------------------------: |
 | Listar livros com PDF's grátis. | <img width="250px" src = "./img/Tela-BibliotecaPesquisa.jpeg"/> |    Não    | Os livros com PDF's grátis foram listados |
 
 ### Métricas:
@@ -115,12 +114,11 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 - **Facilidade de Uso**: 4.6/5 - Os participantes avaliaram a facilidade de uso da página de listagem de livros como alta.
 - **Satisfação**: 4.7/5 - Os participantes expressaram alta satisfação com a experiência de listagem de livros.
 
-
 ## Tela da Informações do livro
 
-|         **Descrição da Tarefa**         |                        **Foto**                        | **Erros** |            **Resultado**            |
-| :-------------------------------------: | :----------------------------------------------------: | :-------: | :---------------------------------: |
-| Ver informações do livro. | <img width="250px" src = "./img/infolivro.png"/> |    Não    | As informações do livro foram mostradas corretamente |
+|  **Descrição da Tarefa**  |                       **Foto**                        | **Erros** |                    **Resultado**                     |
+| :-----------------------: | :---------------------------------------------------: | :-------: | :--------------------------------------------------: |
+| Ver informações do livro. | <img width="250px" src = "./img/Tela-Descricao.jpg"/> |    Não    | As informações do livro foram mostradas corretamente |
 
 ### Métricas:
 
@@ -132,23 +130,23 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ## Tela de Categorização dos Livros
 
-| **Descrição da Tarefa** |                       **Foto**                       | **Erros** |          **Resultado**           |
-| :---------------------: | :--------------------------------------------------: | :-------: | :------------------------------: |
-|   Categorize os livros    | <img width="250px" src = "./img/modal.png"/> |    Não    | Foi possível categorizar os livros. |
+| **Descrição da Tarefa** |                          **Foto**                           | **Erros** |            **Resultado**            |
+| :---------------------: | :---------------------------------------------------------: | :-------: | :---------------------------------: |
+|  Categorize os livros   | <img width="250px" src = "./img/Tela-MarcarAvaliacao.jpg"/> |    Não    | Foi possível categorizar os livros. |
 
 ### Métricas:
 
 - Taxa de Sucesso: A categorização de lido, quero ler, relendo e abandonei foi realizada com sucesso.
-- Tempo Médio de Conclusão: 10 segundos -  O tempo médio para concluir a categorização foi satisfatório e dentro do esperado.
+- Tempo Médio de Conclusão: 10 segundos - O tempo médio para concluir a categorização foi satisfatório e dentro do esperado.
 - Erros Cometidos: Não foram registrados erros significativos durante o processo de categorização dos livros.
 - Facilidade de Uso: 4.6/5 - Os participantes avaliaram a facilidade de uso do aplicativo como alta, destacando a simplicidade na categorização dos livros.
 - Satisfação: 4.8/5 - Os participantes demonstraram alta satisfação com os resultados da categorização dos livros.
 
 ## Tela de Categorias
 
-|   **Descrição da Tarefa**   |                     **Foto**                      | **Erros** |      **Resultado**       |
-| :-------------------------: | :-----------------------------------------------: | :-------: | :----------------------: |
-| Tela dividia em categorias e autores | <img width="250px" src = "./img/telacategorias.png"/> |    Não    | Categorias e autores são msotrados com sucesso. |
+|       **Descrição da Tarefa**        |                       **Foto**                       | **Erros** |                  **Resultado**                  |
+| :----------------------------------: | :--------------------------------------------------: | :-------: | :---------------------------------------------: |
+| Tela dividia em categorias e autores | <img width="250px" src = "./img/Tela-Pesquisa.jpg"/> |    Não    | Categorias e autores são msotrados com sucesso. |
 
 ### Métricas:
 
@@ -160,9 +158,9 @@ Após realizar os testes de usabilidade, obtém-se um relatório a partir das an
 
 ## Tela de Filtro de Pesquisa
 
-|  **Descrição da Tarefa**   |                     **Foto**                     | **Erros** |           **Resultado**           |
-| :------------------------: | :----------------------------------------------: | :-------: | :-------------------------------: |
-| Aplicação de filtros. | <img width="250px" src = "./img/telafiltros.png"/> |    Não    | Os filtros de pesquisa foram aplicados com sucesso. |
+| **Descrição da Tarefa** |                      **Foto**                      | **Erros** |                    **Resultado**                    |
+| :---------------------: | :------------------------------------------------: | :-------: | :-------------------------------------------------: |
+|  Aplicação de filtros.  | <img width="250px" src = "./img/telafiltros.png"/> |    Não    | Os filtros de pesquisa foram aplicados com sucesso. |
 
 ### Métricas:
 
