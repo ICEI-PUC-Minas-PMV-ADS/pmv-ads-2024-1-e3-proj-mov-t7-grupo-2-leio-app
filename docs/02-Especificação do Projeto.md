@@ -49,13 +49,13 @@ O aplicativo Le.io visa proporcionar aos leitores uma ferramenta de organizaçã
 
 Abaixo estão os principais indicadores de desempenho do nosso projeto.
 
-| **Indicador**                           | **Objetivos**                                                                | **Descrição**                                                                                 | **Cálculo**                                | **Fonte Dados**                      | **Perspectiva**                                    |
-| --------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------ | -------------------------------------------------- |
-| Taxa de satisfação                      | Avaliar a satisfação dos usuários em relação à experiência com a aplicação.  | Medir a aceitação da aplicação através da avaliação média atribuída pelos usuários.           | Nota média da loja de aplicativo           | Loja de Aplicativo                   | Aprimorar a qualidade                              |
-| Número de downloads diário              | Obter o número diário de downloads da aplicação.                             | Avaliar o número de downloads diários                                                         | Número de downloads                        | Loja de Aplicativo                   | Necessidade de aplicação                           |
-| Reclamações recebidas                   | Minimizar a incidência de feedbacks negativos mensais.                       | Analisar a quantidade de reclamações recebidas                                                | Somatório das reclamações por mês          | Central de reclamações               | Qualidade do produto                               |
-| Cadastros Realizados                    | Analisar a quantidade de cadastros na plataforma                             | Total de cadastros em relação a plataforma                                                    | Crescimento mensal                         | Contador na plataforma               | Aquisição de novos usuários e expansão de público. |
-| Taxa de Atualização de Lista de Leitura | Verificar a frequência com que os usuários atualizam suas listas de leitura. | Acompanhar a modificação de status dos livros na lista do "Quero Ler" para "Lendo" ou "Lido". | Número de atualizações da lista de leitura | Atividades do usuário no aplicativo. | Engajamento do usuário.                            |
+| **Indicador**                           | **Objetivos**                                                                | **Descrição**                                                                                     | **Cálculo**                                | **Fonte Dados**                      | **Perspectiva**                                    |
+| --------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------ | -------------------------------------------------- |
+| Taxa de satisfação                      | Avaliar a satisfação dos usuários em relação à experiência com a aplicação.  | Medir a aceitação da aplicação através da avaliação média atribuída pelos usuários.               | Nota média da loja de aplicativo           | Loja de Aplicativo                   | Aprimorar a qualidade                              |
+| Número de downloads diário              | Obter o número diário de downloads da aplicação.                             | Avaliar o número de downloads diários                                                             | Número de downloads                        | Loja de Aplicativo                   | Necessidade de aplicação                           |
+| Reclamações recebidas                   | Minimizar a incidência de feedbacks negativos mensais.                       | Analisar a quantidade de reclamações recebidas                                                    | Somatório das reclamações por mês          | Central de reclamações               | Qualidade do produto                               |
+| Cadastros Realizados                    | Analisar a quantidade de cadastros na plataforma                             | Total de cadastros em relação a plataforma                                                        | Crescimento mensal                         | Contador na plataforma               | Aquisição de novos usuários e expansão de público. |
+| Taxa de Atualização de Lista de Leitura | Verificar a frequência com que os usuários atualizam suas listas de leitura. | Acompanhar a modificação de status dos livros na lista do "Quero ler" para "Lendo", "Lido" e etc. | Número de atualizações da lista de leitura | Atividades do usuário no aplicativo. | Engajamento do usuário.                            |
 
 ## Requisitos
 
@@ -63,16 +63,16 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-| ID    | Descrição do Requisito                                                                                                                                       | Prioridade |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
-| RF-01 | O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                                                                             | ALTA       |
-| RF-02 | O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro, categoria ou autor.                                                 | ALTA       |
-| RF-03 | O sistema deve permitir que o usuário possa marcar seus livros de acordo com categorias pré estabelecidas, sendo elas: lido, quero ler, relendo e abandonei. | ALTA       |
-| RF-04 | O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, sinopse e avaliações.                 | ALTA       |
-| RF-05 | O sistema deve permitir que o usuário acesse o link para compra na Play Store.                                                                               | ALTA       |
-| RF-06 | O sistema deve permitir que o usuário possa ver uma prévia do livro na API.                                                                                  | MÉDIA      |
-| RF-07 | O sistema deve permitir que o usuário possa avaliar o livro lido entre 1 e 5 estrelas.                                                                       | MÉDIA      |
-| RF-08 | O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.                                                                      | MÉDIA      |
+| ID    | Descrição do Requisito                                                                                                                                              | Prioridade |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| RF-01 | O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.                                                                                    | ALTA       |
+| RF-02 | O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro, categoria ou autor.                                                        | ALTA       |
+| RF-03 | O sistema deve permitir que o usuário possa marcar seus livros de acordo com categorias pré estabelecidas, sendo elas: lido, lendo, quero ler, relendo e abandonei. | ALTA       |
+| RF-04 | O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, sinopse e avaliações.                        | ALTA       |
+| RF-05 | O sistema deve permitir que o usuário acesse o link para compra na Play Store.                                                                                      | MÉDIA      |
+| RF-06 | O sistema deve permitir que o usuário possa ver uma prévia do livro na API.                                                                                         | MÉDIA      |
+| RF-07 | O sistema deve permitir que o usuário possa avaliar o livro lido entre 1 e 5 estrelas.                                                                              | MÉDIA      |
+| RF-08 | O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.                                                                             | MÉDIA      |
 
 ### Requisitos não Funcionais
 

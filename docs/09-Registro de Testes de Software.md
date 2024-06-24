@@ -34,53 +34,47 @@ Relatório com as evidências dos testes de software realizados no sistema pela 
 | Requisito Associado | RF02 - O sistema deve permitir que o usuário possa buscar pelos seus livros pelo nome do livro, categoria ou autor. |
 |      Avaliação      |                                         Pesquisa realizada com sucesso. ✅                                          |
 
-|    Caso de Teste    |                                                CT-06 - Marcar livros                                                |
-| :-----------------: | :-----------------------------------------------------------------------------------------------------------------: |
-|       Imagem        |                                  <img src = "./img/Tela-MarcarAvaliacao.jpg"/>                                   |
+|    Caso de Teste    |                                                                     CT-06 - Categorizar livros                                                                      |
+| :-----------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|       Imagem        |                                                            <img src = "./img/Tela-MarcarAvaliacao.jpg"/>                                                            |
 | Requisito Associado | RF03 - O sistema deve permitir que o usuário possa marcar seus livros de acordo com categorias pré estabelecidas, sendo elas: lido, quero ler, relendo e abandonei. |
-|      Avaliação      |                                         Livro marcado com sucesso. ✅                                          |
+|      Avaliação      |                                                                    Livro marcado com sucesso. ✅                                                                    |
 
-|    Caso de Teste    |                                                CT-07 - Ler descrição dos livros                                                |
-| :-----------------: | :-----------------------------------------------------------------------------------------------------------------: |
-|       Imagem        |                                  <img src = "./img/Tela-Descricao.jpg"/>                                   |
+|    Caso de Teste    |                                                          CT-07 - Ler descrição dos livros                                                           |
+| :-----------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: |
+|       Imagem        |                                                       <img src = "./img/Tela-Descricao.jpg"/>                                                       |
 | Requisito Associado | RF04 - O sistema deve permitir que o usuário possa ler a descrição do livro buscado, contendo título, autor, imagem, editora, sinopse e avaliações. |
-|      Avaliação      |                                         Descrição do livro disponível com sucesso. ✅                                          |
+|      Avaliação      |                                                    Descrição do livro disponível com sucesso. ✅                                                    |
 
-|    Caso de Teste    |                                                CT-08 - Baixar e-books                                                |
-| :-----------------: | :-----------------------------------------------------------------------------------------------------------------: |
-|       Imagem        |                                  <img src = "./img/Tela-LerPreviaBaixaEBook.jpg"/>                                   |
+|    Caso de Teste    |                         CT-08 - Link de compra na Play Store                          |
+| :-----------------: | :-----------------------------------------------------------------------------------: |
+|       Imagem        |                   <img src = "./img/Tela-LerPreviaBaixaEBook.jpg"/>                   |
 | Requisito Associado | RF05 - O sistema deve permitir que o usuário acesse o link para compra na Play Store. |
-|      Avaliação      |                                         Realizado download do e-book com sucesso. ✅                                          |
+|      Avaliação      |                  Link redirecionado para a Play Store com sucesso ✅                  |
 
-|    Caso de Teste    |                                                CT-09 - Ler prévia de livro                                                   |
-| :-----------------: | :-----------------------------------------------------------------------------------------------------------------: |
-|       Imagem        |                                  <img src = "./img/Tela-LerPreviaBaixaEBook.jpg"/>                                   |
+|    Caso de Teste    |                            CT-09 - Ler prévia de livro                             |
+| :-----------------: | :--------------------------------------------------------------------------------: |
+|       Imagem        |                 <img src = "./img/Tela-LerPreviaBaixaEBook.jpg"/>                  |
 | Requisito Associado | RF06 - O sistema deve permitir que o usuário possa ver uma prévia do livro na API. |
-|      Avaliação      |                                         Leitura da prévia realizada com sucesso. ✅                                          |
+|      Avaliação      |              Link redirecionado com sucesso para a prévia na API. ✅               |
 
-|    Caso de Teste    |                                                CT-10 - Avaliar livros                                                |
-| :-----------------: | :-----------------------------------------------------------------------------------------------------------------: |
-|       Imagem        |                                  <img src = "./img/Tela-MarcarAvaliacao.jpg"/>                                   |
+|    Caso de Teste    |                                    CT-10 - Avaliar livros                                     |
+| :-----------------: | :-------------------------------------------------------------------------------------------: |
+|       Imagem        |                         <img src = "./img/Tela-MarcarAvaliacao.jpg"/>                         |
 | Requisito Associado | RF07 - O sistema deve permitir que o usuário possa avaliar o livro lido entre 1 e 5 estrelas. |
-|      Avaliação      |                                         Avaliação efetuada com sucesso. ✅                                          |
+|      Avaliação      |                              Avaliação efetuada com sucesso. ✅                               |
 
-|    Caso de Teste    |                                        CT-11 - Entrar na conta                                         |
-| :-----------------: | :----------------------------------------------------------------------------------------------------: |
-|       Imagem        | <img src="img/Tela-LoginNormal.jpeg" alt="Tela de login" title="Tela de login" style="height: 800px;"> |
-| Requisito Associado |        RF01 - O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.         |
-|      Avaliação      |                                  O login foi efetuado com sucesso. ✅                                  |
-
-|    Caso de Teste    |                                    CT-11 - Entrar na conta com Google                                     |
-| :-----------------: | :-------------------------------------------------------------------------------------------------------: |
-|       Imagem        | <img src="img/Tela-LoginGoogle.jpg.png" alt="Tela de login" title="Tela de login" style="height: 800px;"> |
-| Requisito Associado |          RF01 - O sistema deve permitir que o usuário crie, edite, visualize e exclua sua conta.          |
-|      Avaliação      |                        O login com a conta do Google foi efetuado com sucesso. ✅                         |
-
-|    Caso de Teste    |                                      CT-12 - Buscar PDF's gratuitos na Biblioteca                                       |
+|    Caso de Teste    |                                      CT-11 - Buscar PDF's gratuitos na Biblioteca                                       |
 | :-----------------: | :---------------------------------------------------------------------------------------------------------------------: |
 |       Imagem        | <img src="img/Tela-BibliotecaPesquisa.jpeg" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;"> |
 | Requisito Associado |             RF08 - O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.              |
-|      Avaliação      |                        Os livros exibidos no resultado de pesquisa possuem PDF para download. ✅                        |
+|      Avaliação      |                    Os livros exibidos no resultado de pesquisa possuem PDF para download na API. ✅                     |
+
+|    Caso de Teste    |                                CT-12 - Visualizar livros categorizados                                 |
+| :-----------------: | :----------------------------------------------------------------------------------------------------: |
+|       Imagem        | <img src="img/Tela-Estante.jpeg" alt="Tela da Estante" title="Tela da Estante" style="height: 800px;"> |
+| Requisito Associado |     RF08 - O sistema deve permitir ao usuário buscar livros listados como gratuitos na biblioteca.     |
+|      Avaliação      |                     Os livros exibidos foram categorizados pelo usuário logado. ✅                     |
 
 ## Avaliação
 

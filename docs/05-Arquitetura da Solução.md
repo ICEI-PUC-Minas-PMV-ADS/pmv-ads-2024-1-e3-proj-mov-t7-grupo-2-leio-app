@@ -31,7 +31,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 A tabela abaixo representa o banco de dados da aplicação no firebase.
 <img src="./img/Tabelas firebase.jpg">
 
-O arquivo contendo o script da criação da configuração das tabelas no firebase está localizado na pasta src/leio/db: <a href="../src/leio/db/firebaseConfig.js">src/leio/db</a> e também está representado abaixo:
+O arquivo contendo o script da criação da configuração das tabelas no firebase está localizado na pasta <a href="../src/leio/db/firebaseConfig.js">src/leio/db</a> e também está representado abaixo:
 
 ```javascript
 import { initializeApp } from "firebase/app";

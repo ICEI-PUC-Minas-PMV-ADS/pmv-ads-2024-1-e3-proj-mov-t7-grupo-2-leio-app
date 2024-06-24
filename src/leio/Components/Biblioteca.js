@@ -28,7 +28,7 @@ const Biblioteca = ({ navigation }) => {
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
   const [estanteBooks, setEstanteBooks] = useState({
     Lido: [],
-    Lendo: [],  
+    Lendo: [],
     "Quero ler": [],
     Relendo: [],
     Abandonei: [],
@@ -67,7 +67,6 @@ const Biblioteca = ({ navigation }) => {
         const bookDetails = await fetchBookDetails(data.livro_id);
 
         if (booksByCategory[data.categoria]) {
-          //  console.log("data.categoria: ", data.categoria);
           booksByCategory[data.categoria].push({
             ...data,
             thumbnail: bookDetails.thumbnail,
@@ -88,17 +87,13 @@ const Biblioteca = ({ navigation }) => {
         `https://www.googleapis.com/books/v1/volumes/${bookId}`
       );
       const bookData = await response.json();
-      console.log("bookData: ", bookData)
       return {
-        thumbnail:
-          bookData.volumeInfo.imageLinks?.thumbnail ||
-          require("../assets/img/no_photo.png"),
+        thumbnail: bookData.volumeInfo.imageLinks?.thumbnail || null,
       };
-    } 
-    catch (error) {
+    } catch (error) {
       console.log("Erro ao buscar detalhes do livro:", error);
       return {
-        thumbnail: require("../assets/img/no_photo.png"),
+        thumbnail: null,
       };
     }
   };
@@ -109,16 +104,16 @@ const Biblioteca = ({ navigation }) => {
       const books =
         appliedFilters.genres || appliedFilters.formats
           ? await fetchFilteredBooks(
-            searchQuery || "i",
-            36,
-            tab === "Biblioteca" ? "newest" : "relevance",
-            appliedFilters
-          )
+              searchQuery || "i",
+              36,
+              tab === "Biblioteca" ? "newest" : "relevance",
+              appliedFilters
+            )
           : await fetchBooks(
-            searchQuery || "i",
-            36,
-            tab === "Biblioteca" ? "newest" : "relevance"
-          );
+              searchQuery || "i",
+              36,
+              tab === "Biblioteca" ? "newest" : "relevance"
+            );
 
       const filteredBooks = books.filter(
         (book) => book.accessInfo.epub?.isAvailable
@@ -203,11 +198,11 @@ const Biblioteca = ({ navigation }) => {
                     onPress={() => redirectInfo(book.livro_id)}
                   >
                     <Image
-                      source={{
-                        uri:
-                          book.thumbnail ||
-                          require("../assets/img/no_photo.png"),
-                      }}
+                      source={
+                        book.thumbnail
+                          ? { uri: book.thumbnail }
+                          : require("../assets/img/no_photo.png")
+                      }
                       style={styles.bookImg}
                     />
                   </TouchableOpacity>
@@ -235,11 +230,11 @@ const Biblioteca = ({ navigation }) => {
               style={styles.book}
             >
               <Image
-                source={{
-                  uri:
-                    book.volumeInfo.imageLinks?.thumbnail ||
-                    require("../assets/img/no_photo.png"),
-                }}
+                source={
+                  book.volumeInfo.imageLinks?.thumbnail
+                    ? { uri: book.volumeInfo.imageLinks.thumbnail }
+                    : require("../assets/img/no_photo.png")
+                }
                 style={styles.bookImg}
               />
             </TouchableOpacity>
@@ -254,38 +249,40 @@ const Biblioteca = ({ navigation }) => {
   return (
     <>
       <ScrollView vertical contentContainerStyle={styles.container}>
+        {activeTab === "Estante" ? null : (
+          <View style={styleBiblioteca.containerInput}>
+            <View
+              style={
+                activeTab === "Estante"
+                  ? styles.inputContainer
+                  : styleBiblioteca.searchContainer
+              }
+            >
+              <TextInput
+                placeholder="O que você quer ler?"
+                style={styles.input}
+                value={query}
+                onChangeText={handleSearch}
+              />
+              <TouchableOpacity onPress={() => handleSearch(query)}>
+                <Image
+                  style={styleBiblioteca.searchIcon}
+                  source={require("../assets/img/search.svg")}
+                />
+              </TouchableOpacity>
+            </View>
 
-        <View style={styleBiblioteca.containerInput}>
-
-          <View style={activeTab === "Estante" ? styles.inputContainer : styleBiblioteca.searchContainer}>
-            <TextInput
-              placeholder="O que você quer ler?"
-              style={styles.input}
-              value={query}
-              onChangeText={handleSearch}
-            />
-            <TouchableOpacity onPress={() => handleSearch(query)}>
+            <TouchableOpacity
+              style={styleBiblioteca.searchFilter}
+              onPress={() => setFilterModalVisible(true)}
+            >
               <Image
-                style={styleBiblioteca.searchIcon}
-                source={require("../assets/img/search.svg")}
+                style={styleBiblioteca.filterImg}
+                source={require("../assets/img/filter.svg")}
               />
             </TouchableOpacity>
           </View>
-
-          <TouchableOpacity
-            style={styleBiblioteca.searchFilter}
-            onPress={() => setFilterModalVisible(true)}
-          >
-            {activeTab === "Estante" ? null
-              :
-              (
-                <Image
-                  style={styleBiblioteca.filterImg}
-                  source={require("../assets/img/filter.svg")}
-                />
-              )}
-          </TouchableOpacity>
-        </View>
+        )}
 
         <View style={styleBiblioteca.tabs}>
           <TouchableOpacity
@@ -317,11 +314,9 @@ const Biblioteca = ({ navigation }) => {
           onClose={() => setFilterModalVisible(false)}
           onApply={(appliedFilters) => setFilters(appliedFilters)}
         />
-
       </ScrollView>
 
       <Menu navigation={navigation} />
-
     </>
   );
 };

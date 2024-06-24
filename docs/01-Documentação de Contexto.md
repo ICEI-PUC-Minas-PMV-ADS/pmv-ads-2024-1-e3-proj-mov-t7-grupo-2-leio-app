@@ -12,7 +12,7 @@ A atual sobrecarga diária de informações dificulta a organização das leitur
 
 ## Objetivos
 
-O objetivo geral deste projeto é desenvolver um aplicativo que auxilia os leitores na organização e busca por livros proporcionando uma maior inclusão à leitura, permitindo que eles gerenciem facilmente as obras que já leram, que desejam ler, aqueles que desejam trocar, entre outras categorias.
+O objetivo geral deste projeto é desenvolver um aplicativo que auxilia os leitores na organização e busca por livros proporcionando uma maior inclusão à leitura, permitindo que eles gerenciem facilmente as obras que já leram, que desejam ler, reler, entre outras categorias.
 
 Como objetivos específicos, podemos ressaltar:
 
