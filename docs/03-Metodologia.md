@@ -23,7 +23,7 @@ O projeto segue com duas branches até o momento:
 
 - `main`: versão completa e estável do projeto
 - `dev`: versão do aplicativo em teste
-  Observação: a branch `dev` será excluída após a conclusão do projeto.
+  <br> Observação: a branch `dev` será excluída após a conclusão do projeto.
 
 Quanto à gerência de issues, o projeto adota a seguinte convenção para etiquetas:
 

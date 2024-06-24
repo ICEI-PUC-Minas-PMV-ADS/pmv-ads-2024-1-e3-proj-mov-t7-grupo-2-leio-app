@@ -219,7 +219,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/Tela-Estante.jpg" alt="Tela da Estante" title="Tela da Estante" style="height: 800px;">
+      <img src="img/Tela-Estante.jpg" alt="Tela da Estante" title="Tela da Estante">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
@@ -273,7 +273,7 @@ Nesta seção, você encontrará uma visão detalhada das telas desenvolvidas pa
 <table>
   <tr>
     <td style="width: 30%;">
-      <img src="img/telafiltros.png" alt="Tela da Biblioteca" title="Tela da Biblioteca" style="height: 800px;">
+      <img src="img/telafiltros.png" alt="Tela da Biblioteca" title="Tela da Biblioteca">
     </td>
     <td style="width: 70%;">
       <h3>Requisitos atendidos</h3>
